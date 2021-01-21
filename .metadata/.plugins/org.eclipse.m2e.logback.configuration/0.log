@@ -1,0 +1,96 @@
+2021-01-21 16:53:02,006 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2021-01-21 16:55:58,403 [Worker-2: Creating project "dbpl-1"] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: autores:dbpl-1:0.0.1-SNAPSHOT @ /home/diego/Documentos/workspace/dbpl-1/pom.xml.
+2021-01-21 16:55:58,522 [Worker-2: Creating project "dbpl-1"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /dbpl-1/src/main/java
+2021-01-21 16:55:58,523 [Worker-2: Creating project "dbpl-1"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /dbpl-1/src/main/resources
+2021-01-21 16:55:58,523 [Worker-2: Creating project "dbpl-1"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /dbpl-1/src/test/java
+2021-01-21 16:55:58,523 [Worker-2: Creating project "dbpl-1"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /dbpl-1/src/test/resources
+2021-01-21 16:55:59,264 [Worker-3: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-01-21 16:55:59,268 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-21 16:55:59,270 [Worker-3: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-01-21 16:55:59,271 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-21 16:56:59,450 [Worker-1: Creating project "AlbalatMiguel-Diego-autores-dbpl-1"] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: arso:AlbalatMiguel-Diego-autores-dbpl-1:0.0.1-SNAPSHOT @ /home/diego/Documentos/workspace/AlbalatMiguel-Diego-autores-dbpl-1/pom.xml.
+2021-01-21 16:56:59,523 [Worker-1: Creating project "AlbalatMiguel-Diego-autores-dbpl-1"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /AlbalatMiguel-Diego-autores-dbpl-1/src/main/java
+2021-01-21 16:56:59,524 [Worker-1: Creating project "AlbalatMiguel-Diego-autores-dbpl-1"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /AlbalatMiguel-Diego-autores-dbpl-1/src/main/resources
+2021-01-21 16:56:59,524 [Worker-1: Creating project "AlbalatMiguel-Diego-autores-dbpl-1"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /AlbalatMiguel-Diego-autores-dbpl-1/src/test/java
+2021-01-21 16:56:59,524 [Worker-1: Creating project "AlbalatMiguel-Diego-autores-dbpl-1"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /AlbalatMiguel-Diego-autores-dbpl-1/src/test/resources
+2021-01-21 16:56:59,736 [Worker-10: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-01-21 16:56:59,736 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-21 16:56:59,738 [Worker-10: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-01-21 16:56:59,738 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-21 17:04:40,694 [Worker-10: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: arso:AlbalatMiguel-Diego-autores-dbpl-1:0.0.1-SNAPSHOT @ /home/diego/Documentos/workspace/AlbalatMiguel-Diego-autores-dbpl-1/pom.xml.
+2021-01-21 17:04:41,068 [Worker-10: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/sun/activation/all/1.2.0/all-1.2.0.pom
+2021-01-21 17:04:41,145 [Worker-10: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/sun/activation/all/1.2.0/all-1.2.0.pom
+2021-01-21 17:04:41,176 [Worker-10: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/javax/json/javax.json-api/1.1/javax.json-api-1.1.pom
+2021-01-21 17:04:41,201 [Worker-10: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/javax/json/javax.json-api/1.1/javax.json-api-1.1.pom
+2021-01-21 17:04:41,229 [Worker-10: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/glassfish/json/1.1/json-1.1.pom
+2021-01-21 17:04:41,254 [Worker-10: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/glassfish/json/1.1/json-1.1.pom
+2021-01-21 17:04:41,288 [Worker-10: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/glassfish/javax.json/1.1/javax.json-1.1.pom
+2021-01-21 17:04:41,313 [Worker-10: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/glassfish/javax.json/1.1/javax.json-1.1.pom
+2021-01-21 17:04:41,339 [Worker-10: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/geronimo/specs/geronimo-json_1.1_spec/1.0/geronimo-json_1.1_spec-1.0.pom
+2021-01-21 17:04:41,394 [Worker-10: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/geronimo/specs/geronimo-json_1.1_spec/1.0/geronimo-json_1.1_spec-1.0.pom
+2021-01-21 17:04:41,419 [Worker-10: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/geronimo/genesis/genesis-java8-flava/2.3/genesis-java8-flava-2.3.pom
+2021-01-21 17:04:41,448 [Worker-10: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/geronimo/genesis/genesis-java8-flava/2.3/genesis-java8-flava-2.3.pom
+2021-01-21 17:04:41,479 [Worker-10: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/geronimo/genesis/genesis-default-flava/2.3/genesis-default-flava-2.3.pom
+2021-01-21 17:04:41,509 [Worker-10: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/geronimo/genesis/genesis-default-flava/2.3/genesis-default-flava-2.3.pom
+2021-01-21 17:04:41,532 [Worker-10: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/geronimo/genesis/genesis/2.3/genesis-2.3.pom
+2021-01-21 17:04:41,566 [Worker-10: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/geronimo/genesis/genesis/2.3/genesis-2.3.pom
+2021-01-21 17:04:41,597 [AetherRepositoryConnector-repo.maven.apache.org-0-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/glassfish/javax.json/1.1/javax.json-1.1.jar
+2021-01-21 17:04:41,651 [AetherRepositoryConnector-repo.maven.apache.org-0-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/javax/json/javax.json-api/1.1/javax.json-api-1.1.jar
+2021-01-21 17:04:41,655 [AetherRepositoryConnector-repo.maven.apache.org-0-2] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/geronimo/specs/geronimo-json_1.1_spec/1.0/geronimo-json_1.1_spec-1.0.jar
+2021-01-21 17:04:41,675 [AetherRepositoryConnector-repo.maven.apache.org-0-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/glassfish/javax.json/1.1/javax.json-1.1.jar
+2021-01-21 17:04:41,696 [AetherRepositoryConnector-repo.maven.apache.org-0-2] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/geronimo/specs/geronimo-json_1.1_spec/1.0/geronimo-json_1.1_spec-1.0.jar
+2021-01-21 17:04:41,697 [AetherRepositoryConnector-repo.maven.apache.org-0-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/javax/json/javax.json-api/1.1/javax.json-api-1.1.jar
+2021-01-21 17:04:41,850 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-21 17:04:41,851 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-21 17:04:41,853 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-21 17:04:41,853 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-21 17:04:42,997 [Worker-10: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1-sources.jar
+2021-01-21 17:04:43,123 [Worker-10: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1-sources.jar
+2021-01-21 17:04:43,146 [Worker-10: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for javax.xml.bind:jaxb-api:2.3.1
+2021-01-21 17:04:43,285 [Worker-10: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0-sources.jar
+2021-01-21 17:04:43,346 [Worker-10: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0-sources.jar
+2021-01-21 17:04:43,371 [Worker-10: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for javax.activation:javax.activation-api:1.2.0
+2021-01-21 17:04:43,501 [Worker-10: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/javax/json/javax.json-api/1.1/javax.json-api-1.1-sources.jar
+2021-01-21 17:04:43,558 [Worker-10: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/javax/json/javax.json-api/1.1/javax.json-api-1.1-sources.jar
+2021-01-21 17:04:43,594 [Worker-10: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for javax.json:javax.json-api:1.1
+2021-01-21 17:04:43,724 [Worker-10: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/glassfish/javax.json/1.1/javax.json-1.1-sources.jar
+2021-01-21 17:04:43,828 [Worker-10: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/glassfish/javax.json/1.1/javax.json-1.1-sources.jar
+2021-01-21 17:04:43,856 [Worker-10: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.glassfish:javax.json:1.1
+2021-01-21 17:04:43,990 [Worker-10: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/geronimo/specs/geronimo-json_1.1_spec/1.0/geronimo-json_1.1_spec-1.0-sources.jar
+2021-01-21 17:04:44,084 [Worker-10: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/geronimo/specs/geronimo-json_1.1_spec/1.0/geronimo-json_1.1_spec-1.0-sources.jar
+2021-01-21 17:04:44,095 [Worker-10: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.apache.geronimo.specs:geronimo-json_1.1_spec:1.0
+2021-01-21 17:04:44,274 [Worker-11: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: arso:AlbalatMiguel-Diego-autores-dbpl-1:0.0.1-SNAPSHOT @ /home/diego/Documentos/workspace/AlbalatMiguel-Diego-autores-dbpl-1/pom.xml.
+2021-01-21 17:04:44,340 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-21 17:04:44,341 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-21 17:04:44,343 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-21 17:04:44,343 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-21 17:05:35,936 [Worker-2: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: arso:AlbalatMiguel-Diego-autores-dbpl-1:0.0.1-SNAPSHOT @ /home/diego/Documentos/workspace/AlbalatMiguel-Diego-autores-dbpl-1/pom.xml.
+2021-01-21 17:05:35,988 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-21 17:05:35,988 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-21 17:05:35,990 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-21 17:05:35,990 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-21 17:06:31,847 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-21 17:06:31,847 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-21 17:06:31,847 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-21 17:06:31,848 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-21 17:06:46,638 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-21 17:06:46,639 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-21 17:06:46,640 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-21 17:06:46,640 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-21 17:06:50,256 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-21 17:06:50,256 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-21 17:06:50,257 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-21 17:06:50,258 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-21 17:07:08,180 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-21 17:07:08,181 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-21 17:07:08,181 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-21 17:07:08,181 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-21 17:07:18,661 [Worker-10: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: arso:AlbalatMiguel-Diego-autores-dbpl-1:0.0.1-SNAPSHOT @ /home/diego/Documentos/workspace/AlbalatMiguel-Diego-autores-dbpl-1/pom.xml.
+2021-01-21 17:07:18,708 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-21 17:07:18,709 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-21 17:07:18,710 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-21 17:07:18,711 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-21 17:07:29,101 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-21 17:07:29,101 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-21 17:07:29,102 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-21 17:07:29,102 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
