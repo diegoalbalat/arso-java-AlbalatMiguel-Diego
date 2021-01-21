@@ -1,0 +1,32 @@
+package controller;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URLConnection;
+
+import modelo.Autores;
+
+public class AutoresControllerImpl implements AutoresController {
+
+	public final static String DBLP_URL = "https://dblp.org";
+	public final static String DBLP_FIND_ENDPOINT = "/search/author/api?q=";
+
+	public final static String GB_URL = "https://books.google.com/books/feeds/volumes?q=";
+
+	@Override
+	public Autores findAutores(String autor) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private String makeRequest(String url) {
+		URLConnection yc = yahoo.openConnection();
+		BufferedReader in = new BufferedReader(new InputStreamReader(yc.getInputStream()));
+		String inputLine;
+
+		while ((inputLine = in.readLine()) != null)
+			System.out.println(inputLine);
+		in.close();
+	}
+
+}

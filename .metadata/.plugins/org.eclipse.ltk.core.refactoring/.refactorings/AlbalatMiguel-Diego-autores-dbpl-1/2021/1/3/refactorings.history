@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract method &apos;private void obtenerArbolAutores(Autores autores, String response)&apos; from &apos;controller.AutoresControllerImpl.findAutores()&apos; to &apos;controller.AutoresControllerImpl&apos;&#x0A;- Original project: &apos;AlbalatMiguel-Diego-autores-dbpl-1&apos;&#x0A;- Method name: &apos;obtenerArbolAutores&apos;&#x0A;- Destination type: &apos;controller.AutoresControllerImpl&apos;&#x0A;- Declared visibility: &apos;private&apos;" comments="false" description="Extract method &apos;obtenerArbolAutores&apos;" destination="0" exceptions="false" flags="786434" id="org.eclipse.jdt.ui.extract.method" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;controller{AutoresControllerImpl.java" name="obtenerArbolAutores" replace="false" selection="1100 1336" stamp="1611256972620" version="1.0" visibility="2"/>
+</session>

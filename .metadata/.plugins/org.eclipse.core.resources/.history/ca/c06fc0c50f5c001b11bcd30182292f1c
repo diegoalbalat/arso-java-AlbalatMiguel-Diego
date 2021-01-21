@@ -1,0 +1,13 @@
+package controller;
+
+import modelo.Autores;
+
+public class AutoresControllerImpl implements AutoresController{
+
+	@Override
+	public Autores findAutores(String autor) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

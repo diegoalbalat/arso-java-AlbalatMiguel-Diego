@@ -1,0 +1,13 @@
+package controller;
+
+import modelo.Autores;
+
+public class App {
+
+	public static void main(String[] args) {
+		AutoresControllerImpl a = new AutoresControllerImpl();
+		Autores autores = a.findAutores("berners");
+		
+	}
+
+}

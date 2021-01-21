@@ -1,0 +1,6 @@
+package controller;
+
+public interface AutoresController {
+
+	public Autores findAutores(String autor);
+}

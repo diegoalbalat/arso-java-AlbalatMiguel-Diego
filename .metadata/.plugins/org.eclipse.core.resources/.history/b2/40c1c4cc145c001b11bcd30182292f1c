@@ -1,0 +1,107 @@
+package controller;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.math.BigInteger;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
+
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpression;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
+
+import org.apache.commons.io.IOUtils;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
+import org.xml.sax.InputSource;
+
+import commons.Utils;
+import modelo.Autor;
+import modelo.Autores;
+
+public class AutoresControllerImpl implements AutoresController {
+
+	public final static String DBLP_URL = "https://dblp.org";
+	public final static String DBLP_FIND_ENDPOINT = "/search/author/api?q=";
+
+	public final static String GB_URL = "https://books.google.com/books/feeds/volumes?q=";
+
+	@Override
+	public Autores findAutores(String autor) {
+		Autores autores = new Autores();
+		// Realizar petición a DBLP
+		String response = makeRequest(DBLP_URL + DBLP_FIND_ENDPOINT + autor);
+		if (!response.isEmpty()) {
+			Document doc = Utils.convertStringToXMLDocument(response);
+			XPathFactory factoria = XPathFactory.newInstance();
+			XPath xpath = factoria.newXPath();
+			XPathExpression consulta;
+			NodeList resultado;
+			Element element;
+			try {
+				consulta = xpath.compile("//hit");
+				resultado = (NodeList) consulta.evaluate(doc, XPathConstants.NODESET);
+				Autor autorTemp = new Autor();
+				NodeList nodeListHit;
+				for(int i = 0; i < resultado.getLength(); i++) {
+					autorTemp = new Autor();
+					element = (Element) resultado.item(i);
+					// Recogemos el nombre del autor
+
+					consulta = xpath.compile("//info//author");	
+					nodeListHit = (NodeList) consulta.evaluate(resultado.item(i), XPathConstants.NODESET);
+					element = (Element) nodeListHit.item(0);
+					autorTemp.setNombre(element.getTextContent());
+				
+					// Recogemos la url del autor
+					consulta = xpath.compile("//hit/info/url");	
+					nodeListHit = (NodeList) consulta.evaluate(doc, XPathConstants.NODESET);
+					element = (Element) nodeListHit.item(0);
+					//autorTemp.setUrl(element.getTextContent());
+					//autores.getAutor().add(autorTemp);
+					// Recogemos el id como atributo
+					consulta = xpath.compile("//hit");	
+					//element = (Element) consulta.evaluate(doc, XPathConstants.NODE);
+					//autorTemp.setId(new BigInteger(element.getAttribute("id")));
+					System.out.println("");
+
+				}
+				
+			} catch (XPathExpressionException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} else {
+			// No hay resultados
+		}
+		// Procesar respuesta
+
+		// Generar arbol de objectos JAXB
+		return autores;
+	}
+
+	private String makeRequest(String url) {
+		URL endpoint;
+		String body = "";
+		try {
+			endpoint = new URL(url);
+			URLConnection con = endpoint.openConnection();
+			InputStream in = con.getInputStream();
+			String encoding = con.getContentEncoding();
+			body = IOUtils.toString(in, "UTF-8");
+			in.close();
+			System.out.println(body);
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return body;
+
+	}
+}
