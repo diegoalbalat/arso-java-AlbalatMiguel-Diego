@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="NewWizardAction">
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.jpt.jaxb.ui.wizard.generateJAXBClasses"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.jpt.jaxb"/>
+			<item value="org.eclipse.m2e"/>
+		</list>
+	</section>
+	<section name="InstallationDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="-71"/>
+		<item key="DIALOG_Y_ORIGIN" value="-321"/>
+		<item key="DIALOG_WIDTH" value="690"/>
+		<item key="DIALOG_HEIGHT" value="868"/>
+		<item key="DIALOG_FONT_NAME" value="1|Noto Sans|10.0|0|GTK|1|"/>
+	</section>
+	<section name="FileSystemImportWizard">
+	</section>
+</section>
