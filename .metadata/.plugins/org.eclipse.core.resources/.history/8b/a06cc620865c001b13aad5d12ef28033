@@ -1,0 +1,5 @@
+?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<favoritos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="docFavoritos.xsd">
+    <urlAutor>https://dblp.org/pid/b/TimBernersLee</urlAutor>
+    <urlAutor>https://dblp.org/pid/b/TimBernersLeo</urlAutor>
+</favoritos>

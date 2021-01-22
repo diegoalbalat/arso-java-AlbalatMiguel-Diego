@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<InformacionAutor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" idAutor="672560912" xsi:schemaLocation="autor.xsd">
+    <nombreCompleto xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">Tim Berners-Lee</nombreCompleto>
+    <afiliacion>
+        <afiliacionPrimaria>Massachusetts Institiute of Technology, Cambridge, MA, USA</afiliacionPrimaria>
+        <afiliacionSecundaria>University of Southampton, School of Electronics and Computer Science, UK</afiliacionSecundaria>
+        <afiliacionSecundaria>CERN, Geneva, Switzerland</afiliacionSecundaria>
+    </afiliacion>
+    <paginas>
+        <paginaPrincipal>http://www.w3.org/People/Berners-Lee/</paginaPrincipal>
+        <paginasSecundaria>https://dl.acm.org/profile/81100026375</paginasSecundaria>
+        <paginasSecundaria>https://zbmath.org/authors/?q=ai:berners-lee.tim</paginasSecundaria>
+        <paginasSecundaria>https://en.wikipedia.org/wiki/Tim_Berners-Lee</paginasSecundaria>
+        <paginasSecundaria>https://twitter.com/timberners_lee</paginasSecundaria>
+        <paginasSecundaria>https://github.com/timbl</paginasSecundaria>
+        <paginasSecundaria>https://www.researchgate.net/profile/Tim_Berners-Lee</paginasSecundaria>
+        <paginasSecundaria>https://openlibrary.org/authors/OL25245A</paginasSecundaria>
+        <paginasSecundaria>https://www.imdb.com/name/nm3805083/</paginasSecundaria>
+    </paginas>
+    <paginasPremios>http://amturing.acm.org/award_winners/berners-lee_8087960.cfm</paginasPremios>
+    <paginasPremios>http://www.computerhistory.org/fellowawards/hall/sir-tim-berners-lee/</paginasPremios>
+    <librosAutor>https://dblp.org/rec/conf/egose/BuyleTMJMVB19</librosAutor>
+    <librosAutor>https://dblp.org/rec/conf/www/AcostaBDDIJVZ19</librosAutor>
+    <librosAutor>https://dblp.org/rec/conf/esws/CapadisliG0ASB17</librosAutor>
+    <librosAutor>https://dblp.org/rec/conf/icwe/CapadisliGV0AB17</librosAutor>
+    <librosAutor>https://dblp.org/rec/conf/www/LehmannACJBHHB17</librosAutor>
+    <librosAutor>https://dblp.org/rec/conf/www/MansourSHZCGAB16</librosAutor>
+    <librosAutor>https://dblp.org/rec/conf/www/AuerHBB16</librosAutor>
+    <librosAutor>https://dblp.org/rec/conf/www/AuerBBH15</librosAutor>
+    <librosAutor>https://dblp.org/rec/conf/semweb/SambraHBKA14</librosAutor>
+    <librosAutor>https://dblp.org/rec/journals/expert/ShadboltOBGGHs12</librosAutor>
+    <librosAutor>https://dblp.org/rec/conf/www/Berners-Lee11</librosAutor>
+    <librosAutor>https://dblp.org/rec/conf/www/BizerHBH11</librosAutor>
+    <librosAutor>https://dblp.org/rec/books/igi/11/BizerHB11</librosAutor>
+    <librosAutor>https://dblp.org/rec/journals/ai/HendlerB10</librosAutor>
+    <librosAutor>https://dblp.org/rec/journals/intr/Berners-LeeCGP10</librosAutor>
+    <librosAutor>https://dblp.org/rec/conf/esws/OmitolaKPYSSBGHsS10</librosAutor>
+    <librosAutor>https://dblp.org/rec/books/mit/10/OHaraBHS10</librosAutor>
+    <librosAutor>https://dblp.org/rec/journals/ijswis/BizerHB09</librosAutor>
+    <librosAutor>https://dblp.org/rec/conf/chi/schraefelAWTBCJKDMMSSW09</librosAutor>
+    <librosAutor>https://dblp.org/rec/conf/semweb/SeneviratneKB09</librosAutor>
+    <librosAutor>https://dblp.org/rec/journals/aim/Berners-LeeK08</librosAutor>
+    <librosAutor>https://dblp.org/rec/journals/cacm/WeitznerABFHS08</librosAutor>
+    <librosAutor>https://dblp.org/rec/journals/cacm/HendlerSHBW08</librosAutor>
+    <librosAutor>https://dblp.org/rec/journals/tplp/Berners-LeeCKSH08</librosAutor>
+    <librosAutor>https://dblp.org/rec/conf/www/Berners-LeeHLPPS08</librosAutor>
+    <librosAutor>https://dblp.org/rec/conf/www/BizerHIB08</librosAutor>
+    <librosAutor>https://dblp.org/rec/conf/www/BizerHIB08a</librosAutor>
+    <librosAutor>https://dblp.org/rec/conf/policy/HansonBKSW07</librosAutor>
+    <librosAutor>https://dblp.org/rec/journals/corr/abs-0711-1533</librosAutor>
+    <librosAutor>https://dblp.org/rec/journals/expert/ShadboltBH06</librosAutor>
+    <librosAutor>https://dblp.org/rec/journals/ftweb/Berners-LeeHHOSW06</librosAutor>
+    <librosAutor>https://dblp.org/rec/conf/aaai/KagalBCW06</librosAutor>
+    <librosAutor>https://dblp.org/rec/conf/aaaiss/WeitznerABHHKMSW06</librosAutor>
+    <librosAutor>https://dblp.org/rec/conf/policy/KagalBCW06</librosAutor>
+    <librosAutor>https://dblp.org/rec/conf/www/ShadboltBHHB06</librosAutor>
+    <librosAutor>https://dblp.org/rec/conf/w3c/Berners-LeeCPS05</librosAutor>
+    <librosAutor>https://dblp.org/rec/conf/www/Berners-Lee05</librosAutor>
+    <librosAutor>https://dblp.org/rec/journals/rfc/rfc3986</librosAutor>
+    <librosAutor>https://dblp.org/rec/books/daglib/0020403</librosAutor>
+    <librosAutor>https://dblp.org/rec/journals/rfc/rfc2616</librosAutor>
+    <librosAutor>https://dblp.org/rec/www/org/w3/http1-1</librosAutor>
+    <librosAutor>https://dblp.org/rec/journals/rfc/rfc2396</librosAutor>
+    <librosAutor>https://dblp.org/rec/journals/cacm/Berners-Lee97</librosAutor>
+    <librosAutor>https://dblp.org/rec/journals/jodi/Berners-Lee97</librosAutor>
+    <librosAutor>https://dblp.org/rec/journals/rfc/rfc2068</librosAutor>
+    <librosAutor>https://dblp.org/rec/journals/computer/Berners-Lee96</librosAutor>
+    <librosAutor>https://dblp.org/rec/journals/wwwj/Berners-Lee96</librosAutor>
+    <librosAutor>https://dblp.org/rec/journals/rfc/rfc1945</librosAutor>
+    <librosAutor>https://dblp.org/rec/journals/rfc/rfc1866</librosAutor>
+    <librosAutor>https://dblp.org/rec/journals/cacm/Berners-LeeCLNS94</librosAutor>
+    <librosAutor>https://dblp.org/rec/journals/rfc/rfc1630</librosAutor>
+    <librosAutor>https://dblp.org/rec/journals/rfc/rfc1738</librosAutor>
+    <librosAutor>https://dblp.org/rec/journals/cn/Berners-LeeCG92</librosAutor>
+    <librosAutor>https://dblp.org/rec/journals/en/Berners-LeeCGP92</librosAutor>
+    <librosAutor>https://dblp.org/rec/conf/sigopsE/Berners-Lee88</librosAutor>
+</InformacionAutor>

@@ -7,8 +7,10 @@ import java.math.BigInteger;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ListIterator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -81,12 +83,11 @@ public class AutoresControllerImpl implements AutoresController {
 			} catch (JAXBException e) {
 				e.printStackTrace();
 			}
-		}
-		else {
+		} else {
 			try {
 				contexto = JAXBContext.newInstance(InformacionAutor.class);
 				Unmarshaller unmarshaller = contexto.createUnmarshaller();
-				infoAutor = (InformacionAutor)unmarshaller.unmarshal(autorFile);
+				infoAutor = (InformacionAutor) unmarshaller.unmarshal(autorFile);
 			} catch (JAXBException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -234,26 +235,120 @@ public class AutoresControllerImpl implements AutoresController {
 	}
 
 	@Override
-	public int crearFavoritos() {
-		// TODO Auto-generated method stub
-		return 0;
+	public String crearFavoritos() {
+		// Se genera un identificador para el documento
+		String id = Utils.createId();
+		// Se crea el fichero si no existe ya
+		File docFavoritos = new File("xml/favoritos" + id + ".xml");
+		if (!docFavoritos.exists()) {
+			try {
+				Favoritos favoritos = new Favoritos();
+				favoritos.getUrlAutor();
+				JAXBContext contexto = JAXBContext.newInstance(Favoritos.class);
+				Marshaller marshaller = contexto.createMarshaller();
+				marshaller.setProperty("jaxb.formatted.output", true);
+				marshaller.setProperty("jaxb.schemaLocation","docFavoritos.xsd");
+				marshaller.marshal(favoritos, docFavoritos);
+			} catch (JAXBException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return id;
+		}
+		// Si existe se busca otro identificador
+		else {
+			return this.crearFavoritos();
+		}
+
 	}
 
 	@Override
-	public Favoritos findFavoritos(int identificador) {
-		// TODO Auto-generated method stub
+	public Favoritos findFavoritos(String identificador) {
+		// Obtenemos el fichero y comprobamos que exista
+		File docFavoritos = new File("xml/favoritos" + identificador + ".xml");
+		if (docFavoritos.exists()) {
+			// Realizamos el unmarshalling del fichero en la variable favoritos y lo
+			// devolvemos
+			JAXBContext contexto;
+			Favoritos favoritos = new Favoritos();
+			try {
+				contexto = JAXBContext.newInstance(Favoritos.class);
+				Unmarshaller unmarshaller = contexto.createUnmarshaller();
+				favoritos = (Favoritos) unmarshaller.unmarshal(docFavoritos);
+
+			} catch (JAXBException e) {
+				e.printStackTrace();
+			}
+			return favoritos;
+		}
+		// Si no existe el fichero devolvemos nulo (El error se comprobara en los
+		// servicios)
 		return null;
 	}
 
 	@Override
-	public Favoritos deleteAutorFavoritos(int identificador, String urlAutor) {
-		// TODO Auto-generated method stub
-		return null;
+	public boolean deleteAutorFavoritos(String identificador, String urlAutor) {
+		File docFavoritos = new File("xml/favoritos" + identificador + ".xml");
+		if (docFavoritos.exists()) {
+			// Realizamos el unmarshalling del fichero en la variable favoritos y lo devolvemos
+			JAXBContext contexto;
+			Favoritos favoritos = new Favoritos();
+			try {
+				contexto = JAXBContext.newInstance(Favoritos.class);
+				Unmarshaller unmarshaller = contexto.createUnmarshaller();
+				favoritos = (Favoritos) unmarshaller.unmarshal(docFavoritos);
+				boolean removed = false;
+				// Creamos un iterador para recorrer la lista y borrar la url en caso de encontrarla
+				ListIterator<String> iter = favoritos.getUrlAutor().listIterator();
+				while (iter.hasNext()) {
+					if (iter.next().equals(urlAutor)) {
+						iter.remove();
+						removed = true;
+					}
+				}
+				if(removed) {
+					Marshaller marshaller = contexto.createMarshaller();
+					marshaller.setProperty("jaxb.formatted.output", true);
+					marshaller.setProperty("jaxb.schemaLocation","docFavoritos.xsd");
+					marshaller.marshal(favoritos, docFavoritos);
+					return true;
+				}
+				return false;
+			} catch (JAXBException e) {
+				e.printStackTrace();
+			}
+			return true;
+		}
+		return false;
 	}
 
 	@Override
-	public Favoritos addAutorFavoritos(int identificador, String urlAutor) {
-		// TODO Auto-generated method stub
+	public Favoritos addAutorFavoritos(String identificador, String urlAutor) {
+		File docFavoritos = new File("xml/favoritos" + identificador + ".xml");
+		if (docFavoritos.exists()) {
+			// Realizamos el unmarshalling del fichero en la variable favoritos y lo devolvemos
+			JAXBContext contexto;
+			Favoritos favoritos = new Favoritos();
+			try {
+				contexto = JAXBContext.newInstance(Favoritos.class);
+				Unmarshaller unmarshaller = contexto.createUnmarshaller();
+				favoritos = (Favoritos) unmarshaller.unmarshal(docFavoritos);
+				if (favoritos.getUrlAutor().stream().filter(p -> p.equals(urlAutor)).collect(Collectors.toList()).size() == 0) {
+					// Añadir
+					favoritos.getUrlAutor().add(urlAutor);
+					Marshaller marshaller = contexto.createMarshaller();
+					marshaller.setProperty("jaxb.formatted.output", true);
+					marshaller.setProperty("jaxb.schemaLocation","docFavoritos.xsd");
+					marshaller.marshal(favoritos, docFavoritos);
+				}
+				else {
+					// Ya existe
+				}
+				return favoritos;
+			} catch (JAXBException e) {
+				e.printStackTrace();
+			}
+		}
 		return null;
 	}
 

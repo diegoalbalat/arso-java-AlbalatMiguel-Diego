@@ -1,2 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.net.URL"/>
+    <fullyQualifiedTypeName name="java.io.InputStream"/>
+    <fullyQualifiedTypeName name="controller.AutoresController"/>
+    <fullyQualifiedTypeName name="controller.AutoresControllerImpl"/>
+    <fullyQualifiedTypeName name="modelo.Autores"/>
+    <fullyQualifiedTypeName name="javax.xml.xpath.XPathExpression"/>
+    <fullyQualifiedTypeName name="javax.xml.bind.Element"/>
+    <fullyQualifiedTypeName name="org.w3c.dom.Document"/>
+    <fullyQualifiedTypeName name="modelo.Autor"/>
+    <fullyQualifiedTypeName name="javax.xml.xpath.XPathConstants"/>
+    <fullyQualifiedTypeName name="java.math.BigInteger"/>
+    <fullyQualifiedTypeName name="javax.xml.xpath.XPathExpressionException"/>
+    <fullyQualifiedTypeName name="java.util.Iterator"/>
+    <fullyQualifiedTypeName name="org.w3c.dom.Node"/>
+    <fullyQualifiedTypeName name="commons.EspacioNombresDBLP"/>
+    <fullyQualifiedTypeName name="modelo.TipoAfiliacion"/>
+    <fullyQualifiedTypeName name="modelo.PaginasAsociadas"/>
+    <fullyQualifiedTypeName name="modelo.InformacionAutor"/>
+    <fullyQualifiedTypeName name="modelo.Favoritos"/>
+</qualifiedTypeNameHistroy>
