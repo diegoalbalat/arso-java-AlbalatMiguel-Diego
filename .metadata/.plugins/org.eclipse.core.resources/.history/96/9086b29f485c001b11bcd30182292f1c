@@ -20,7 +20,7 @@ public interface AutoresController {
 	 **/
 	public InformacionAutor findInformacion(String urlAutor);
 	
-	public int crearFavoritos();
+	public Favoritos crearFavoritos();
 	
 	public Favoritos findFavoritos(int identificador);
 	

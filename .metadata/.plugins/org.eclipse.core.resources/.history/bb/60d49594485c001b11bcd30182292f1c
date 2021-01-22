@@ -20,11 +20,11 @@ public interface AutoresController {
 	 **/
 	public InformacionAutor findInformacion(String urlAutor);
 	
-	public int crearFavoritos();
+	public Favoritos crearFavoritos();
 	
 	public Favoritos findFavoritos(int identificador);
 	
-	public Favoritos deleteAutorFavoritos(int identificador, String urlAutor);
+	public Favoritos deleteAutorFavoritos();
 	
 	public Favoritos addAutorFavoritos(int identificador, String urlAutor);
 	

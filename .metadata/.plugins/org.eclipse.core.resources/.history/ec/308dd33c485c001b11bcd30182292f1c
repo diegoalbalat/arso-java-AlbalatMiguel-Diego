@@ -1,7 +1,6 @@
 package controller;
 
 import modelo.Autores;
-import modelo.Favoritos;
 import modelo.InformacionAutor;
 
 public interface AutoresController {
@@ -19,13 +18,5 @@ public interface AutoresController {
 	 * 		Tipo: String   
 	 **/
 	public InformacionAutor findInformacion(String urlAutor);
-	
-	public int crearFavoritos();
-	
-	public Favoritos findFavoritos(int identificador);
-	
-	public Favoritos deleteAutorFavoritos(int identificador, String urlAutor);
-	
-	public Favoritos addAutorFavoritos(int identificador, String urlAutor);
 	
 }
