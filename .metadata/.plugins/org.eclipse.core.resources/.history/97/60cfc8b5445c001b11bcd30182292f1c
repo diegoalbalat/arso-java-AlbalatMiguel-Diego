@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<InformacionAutor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" idAutor="439240740" xsi:schemaLocation="autor.xsd">
+    <nombreCompleto xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">Mary Lee Berners-Lee</nombreCompleto>
+    <afiliacion/>
+    <paginas/>
+    <librosAutor></librosAutor>
+</InformacionAutor>

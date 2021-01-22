@@ -1,0 +1,283 @@
+//
+// Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.1 
+// Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+// Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
+// Generado el: 2021.01.22 a las 12:45:05 AM CET 
+//
+
+
+package generated;
+
+import java.util.ArrayList;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+
+
+/**
+ * <p>Clase Java para anonymous complex type.
+ * 
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * 
+ * <pre>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="nombreCompleto" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+ *         &lt;element name="afiliacion" type="{}tipoAfiliacion" minOccurs="0"/&gt;
+ *         &lt;element name="premio" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="paginas" type="{}paginasAsociadas" minOccurs="0"/&gt;
+ *         &lt;element name="paginasPremios" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="librosAutor" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="librosEditor" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *       &lt;attribute name="pidAutor" use="required" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "", propOrder = {
+    "nombreCompleto",
+    "afiliacion",
+    "premio",
+    "paginas",
+    "paginasPremios",
+    "librosAutor",
+    "librosEditor"
+})
+@XmlRootElement(name = "InformacionAutor")
+public class InformacionAutor {
+
+    @XmlElement(required = true)
+    protected Object nombreCompleto;
+    protected TipoAfiliacion afiliacion;
+    protected List<String> premio;
+    protected PaginasAsociadas paginas;
+    protected List<String> paginasPremios;
+    protected List<String> librosAutor;
+    protected List<String> librosEditor;
+    @XmlAttribute(name = "pidAutor", required = true)
+    protected String pidAutor;
+
+    /**
+     * Obtiene el valor de la propiedad nombreCompleto.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Object }
+     *     
+     */
+    public Object getNombreCompleto() {
+        return nombreCompleto;
+    }
+
+    /**
+     * Define el valor de la propiedad nombreCompleto.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Object }
+     *     
+     */
+    public void setNombreCompleto(Object value) {
+        this.nombreCompleto = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad afiliacion.
+     * 
+     * @return
+     *     possible object is
+     *     {@link TipoAfiliacion }
+     *     
+     */
+    public TipoAfiliacion getAfiliacion() {
+        return afiliacion;
+    }
+
+    /**
+     * Define el valor de la propiedad afiliacion.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link TipoAfiliacion }
+     *     
+     */
+    public void setAfiliacion(TipoAfiliacion value) {
+        this.afiliacion = value;
+    }
+
+    /**
+     * Gets the value of the premio property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the premio property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getPremio().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link String }
+     * 
+     * 
+     */
+    public List<String> getPremio() {
+        if (premio == null) {
+            premio = new ArrayList<String>();
+        }
+        return this.premio;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad paginas.
+     * 
+     * @return
+     *     possible object is
+     *     {@link PaginasAsociadas }
+     *     
+     */
+    public PaginasAsociadas getPaginas() {
+        return paginas;
+    }
+
+    /**
+     * Define el valor de la propiedad paginas.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link PaginasAsociadas }
+     *     
+     */
+    public void setPaginas(PaginasAsociadas value) {
+        this.paginas = value;
+    }
+
+    /**
+     * Gets the value of the paginasPremios property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the paginasPremios property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getPaginasPremios().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link String }
+     * 
+     * 
+     */
+    public List<String> getPaginasPremios() {
+        if (paginasPremios == null) {
+            paginasPremios = new ArrayList<String>();
+        }
+        return this.paginasPremios;
+    }
+
+    /**
+     * Gets the value of the librosAutor property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the librosAutor property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getLibrosAutor().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link String }
+     * 
+     * 
+     */
+    public List<String> getLibrosAutor() {
+        if (librosAutor == null) {
+            librosAutor = new ArrayList<String>();
+        }
+        return this.librosAutor;
+    }
+
+    /**
+     * Gets the value of the librosEditor property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the librosEditor property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getLibrosEditor().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link String }
+     * 
+     * 
+     */
+    public List<String> getLibrosEditor() {
+        if (librosEditor == null) {
+            librosEditor = new ArrayList<String>();
+        }
+        return this.librosEditor;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad pidAutor.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getPidAutor() {
+        return pidAutor;
+    }
+
+    /**
+     * Define el valor de la propiedad pidAutor.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setPidAutor(String value) {
+        this.pidAutor = value;
+    }
+
+}

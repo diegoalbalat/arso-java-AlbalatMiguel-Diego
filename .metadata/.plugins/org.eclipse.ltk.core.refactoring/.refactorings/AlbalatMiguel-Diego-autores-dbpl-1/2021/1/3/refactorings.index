@@ -1,1 +1,4 @@
 1611256972620	Extract method 'obtenerArbolAutores'
+1611271628050	Extract method 'getDblpInformation'
+1611273574235	Delete elements
+1611273582841	Delete element

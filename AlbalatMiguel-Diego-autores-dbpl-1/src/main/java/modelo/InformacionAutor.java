@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.1 
 // Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2021.01.21 a las 06:21:03 PM CET 
+// Generado el: 2021.01.22 a las 12:47:14 AM CET 
 //
 
 
@@ -34,9 +34,9 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="afiliacion" type="{}tipoAfiliacion" minOccurs="0"/&gt;
  *         &lt;element name="premio" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="paginas" type="{}paginasAsociadas" minOccurs="0"/&gt;
- *         &lt;element name="librosCreados" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="libroAsociado" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="libroDisponible" type="{}libro" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="paginasPremios" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="librosAutor" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="librosEditor" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *       &lt;attribute name="idAutor" use="required" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" /&gt;
  *     &lt;/restriction&gt;
@@ -52,9 +52,9 @@ import javax.xml.bind.annotation.XmlType;
     "afiliacion",
     "premio",
     "paginas",
-    "librosCreados",
-    "libroAsociado",
-    "libroDisponible"
+    "paginasPremios",
+    "librosAutor",
+    "librosEditor"
 })
 @XmlRootElement(name = "InformacionAutor")
 public class InformacionAutor {
@@ -64,9 +64,9 @@ public class InformacionAutor {
     protected TipoAfiliacion afiliacion;
     protected List<String> premio;
     protected PaginasAsociadas paginas;
-    protected List<String> librosCreados;
-    protected List<String> libroAsociado;
-    protected List<Libro> libroDisponible;
+    protected List<String> paginasPremios;
+    protected List<String> librosAutor;
+    protected List<String> librosEditor;
     @XmlAttribute(name = "idAutor", required = true)
     @XmlSchemaType(name = "positiveInteger")
     protected BigInteger idAutor;
@@ -173,18 +173,18 @@ public class InformacionAutor {
     }
 
     /**
-     * Gets the value of the librosCreados property.
+     * Gets the value of the paginasPremios property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the librosCreados property.
+     * This is why there is not a <CODE>set</CODE> method for the paginasPremios property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getLibrosCreados().add(newItem);
+     *    getPaginasPremios().add(newItem);
      * </pre>
      * 
      * 
@@ -194,26 +194,26 @@ public class InformacionAutor {
      * 
      * 
      */
-    public List<String> getLibrosCreados() {
-        if (librosCreados == null) {
-            librosCreados = new ArrayList<String>();
+    public List<String> getPaginasPremios() {
+        if (paginasPremios == null) {
+            paginasPremios = new ArrayList<String>();
         }
-        return this.librosCreados;
+        return this.paginasPremios;
     }
 
     /**
-     * Gets the value of the libroAsociado property.
+     * Gets the value of the librosAutor property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the libroAsociado property.
+     * This is why there is not a <CODE>set</CODE> method for the librosAutor property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getLibroAsociado().add(newItem);
+     *    getLibrosAutor().add(newItem);
      * </pre>
      * 
      * 
@@ -223,40 +223,40 @@ public class InformacionAutor {
      * 
      * 
      */
-    public List<String> getLibroAsociado() {
-        if (libroAsociado == null) {
-            libroAsociado = new ArrayList<String>();
+    public List<String> getLibrosAutor() {
+        if (librosAutor == null) {
+            librosAutor = new ArrayList<String>();
         }
-        return this.libroAsociado;
+        return this.librosAutor;
     }
 
     /**
-     * Gets the value of the libroDisponible property.
+     * Gets the value of the librosEditor property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the libroDisponible property.
+     * This is why there is not a <CODE>set</CODE> method for the librosEditor property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getLibroDisponible().add(newItem);
+     *    getLibrosEditor().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Libro }
+     * {@link String }
      * 
      * 
      */
-    public List<Libro> getLibroDisponible() {
-        if (libroDisponible == null) {
-            libroDisponible = new ArrayList<Libro>();
+    public List<String> getLibrosEditor() {
+        if (librosEditor == null) {
+            librosEditor = new ArrayList<String>();
         }
-        return this.libroDisponible;
+        return this.librosEditor;
     }
 
     /**

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name="autores">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="autor" type="Autor"
+					maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="Autor">
+		<xs:sequence>
+			<xs:element name="nombre" type="xs:string" />
+			<xs:element name="url" type="xs:anyURI" />
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:positiveInteger"
+			use="required" />
+	</xs:complexType>
+
+	<xs:element name="InformacionAutor">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="nombreCompleto"></xs:element>
+				<xs:element name="afiliacion" type="tipoAfiliacion"
+					minOccurs="0"></xs:element>
+				<xs:element name="premio" type="xs:string" minOccurs="0"
+					maxOccurs="unbounded"></xs:element>
+				<xs:element name="paginas" type="paginasAsociadas"
+					minOccurs="0"></xs:element>
+				<xs:element name="paginasPremios" type="xs:string"
+					minOccurs="0" maxOccurs="unbounded"></xs:element>
+				<xs:element name="librosAutor" type="libro"
+					minOccurs="0" maxOccurs="unbounded"></xs:element>
+				<xs:element name="librosEditor" type="libro"
+					minOccurs="0" maxOccurs="unbounded"></xs:element>
+			</xs:sequence>
+			<xs:attribute name="idAutor" type="xs:positiveInteger"
+				use="required" />
+		</xs:complexType>
+	</xs:element>
+
+
+	<xs:complexType name="libro">
+		<xs:sequence>
+			<xs:element name="titulos" type="xs:string"
+				maxOccurs="unbounded" />
+			<xs:element name="creador" type="xs:string"
+				maxOccurs="unbounded" />
+			<xs:element name="fecha" type="xs:date" />
+			<xs:element name="descripcion" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="lenguaje" type="xs:string" />
+			<xs:element name="identificadores" type="xs:string"
+				maxOccurs="unbounded" />
+		</xs:sequence>
+		<xs:attribute name="idLibro" type="xs:string" />
+	</xs:complexType>
+
+	<xs:complexType name="paginasAsociadas">
+		<xs:sequence>
+			<xs:element name="paginaPrincipal" type="xs:string" />
+			<xs:element name="paginasSecundaria" type="xs:string"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="tipoAfiliacion">
+		<xs:sequence>
+			<xs:element name="afiliacionPrimaria" type="xs:string" />
+			<xs:element name="afiliacionSecundaria" type="xs:string"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>
