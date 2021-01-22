@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.1 
 // Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2021.01.22 a las 12:47:14 AM CET 
+// Generado el: 2021.01.22 a las 11:27:13 PM CET 
 //
 
 
@@ -30,13 +30,14 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="nombreCompleto" type="{http://www.w3.org/2001/XMLSchema}anyType"/&gt;
+ *         &lt;element name="nombreCompleto" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="afiliacion" type="{}tipoAfiliacion" minOccurs="0"/&gt;
  *         &lt;element name="premio" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="paginas" type="{}paginasAsociadas" minOccurs="0"/&gt;
  *         &lt;element name="paginasPremios" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="librosAutor" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="librosEditor" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="articulosAutor" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="articulosEditor" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="libros" type="{}libro" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *       &lt;attribute name="idAutor" use="required" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" /&gt;
  *     &lt;/restriction&gt;
@@ -53,20 +54,22 @@ import javax.xml.bind.annotation.XmlType;
     "premio",
     "paginas",
     "paginasPremios",
-    "librosAutor",
-    "librosEditor"
+    "articulosAutor",
+    "articulosEditor",
+    "libros"
 })
 @XmlRootElement(name = "InformacionAutor")
 public class InformacionAutor {
 
     @XmlElement(required = true)
-    protected Object nombreCompleto;
+    protected String nombreCompleto;
     protected TipoAfiliacion afiliacion;
     protected List<String> premio;
     protected PaginasAsociadas paginas;
     protected List<String> paginasPremios;
-    protected List<String> librosAutor;
-    protected List<String> librosEditor;
+    protected List<String> articulosAutor;
+    protected List<String> articulosEditor;
+    protected List<Libro> libros;
     @XmlAttribute(name = "idAutor", required = true)
     @XmlSchemaType(name = "positiveInteger")
     protected BigInteger idAutor;
@@ -76,10 +79,10 @@ public class InformacionAutor {
      * 
      * @return
      *     possible object is
-     *     {@link Object }
+     *     {@link String }
      *     
      */
-    public Object getNombreCompleto() {
+    public String getNombreCompleto() {
         return nombreCompleto;
     }
 
@@ -88,10 +91,10 @@ public class InformacionAutor {
      * 
      * @param value
      *     allowed object is
-     *     {@link Object }
+     *     {@link String }
      *     
      */
-    public void setNombreCompleto(Object value) {
+    public void setNombreCompleto(String value) {
         this.nombreCompleto = value;
     }
 
@@ -202,18 +205,18 @@ public class InformacionAutor {
     }
 
     /**
-     * Gets the value of the librosAutor property.
+     * Gets the value of the articulosAutor property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the librosAutor property.
+     * This is why there is not a <CODE>set</CODE> method for the articulosAutor property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getLibrosAutor().add(newItem);
+     *    getArticulosAutor().add(newItem);
      * </pre>
      * 
      * 
@@ -223,26 +226,26 @@ public class InformacionAutor {
      * 
      * 
      */
-    public List<String> getLibrosAutor() {
-        if (librosAutor == null) {
-            librosAutor = new ArrayList<String>();
+    public List<String> getArticulosAutor() {
+        if (articulosAutor == null) {
+            articulosAutor = new ArrayList<String>();
         }
-        return this.librosAutor;
+        return this.articulosAutor;
     }
 
     /**
-     * Gets the value of the librosEditor property.
+     * Gets the value of the articulosEditor property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the librosEditor property.
+     * This is why there is not a <CODE>set</CODE> method for the articulosEditor property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getLibrosEditor().add(newItem);
+     *    getArticulosEditor().add(newItem);
      * </pre>
      * 
      * 
@@ -252,11 +255,40 @@ public class InformacionAutor {
      * 
      * 
      */
-    public List<String> getLibrosEditor() {
-        if (librosEditor == null) {
-            librosEditor = new ArrayList<String>();
+    public List<String> getArticulosEditor() {
+        if (articulosEditor == null) {
+            articulosEditor = new ArrayList<String>();
         }
-        return this.librosEditor;
+        return this.articulosEditor;
+    }
+
+    /**
+     * Gets the value of the libros property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the libros property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getLibros().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Libro }
+     * 
+     * 
+     */
+    public List<Libro> getLibros() {
+        if (libros == null) {
+            libros = new ArrayList<Libro>();
+        }
+        return this.libros;
     }
 
     /**

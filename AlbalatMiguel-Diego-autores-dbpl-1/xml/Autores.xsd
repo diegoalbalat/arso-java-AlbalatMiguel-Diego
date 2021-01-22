@@ -22,7 +22,7 @@
 	<xs:element name="InformacionAutor">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="nombreCompleto"></xs:element>
+				<xs:element name="nombreCompleto" type="xs:string"></xs:element>
 				<xs:element name="afiliacion" type="tipoAfiliacion"
 					minOccurs="0"></xs:element>
 				<xs:element name="premio" type="xs:string" minOccurs="0"
@@ -31,9 +31,11 @@
 					minOccurs="0"></xs:element>
 				<xs:element name="paginasPremios" type="xs:string"
 					minOccurs="0" maxOccurs="unbounded"></xs:element>
-				<xs:element name="librosAutor" type="xs:string"
+				<xs:element name="articulosAutor" type="xs:string"
 					minOccurs="0" maxOccurs="unbounded"></xs:element>
-				<xs:element name="librosEditor" type="xs:string"
+				<xs:element name="articulosEditor" type="xs:string"
+					minOccurs="0" maxOccurs="unbounded"></xs:element>
+				<xs:element name="libros" type="libro"
 					minOccurs="0" maxOccurs="unbounded"></xs:element>
 			</xs:sequence>
 			<xs:attribute name="idAutor" type="xs:positiveInteger"
@@ -55,6 +57,19 @@
 			<xs:element name="afiliacionPrimaria" type="xs:string" />
 			<xs:element name="afiliacionSecundaria" type="xs:string"
 				minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	
+		<xs:complexType name="libro">
+		<xs:sequence>
+			<xs:element name="id" type="xs:string" />
+			<xs:element name="titulo" type="xs:string" />
+			<xs:element name="descripcion" type="xs:string" />
+			<xs:element name="isbn" type="xs:string"
+				minOccurs="1" maxOccurs="2" />
+			<xs:element name="idioma" type="xs:string" />
+			<xs:element name="fecha" type="xs:date" />
+			<xs:element name="paginas" type="xs:positiveInteger" />
 		</xs:sequence>
 	</xs:complexType>
 

@@ -2,17 +2,17 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.1 
 // Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2021.01.21 a las 11:38:25 PM CET 
+// Generado el: 2021.01.23 a las 12:27:08 AM CET 
 //
 
 
 package modelo;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
@@ -29,14 +29,14 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="titulos" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded"/&gt;
- *         &lt;element name="creador" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded"/&gt;
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="titulo" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="descripcion" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="isbn" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="2"/&gt;
+ *         &lt;element name="idioma" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="fecha" type="{http://www.w3.org/2001/XMLSchema}date"/&gt;
- *         &lt;element name="descripcion" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="lenguaje" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="identificadores" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded"/&gt;
+ *         &lt;element name="paginas" type="{http://www.w3.org/2001/XMLSchema}positiveInteger"/&gt;
  *       &lt;/sequence&gt;
- *       &lt;attribute name="idLibro" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
@@ -46,110 +46,79 @@ import javax.xml.datatype.XMLGregorianCalendar;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "libro", propOrder = {
-    "titulos",
-    "creador",
-    "fecha",
+    "id",
+    "titulo",
     "descripcion",
-    "lenguaje",
-    "identificadores"
+    "isbn",
+    "idioma",
+    "fecha",
+    "paginas"
 })
 public class Libro {
 
     @XmlElement(required = true)
-    protected List<String> titulos;
+    protected String id;
     @XmlElement(required = true)
-    protected List<String> creador;
+    protected String titulo;
+    @XmlElement(required = true)
+    protected String descripcion;
+    @XmlElement(required = true)
+    protected List<String> isbn;
+    @XmlElement(required = true)
+    protected String idioma;
     @XmlElement(required = true)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar fecha;
-    protected String descripcion;
     @XmlElement(required = true)
-    protected String lenguaje;
-    @XmlElement(required = true)
-    protected List<String> identificadores;
-    @XmlAttribute(name = "idLibro")
-    protected String idLibro;
+    @XmlSchemaType(name = "positiveInteger")
+    protected BigInteger paginas;
 
     /**
-     * Gets the value of the titulos property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the titulos property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getTitulos().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getTitulos() {
-        if (titulos == null) {
-            titulos = new ArrayList<String>();
-        }
-        return this.titulos;
-    }
-
-    /**
-     * Gets the value of the creador property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the creador property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getCreador().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getCreador() {
-        if (creador == null) {
-            creador = new ArrayList<String>();
-        }
-        return this.creador;
-    }
-
-    /**
-     * Obtiene el valor de la propiedad fecha.
+     * Obtiene el valor de la propiedad id.
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getFecha() {
-        return fecha;
+    public String getId() {
+        return id;
     }
 
     /**
-     * Define el valor de la propiedad fecha.
+     * Define el valor de la propiedad id.
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public void setFecha(XMLGregorianCalendar value) {
-        this.fecha = value;
+    public void setId(String value) {
+        this.id = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad titulo.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getTitulo() {
+        return titulo;
+    }
+
+    /**
+     * Define el valor de la propiedad titulo.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setTitulo(String value) {
+        this.titulo = value;
     }
 
     /**
@@ -177,42 +146,18 @@ public class Libro {
     }
 
     /**
-     * Obtiene el valor de la propiedad lenguaje.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getLenguaje() {
-        return lenguaje;
-    }
-
-    /**
-     * Define el valor de la propiedad lenguaje.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setLenguaje(String value) {
-        this.lenguaje = value;
-    }
-
-    /**
-     * Gets the value of the identificadores property.
+     * Gets the value of the isbn property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the identificadores property.
+     * This is why there is not a <CODE>set</CODE> method for the isbn property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getIdentificadores().add(newItem);
+     *    getIsbn().add(newItem);
      * </pre>
      * 
      * 
@@ -222,35 +167,83 @@ public class Libro {
      * 
      * 
      */
-    public List<String> getIdentificadores() {
-        if (identificadores == null) {
-            identificadores = new ArrayList<String>();
+    public List<String> getIsbn() {
+        if (isbn == null) {
+            isbn = new ArrayList<String>();
         }
-        return this.identificadores;
+        return this.isbn;
     }
 
     /**
-     * Obtiene el valor de la propiedad idLibro.
+     * Obtiene el valor de la propiedad idioma.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getIdLibro() {
-        return idLibro;
+    public String getIdioma() {
+        return idioma;
     }
 
     /**
-     * Define el valor de la propiedad idLibro.
+     * Define el valor de la propiedad idioma.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setIdLibro(String value) {
-        this.idLibro = value;
+    public void setIdioma(String value) {
+        this.idioma = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad fecha.
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public XMLGregorianCalendar getFecha() {
+        return fecha;
+    }
+
+    /**
+     * Define el valor de la propiedad fecha.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public void setFecha(XMLGregorianCalendar value) {
+        this.fecha = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad paginas.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BigInteger }
+     *     
+     */
+    public BigInteger getPaginas() {
+        return paginas;
+    }
+
+    /**
+     * Define el valor de la propiedad paginas.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BigInteger }
+     *     
+     */
+    public void setPaginas(BigInteger value) {
+        this.paginas = value;
     }
 
 }

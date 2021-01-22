@@ -8,6 +8,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.ListIterator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -24,8 +25,10 @@ import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 
 import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import commons.Utils;
@@ -33,6 +36,7 @@ import modelo.Autor;
 import modelo.Autores;
 import modelo.Favoritos;
 import modelo.InformacionAutor;
+import modelo.Libro;
 import modelo.PaginasAsociadas;
 import modelo.TipoAfiliacion;
 
@@ -70,11 +74,12 @@ public class AutoresControllerImpl implements AutoresController {
 
 			// Solicitar fichero rdf de DBLP
 			String response = makeRequest(urlAutor + DBLP_RDF);
-			System.out.println(response);
+			
 			getDblpInformation(infoAutor, response);
 			// Solicitar ifnormación de Google Books
-			getGBInformation(infoAutor, response);
-			// SOlicitar ifnroamcion JSON
+			getGBInformation(infoAutor);
+			
+			// SOlicitar informacion JSON
 			getDBPediaInformation(infoAutor, response);
 			// Guardar autor en XML
 			try {
@@ -161,7 +166,7 @@ public class AutoresControllerImpl implements AutoresController {
 			resultado = (NodeList) consulta.evaluate(doc, XPathConstants.NODESET);
 			for (int i = 0; i < resultado.getLength(); i++) {
 				element = (Element) resultado.item(i);
-				infoAutor.getLibrosAutor().add(element.getAttribute("rdf:resource"));
+				infoAutor.getArticulosAutor().add(element.getAttribute("rdf:resource"));
 			}
 
 			// idAutor;
@@ -177,10 +182,102 @@ public class AutoresControllerImpl implements AutoresController {
 			e.printStackTrace();
 		}
 	}
-	private void getGBInformation(InformacionAutor infoAutor, String response) {
+
+	private void getGBInformation(InformacionAutor infoAutor) {
+
+		String response;
+		String url = GB_URL + infoAutor.getNombreCompleto().toLowerCase().replace(" ", "%20")
+				+ "&start-index=1&max-results=100";
+		boolean pendientes = false;
+		do {
+			response = makeRequest(url);
+			Document doc = Utils.convertStringToXMLDocument(response);
+			NodeList nodeList = doc.getElementsByTagName("link");
+			Element element;
+			int index;
+			for (index = 0; index < nodeList.getLength(); index++) {
+				element = (Element) nodeList.item(index);
+				if (element.getNodeType() == Node.ELEMENT_NODE) {
+					if (element.getAttribute("rel").equals("next")) {
+						pendientes = true;
+						url = element.getAttribute("href");
+						break;
+					}
+				}
+			}
+			if (index == nodeList.getLength()) {
+				pendientes = false;
+			}
+
+			NodeList nodeLibroList = doc.getElementsByTagName("entry");
+			for (int i = 0; i < nodeLibroList.getLength(); i++) {
+				Libro entrada = new Libro();
+
+				Element libroElement = (Element) nodeLibroList.item(i);
+				// Recuperamos el id del libro (url)
+				nodeList = libroElement.getElementsByTagName("id");
+				element = (Element) nodeList.item(0);
+				if (element != null) {
+					entrada.setId(element.getTextContent());
+				}
+				// Recuperamos el titulo del libro
+				nodeList = libroElement.getElementsByTagName("title");
+				element = (Element) nodeList.item(0);
+				if (element != null) {
+					entrada.setTitulo(element.getTextContent());
+				}
+
+				// Recuperamos la fecha de publicacion
+				nodeList = libroElement.getElementsByTagName("dc:date");
+				element = (Element) nodeList.item(0);
+				if (element != null) {
+					Date date = Utils.dateFromString(element.getTextContent());
+					entrada.setFecha(Utils.createFecha(date));
+				}
+
+				// Recogemos la descripcion del libro
+				nodeList = libroElement.getElementsByTagName("dc:description");
+				element = (Element) nodeList.item(0);
+				if (element != null) {
+					entrada.setDescripcion(element.getTextContent());
+				}
+
+				// Recuperamos el idioma del libro
+				nodeList = libroElement.getElementsByTagName("dc:language");
+				element = (Element) nodeList.item(0);
+				if (element != null) {
+					entrada.setIdioma(element.getTextContent().toUpperCase());
+				}
+
+				// Recuperamos los identificadores (ISBN)
+				nodeList = libroElement.getElementsByTagName("dc:identifier");
+				for (int j = 0; j < nodeList.getLength(); j++) {
+					element = (Element) nodeList.item(j);
+					entrada.getIsbn().add(element.getTextContent());
+				}
+				
+				// Recuperamos el numero de paginas del libro
+				nodeList = libroElement.getElementsByTagName("dc:format");
+				for (int j = 0; j < nodeList.getLength(); j++) {
+					element = (Element) nodeList.item(j);
+					if(element.getTextContent().endsWith(" pages")) {
+						entrada.setPaginas(new BigInteger(StringUtils.substringBefore(element.getTextContent(), " ")));
+					}
+					
+				}
+				
+				// Se añade la entrada a la lista de libros del autor
+				infoAutor.getLibros().add(entrada);
+			}
+		} while (pendientes == true);
+
+		
+
 	}
+
 	private void getDBPediaInformation(InformacionAutor infoAutor, String response) {
 	}
+
 	private void obtenerArbolAutores(Autores autores, String response) {
 		Document doc = Utils.convertStringToXMLDocument(response);
 		XPathFactory factoria = XPathFactory.newInstance();
@@ -253,7 +350,7 @@ public class AutoresControllerImpl implements AutoresController {
 				JAXBContext contexto = JAXBContext.newInstance(Favoritos.class);
 				Marshaller marshaller = contexto.createMarshaller();
 				marshaller.setProperty("jaxb.formatted.output", true);
-				marshaller.setProperty("jaxb.schemaLocation","docFavoritos.xsd");
+				marshaller.setProperty("jaxb.schemaLocation", "docFavoritos.xsd");
 				marshaller.marshal(favoritos, docFavoritos);
 			} catch (JAXBException e) {
 				// TODO Auto-generated catch block
@@ -296,7 +393,8 @@ public class AutoresControllerImpl implements AutoresController {
 	public boolean deleteAutorFavoritos(String identificador, String urlAutor) {
 		File docFavoritos = new File("xml/favoritos" + identificador + ".xml");
 		if (docFavoritos.exists()) {
-			// Realizamos el unmarshalling del fichero en la variable favoritos y lo devolvemos
+			// Realizamos el unmarshalling del fichero en la variable favoritos y lo
+			// devolvemos
 			JAXBContext contexto;
 			Favoritos favoritos = new Favoritos();
 			try {
@@ -304,7 +402,8 @@ public class AutoresControllerImpl implements AutoresController {
 				Unmarshaller unmarshaller = contexto.createUnmarshaller();
 				favoritos = (Favoritos) unmarshaller.unmarshal(docFavoritos);
 				boolean removed = false;
-				// Creamos un iterador para recorrer la lista y borrar la url en caso de encontrarla
+				// Creamos un iterador para recorrer la lista y borrar la url en caso de
+				// encontrarla
 				ListIterator<String> iter = favoritos.getUrlAutor().listIterator();
 				while (iter.hasNext()) {
 					if (iter.next().equals(urlAutor)) {
@@ -312,10 +411,10 @@ public class AutoresControllerImpl implements AutoresController {
 						removed = true;
 					}
 				}
-				if(removed) {
+				if (removed) {
 					Marshaller marshaller = contexto.createMarshaller();
 					marshaller.setProperty("jaxb.formatted.output", true);
-					marshaller.setProperty("jaxb.schemaLocation","docFavoritos.xsd");
+					marshaller.setProperty("jaxb.schemaLocation", "docFavoritos.xsd");
 					marshaller.marshal(favoritos, docFavoritos);
 					return true;
 				}
@@ -332,22 +431,23 @@ public class AutoresControllerImpl implements AutoresController {
 	public Favoritos addAutorFavoritos(String identificador, String urlAutor) {
 		File docFavoritos = new File("xml/favoritos" + identificador + ".xml");
 		if (docFavoritos.exists()) {
-			// Realizamos el unmarshalling del fichero en la variable favoritos y lo devolvemos
+			// Realizamos el unmarshalling del fichero en la variable favoritos y lo
+			// devolvemos
 			JAXBContext contexto;
 			Favoritos favoritos = new Favoritos();
 			try {
 				contexto = JAXBContext.newInstance(Favoritos.class);
 				Unmarshaller unmarshaller = contexto.createUnmarshaller();
 				favoritos = (Favoritos) unmarshaller.unmarshal(docFavoritos);
-				if (favoritos.getUrlAutor().stream().filter(p -> p.equals(urlAutor)).collect(Collectors.toList()).size() == 0) {
+				if (favoritos.getUrlAutor().stream().filter(p -> p.equals(urlAutor)).collect(Collectors.toList())
+						.size() == 0) {
 					// Añadir
 					favoritos.getUrlAutor().add(urlAutor);
 					Marshaller marshaller = contexto.createMarshaller();
 					marshaller.setProperty("jaxb.formatted.output", true);
-					marshaller.setProperty("jaxb.schemaLocation","docFavoritos.xsd");
+					marshaller.setProperty("jaxb.schemaLocation", "docFavoritos.xsd");
 					marshaller.marshal(favoritos, docFavoritos);
-				}
-				else {
+				} else {
 					// Ya existe
 				}
 				return favoritos;
