@@ -18,5 +18,7 @@
     <fullyQualifiedTypeName name="modelo.TipoAfiliacion"/>
     <fullyQualifiedTypeName name="modelo.PaginasAsociadas"/>
     <fullyQualifiedTypeName name="modelo.InformacionAutor"/>
+    <fullyQualifiedTypeName name="java.util.ListIterator"/>
     <fullyQualifiedTypeName name="modelo.Favoritos"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
 </qualifiedTypeNameHistroy>

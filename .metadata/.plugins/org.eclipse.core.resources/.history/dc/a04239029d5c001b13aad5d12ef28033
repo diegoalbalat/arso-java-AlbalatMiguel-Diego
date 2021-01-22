@@ -360,10 +360,8 @@ public class AutoresControllerImpl implements AutoresController {
 
 	@Override
 	public boolean deleteBBDD() {
-		// Se obtiene el directorio
 		File folder = new File("/xml");
 		try {
-			// Se eliminan los ficheros del directorio que acaben en .xml
 			Arrays.stream(folder.listFiles((f, p) -> p.endsWith(".xml"))).forEach(File::delete);
 			return true;
 		} catch (Exception e) {
