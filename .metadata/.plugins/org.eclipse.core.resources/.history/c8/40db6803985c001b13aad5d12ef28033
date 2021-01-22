@@ -7,7 +7,6 @@ import java.math.BigInteger;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.Arrays;
 import java.util.ListIterator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -73,9 +72,7 @@ public class AutoresControllerImpl implements AutoresController {
 			System.out.println(response);
 			getDblpInformation(infoAutor, response);
 			// Solicitar ifnormación de Google Books
-			getGBInformation(infoAutor, response);
 			// SOlicitar ifnroamcion JSON
-			getDBPediaInformation(infoAutor, response);
 			// Guardar autor en XML
 			try {
 				contexto = JAXBContext.newInstance(InformacionAutor.class);
@@ -177,10 +174,7 @@ public class AutoresControllerImpl implements AutoresController {
 			e.printStackTrace();
 		}
 	}
-	private void getGBInformation(InformacionAutor infoAutor, String response) {
-	}
-	private void getDBPediaInformation(InformacionAutor infoAutor, String response) {
-	}
+
 	private void obtenerArbolAutores(Autores autores, String response) {
 		Document doc = Utils.convertStringToXMLDocument(response);
 		XPathFactory factoria = XPathFactory.newInstance();
@@ -356,18 +350,6 @@ public class AutoresControllerImpl implements AutoresController {
 			}
 		}
 		return null;
-	}
-
-	@Override
-	public boolean deleteBBDD() {
-		File folder = new File("/xml");
-		try {
-			Arrays.stream(folder.listFiles((f, p) -> p.endsWith(".xml"))).forEach(File::delete);
-			return true;
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return false;
 	}
 
 }

@@ -73,9 +73,7 @@ public class AutoresControllerImpl implements AutoresController {
 			System.out.println(response);
 			getDblpInformation(infoAutor, response);
 			// Solicitar ifnormación de Google Books
-			getGBInformation(infoAutor, response);
 			// SOlicitar ifnroamcion JSON
-			getDBPediaInformation(infoAutor, response);
 			// Guardar autor en XML
 			try {
 				contexto = JAXBContext.newInstance(InformacionAutor.class);

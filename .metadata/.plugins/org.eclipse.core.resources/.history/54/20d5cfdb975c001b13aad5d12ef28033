@@ -28,6 +28,4 @@ public interface AutoresController {
 	
 	public Favoritos addAutorFavoritos(String identificador, String urlAutor);
 	
-	public boolean deleteBBDD();
-	
 }

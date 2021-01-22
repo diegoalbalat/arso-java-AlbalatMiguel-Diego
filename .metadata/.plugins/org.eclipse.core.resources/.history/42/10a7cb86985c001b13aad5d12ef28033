@@ -73,9 +73,7 @@ public class AutoresControllerImpl implements AutoresController {
 			System.out.println(response);
 			getDblpInformation(infoAutor, response);
 			// Solicitar ifnormación de Google Books
-			getGBInformation(infoAutor, response);
 			// SOlicitar ifnroamcion JSON
-			getDBPediaInformation(infoAutor, response);
 			// Guardar autor en XML
 			try {
 				contexto = JAXBContext.newInstance(InformacionAutor.class);
@@ -177,10 +175,7 @@ public class AutoresControllerImpl implements AutoresController {
 			e.printStackTrace();
 		}
 	}
-	private void getGBInformation(InformacionAutor infoAutor, String response) {
-	}
-	private void getDBPediaInformation(InformacionAutor infoAutor, String response) {
-	}
+
 	private void obtenerArbolAutores(Autores autores, String response) {
 		Document doc = Utils.convertStringToXMLDocument(response);
 		XPathFactory factoria = XPathFactory.newInstance();
