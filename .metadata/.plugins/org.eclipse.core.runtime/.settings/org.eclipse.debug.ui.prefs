@@ -1,3 +1,5 @@
+Console.highWaterMark=80008000
+Console.lowWaterMark=80000000
 eclipse.preferences.version=1
 org.eclipse.debug.ui.MemoryHistoryKnownColor=235,235,235
 org.eclipse.debug.ui.MemoryHistoryUnknownColor=170,175,185

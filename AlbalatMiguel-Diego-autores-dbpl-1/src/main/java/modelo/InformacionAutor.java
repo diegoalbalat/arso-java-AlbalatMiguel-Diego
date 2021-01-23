@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.1 
 // Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2021.01.22 a las 11:27:13 PM CET 
+// Generado el: 2021.01.23 a las 02:00:59 AM CET 
 //
 
 
@@ -38,6 +38,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="articulosAutor" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="articulosEditor" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="libros" type="{}libro" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="informacionPersonal" type="{}informacionPersonal" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *       &lt;attribute name="idAutor" use="required" type="{http://www.w3.org/2001/XMLSchema}positiveInteger" /&gt;
  *     &lt;/restriction&gt;
@@ -56,7 +57,8 @@ import javax.xml.bind.annotation.XmlType;
     "paginasPremios",
     "articulosAutor",
     "articulosEditor",
-    "libros"
+    "libros",
+    "informacionPersonal"
 })
 @XmlRootElement(name = "InformacionAutor")
 public class InformacionAutor {
@@ -70,6 +72,7 @@ public class InformacionAutor {
     protected List<String> articulosAutor;
     protected List<String> articulosEditor;
     protected List<Libro> libros;
+    protected InformacionPersonal informacionPersonal;
     @XmlAttribute(name = "idAutor", required = true)
     @XmlSchemaType(name = "positiveInteger")
     protected BigInteger idAutor;
@@ -289,6 +292,30 @@ public class InformacionAutor {
             libros = new ArrayList<Libro>();
         }
         return this.libros;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad informacionPersonal.
+     * 
+     * @return
+     *     possible object is
+     *     {@link InformacionPersonal }
+     *     
+     */
+    public InformacionPersonal getInformacionPersonal() {
+        return informacionPersonal;
+    }
+
+    /**
+     * Define el valor de la propiedad informacionPersonal.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link InformacionPersonal }
+     *     
+     */
+    public void setInformacionPersonal(InformacionPersonal value) {
+        this.informacionPersonal = value;
     }
 
     /**

@@ -3,17 +3,23 @@ package controller;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.StringReader;
 import java.math.BigInteger;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 import java.util.ListIterator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
+import javax.json.Json;
+import javax.json.JsonArray;
+import javax.json.JsonObject;
+import javax.json.JsonReader;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -36,6 +42,7 @@ import modelo.Autor;
 import modelo.Autores;
 import modelo.Favoritos;
 import modelo.InformacionAutor;
+import modelo.InformacionPersonal;
 import modelo.Libro;
 import modelo.PaginasAsociadas;
 import modelo.TipoAfiliacion;
@@ -46,6 +53,8 @@ public class AutoresControllerImpl implements AutoresController {
 	public final static String DBLP_FIND_ENDPOINT = "/search/author/api?q=";
 	public final static String DBLP_RDF = ".rdf";
 	public final static String GB_URL = "https://books.google.com/books/feeds/volumes?q=";
+	public final static String DBPEDIA_URL = "https://dbpedia.org/data/";
+	public final static String DBPEDIA_JSON = ".json";
 
 	@Override
 	public Autores findAutores(String autor) {
@@ -74,13 +83,13 @@ public class AutoresControllerImpl implements AutoresController {
 
 			// Solicitar fichero rdf de DBLP
 			String response = makeRequest(urlAutor + DBLP_RDF);
-			
+
 			getDblpInformation(infoAutor, response);
 			// Solicitar ifnormación de Google Books
 			getGBInformation(infoAutor);
-			
+
 			// SOlicitar informacion JSON
-			getDBPediaInformation(infoAutor, response);
+			getDBPediaInformation(infoAutor);
 			// Guardar autor en XML
 			try {
 				contexto = JAXBContext.newInstance(InformacionAutor.class);
@@ -192,6 +201,7 @@ public class AutoresControllerImpl implements AutoresController {
 		do {
 			response = makeRequest(url);
 			Document doc = Utils.convertStringToXMLDocument(response);
+			
 			NodeList nodeList = doc.getElementsByTagName("link");
 			Element element;
 			int index;
@@ -208,7 +218,7 @@ public class AutoresControllerImpl implements AutoresController {
 			if (index == nodeList.getLength()) {
 				pendientes = false;
 			}
-
+			
 			NodeList nodeLibroList = doc.getElementsByTagName("entry");
 			for (int i = 0; i < nodeLibroList.getLength(); i++) {
 				Libro entrada = new Libro();
@@ -255,27 +265,86 @@ public class AutoresControllerImpl implements AutoresController {
 					element = (Element) nodeList.item(j);
 					entrada.getIsbn().add(element.getTextContent());
 				}
-				
+
 				// Recuperamos el numero de paginas del libro
 				nodeList = libroElement.getElementsByTagName("dc:format");
 				for (int j = 0; j < nodeList.getLength(); j++) {
 					element = (Element) nodeList.item(j);
-					if(element.getTextContent().endsWith(" pages")) {
+					if (element.getTextContent().endsWith(" pages")) {
 						entrada.setPaginas(new BigInteger(StringUtils.substringBefore(element.getTextContent(), " ")));
 					}
-					
+
 				}
-				
+
 				// Se añade la entrada a la lista de libros del autor
 				infoAutor.getLibros().add(entrada);
 			}
 		} while (pendientes == true);
 
-		
-
 	}
 
-	private void getDBPediaInformation(InformacionAutor infoAutor, String response) {
+	private void getDBPediaInformation(InformacionAutor infoAutor) {
+		String response;
+		String url = "";
+		String autor;
+		// Puesto que no todos los nombres se puede tratar igual, buscamos el enlace de la wikipedia para sacar el nombre
+		// adecuado a para realizar la busqueda en dbpedia
+		List<String> paginas = infoAutor.getPaginas().getPaginasSecundaria();
+		if (paginas.size() != 0) {
+			int i;
+			for (i = 0; i < paginas.size(); i++) {
+				if (paginas.get(i).contains("wikipedia")) {
+					url = paginas.get(i);
+					break;
+				}
+			}
+			// Si el autor tenia un enlace a wikipedia
+			if (i != paginas.size()) {
+				int index = url.lastIndexOf("/");
+				if (index != -1) {
+					// Obtenemos su nombre
+					autor = url.substring(index + 1);
+					url = DBPEDIA_URL + autor + DBPEDIA_JSON;
+					// Realizamos la peticion
+					response = makeRequest(url);
+					// Leemos la respuesta como JSON
+					JsonReader jsonReader = Json.createReader(new StringReader(response));
+					JsonObject object = jsonReader.readObject();
+
+					// Obtener el objecto JSON de información del autor
+					JsonObject autorInfo = object.getJsonObject("http://dbpedia.org/resource/" + autor);
+					JsonArray elementArray;
+					InformacionPersonal infoPersonal = new InformacionPersonal();
+					// Obtener fecha de nacimiento
+					elementArray = autorInfo.getJsonArray("http://dbpedia.org/ontology/birthDate");
+					if (elementArray.get(0) != null) {
+						Date date = Utils.dateFromString(elementArray.get(0).asJsonObject().getString("value"));
+						infoPersonal.setFechaNacimiento(Utils.createFecha(date));
+					}
+					// Obtener numero de hijos
+					elementArray = autorInfo.getJsonArray("http://dbpedia.org/property/children");
+					if (elementArray.get(0) != null) {
+						infoPersonal.setHijos(BigInteger.valueOf(elementArray.get(0).asJsonObject().getInt("value")));
+					}
+
+					// Obtener lugar de nacimiento
+					elementArray = autorInfo.getJsonArray("http://dbpedia.org/property/birthPlace");
+					if (elementArray.get(0) != null) {
+						infoPersonal.setLugarNacimiento(elementArray.get(0).asJsonObject().getString("value"));
+					}
+					// Obtener padres
+					elementArray = autorInfo.getJsonArray("http://dbpedia.org/property/parents");
+					for (JsonObject element : elementArray.getValuesAs(JsonObject.class)) {
+						infoPersonal.getPadres().add(element.getString("value"));
+					}
+
+					infoAutor.setInformacionPersonal(infoPersonal);
+					jsonReader.close();
+				}
+
+			}
+
+		}
 	}
 
 	private void obtenerArbolAutores(Autores autores, String response) {
