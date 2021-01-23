@@ -4,7 +4,7 @@ import modelo.Autores;
 import modelo.Favoritos;
 import modelo.InformacionAutor;
 
-public interface AutoresController {
+public interface IAutoresController {
 
 	/*
 	 * Función encargada de retornar los autores junto con los enlaces a los registro de la API DBLP.

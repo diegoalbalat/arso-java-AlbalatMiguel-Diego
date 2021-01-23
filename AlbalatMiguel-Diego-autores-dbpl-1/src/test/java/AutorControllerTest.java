@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
 import controller.AutorException;
-import controller.AutoresController;
+import controller.IAutoresController;
 import controller.AutoresControllerImpl;
 import modelo.Autores;
 import modelo.Favoritos;
@@ -22,7 +22,7 @@ import modelo.Libro;
 public class AutorControllerTest {
 	private static Autores autores;
 	private static InformacionAutor infoAutor;
-	private static AutoresController controlador;
+	private static IAutoresController controlador;
 	private static String idFavoritos;
 	private static Favoritos favoritos;
 

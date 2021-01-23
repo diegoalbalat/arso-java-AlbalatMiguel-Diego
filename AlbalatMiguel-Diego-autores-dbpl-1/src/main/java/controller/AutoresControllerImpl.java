@@ -46,7 +46,7 @@ import modelo.Libro;
 import modelo.PaginasAsociadas;
 import modelo.TipoAfiliacion;
 
-public class AutoresControllerImpl implements AutoresController {
+public class AutoresControllerImpl implements IAutoresController {
 
 	public final static String DBLP_URL = "https://dblp.org";
 	public final static String DBLP_FIND_ENDPOINT = "/search/author/api?q=";
