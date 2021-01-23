@@ -7936,3 +7936,626 @@ org.eclipse.core.runtime.CoreException: Launch configuration AlbalatMiguel-Diego
 2021-01-23 14:32:41,843 [Worker-251: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
 2021-01-23 14:32:41,844 [Worker-251: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2021-01-23 14:32:41,844 [Worker-251: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:33:43,996 [Worker-251: Launching Executing clean in _home_diego_Documentos_workspace_AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/diego/Documentos/workspace/AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:33:43,996 [Worker-251: Launching Executing clean in _home_diego_Documentos_workspace_AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B clean
+2021-01-23 14:33:45,115 [Worker-253: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:33:45,115 [Worker-253: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:33:45,116 [Worker-253: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:33:45,116 [Worker-253: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:33:45,116 [Worker-253: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:33:45,116 [Worker-253: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:33:45,118 [Worker-253: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:33:51,472 [Worker-255: Launching Executing install in _home_diego_Documentos_workspace_AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/diego/Documentos/workspace/AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:33:51,472 [Worker-255: Launching Executing install in _home_diego_Documentos_workspace_AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B install
+2021-01-23 14:33:53,751 [Worker-255: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:33:53,751 [Worker-255: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:33:53,752 [Worker-255: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:33:53,752 [Worker-255: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:33:58,178 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2021-01-23 14:34:03,215 [Worker-252: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/diego/Documentos/workspace/AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:34:03,215 [Worker-252: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B jetty:run
+2021-01-23 14:35:26,124 [Worker-255: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:35:26,124 [Worker-255: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:35:26,125 [Worker-255: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:35:26,125 [Worker-255: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:35:33,341 [Worker-253: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/diego/Documentos/workspace/AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:35:33,341 [Worker-253: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B jetty:run
+2021-01-23 14:35:51,167 [Worker-251: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:35:51,167 [Worker-251: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:35:51,168 [Worker-251: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:35:51,168 [Worker-251: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:36:20,108 [Worker-253: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:36:20,108 [Worker-253: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:36:20,109 [Worker-253: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:36:20,109 [Worker-253: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:36:28,241 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:36:28,242 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:36:28,242 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:36:28,243 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:36:30,904 [Worker-251: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:36:30,904 [Worker-251: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:36:30,904 [Worker-251: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:36:30,904 [Worker-251: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:36:33,936 [Worker-255: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/diego/Documentos/workspace/AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:36:33,936 [Worker-255: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B jetty:run
+2021-01-23 14:36:48,934 [Worker-253: Launching Executing clean in _home_diego_Documentos_workspace_AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/diego/Documentos/workspace/AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:36:48,935 [Worker-253: Launching Executing clean in _home_diego_Documentos_workspace_AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B clean
+2021-01-23 14:36:50,006 [Worker-251: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:36:50,006 [Worker-251: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:36:50,007 [Worker-251: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:36:50,007 [Worker-251: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:36:50,007 [Worker-251: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:36:50,007 [Worker-251: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:36:50,008 [Worker-251: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:36:55,881 [Worker-251: Launching Executing install in _home_diego_Documentos_workspace_AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/diego/Documentos/workspace/AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:36:55,881 [Worker-251: Launching Executing install in _home_diego_Documentos_workspace_AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B install
+2021-01-23 14:36:58,218 [Worker-256: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:36:58,218 [Worker-256: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:36:58,219 [Worker-256: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:36:58,219 [Worker-256: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:36:59,823 [main] INFO  o.e.m2e.actions.ExecutePomAction - Using existing launch configuration
+2021-01-23 14:36:59,886 [Worker-257: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/diego/Documentos/workspace/AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:36:59,887 [Worker-257: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B jetty:run
+2021-01-23 14:38:44,544 [Worker-253: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:38:44,544 [Worker-253: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:38:44,545 [Worker-253: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:38:44,545 [Worker-253: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:38:50,810 [Worker-252: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:38:50,810 [Worker-252: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:38:50,812 [Worker-252: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:38:50,812 [Worker-252: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:39:16,732 [Worker-253: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:39:16,733 [Worker-253: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:39:16,734 [Worker-253: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:39:16,734 [Worker-253: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:39:53,228 [Worker-252: Launching Executing clean in _home_diego_Documentos_workspace_AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/diego/Documentos/workspace/AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:39:53,228 [Worker-252: Launching Executing clean in _home_diego_Documentos_workspace_AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B clean
+2021-01-23 14:39:54,249 [Worker-256: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:39:54,249 [Worker-256: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:39:54,250 [Worker-256: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:39:54,250 [Worker-256: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:39:54,250 [Worker-256: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:39:54,250 [Worker-256: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:39:54,251 [Worker-256: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:39:56,000 [Worker-256: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/diego/Documentos/workspace/AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:39:56,000 [Worker-256: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B jetty:run
+2021-01-23 14:40:48,406 [Worker-256: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:40:48,406 [Worker-256: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:40:48,407 [Worker-256: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:40:48,407 [Worker-256: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:40:59,199 [Worker-253: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/diego/Documentos/workspace/AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:40:59,199 [Worker-253: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B jetty:run
+2021-01-23 14:41:42,622 [Worker-255: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:41:42,622 [Worker-255: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:41:42,623 [Worker-255: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:41:42,623 [Worker-255: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:41:45,175 [Worker-251: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:41:45,175 [Worker-251: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:41:45,176 [Worker-251: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:41:45,176 [Worker-251: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:41:48,852 [Worker-252: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/diego/Documentos/workspace/AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:41:48,852 [Worker-252: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B jetty:run
+2021-01-23 14:47:02,872 [Worker-254: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:47:02,872 [Worker-254: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:47:02,873 [Worker-254: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:47:02,873 [Worker-254: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:47:15,996 [Worker-258: Launching Executing clean in _home_diego_Documentos_workspace_AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/diego/Documentos/workspace/AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:47:15,997 [Worker-258: Launching Executing clean in _home_diego_Documentos_workspace_AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B clean
+2021-01-23 14:47:17,126 [Worker-255: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:47:17,126 [Worker-255: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:47:17,127 [Worker-255: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:47:17,128 [Worker-255: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:47:17,128 [Worker-255: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:47:17,128 [Worker-255: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:47:17,130 [Worker-255: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:47:18,980 [Worker-253: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/diego/Documentos/workspace/AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:47:18,980 [Worker-253: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B jetty:run
+2021-01-23 14:47:56,730 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:47:56,731 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:47:56,732 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:47:56,732 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:47:59,432 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:47:59,433 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:47:59,434 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:47:59,434 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:48:02,831 [Worker-258: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/diego/Documentos/workspace/AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:48:02,831 [Worker-258: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B jetty:run
+2021-01-23 14:48:39,865 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:48:39,865 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:48:39,866 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:48:39,866 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:48:50,832 [Worker-256: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:48:50,833 [Worker-256: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:48:50,834 [Worker-256: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:48:50,834 [Worker-256: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:48:54,312 [Worker-253: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:48:54,312 [Worker-253: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:48:54,313 [Worker-253: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:48:54,313 [Worker-253: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:48:59,264 [Worker-251: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:48:59,265 [Worker-251: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:48:59,266 [Worker-251: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:48:59,266 [Worker-251: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:49:11,060 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:49:11,060 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:49:11,061 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:49:11,061 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:49:14,540 [Worker-253: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/diego/Documentos/workspace/AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:49:14,540 [Worker-253: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B jetty:run
+2021-01-23 14:51:38,297 [Worker-259: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:51:38,297 [Worker-259: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:51:38,297 [Worker-259: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:51:38,297 [Worker-259: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:51:47,853 [Worker-260: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:51:47,853 [Worker-260: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:51:47,854 [Worker-260: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:51:47,854 [Worker-260: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:52:06,041 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:52:06,041 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:52:06,042 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:52:06,042 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:52:25,709 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:52:25,709 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:52:25,709 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:52:25,709 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:52:27,900 [Worker-252: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:52:27,900 [Worker-252: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:52:27,900 [Worker-252: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:52:27,900 [Worker-252: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:52:41,463 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:52:41,463 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:52:41,464 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:52:41,464 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:53:43,320 [Worker-257: Cleaning all projects] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:53:43,502 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:53:43,503 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:53:43,503 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:53:43,503 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:53:43,503 [Worker-258: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:53:43,503 [Worker-258: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:53:43,505 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:53:53,854 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:53:53,854 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:53:53,854 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:53:53,854 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:53:59,125 [Worker-260: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2021-01-23 14:53:59,222 [Worker-260: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: arso:AlbalatMiguel-Diego-autores-dblp-2-2:0.0.1-SNAPSHOT @ /home/diego/Documentos/workspace/AlbalatMiguel-Diego-autores-dblp-2-2/pom.xml.
+2021-01-23 14:53:59,466 [Worker-260: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /AlbalatMiguel-Diego-autores-dblp-2-2/src/main/java
+2021-01-23 14:53:59,466 [Worker-260: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /AlbalatMiguel-Diego-autores-dblp-2-2/src/main/resources
+2021-01-23 14:53:59,466 [Worker-260: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /AlbalatMiguel-Diego-autores-dblp-2-2/src/test/java
+2021-01-23 14:53:59,466 [Worker-260: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /AlbalatMiguel-Diego-autores-dblp-2-2/src/test/resources
+2021-01-23 14:53:59,552 [Worker-260: Updating Maven Project] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:53:59,554 [Worker-260: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 0 sec
+2021-01-23 14:53:59,778 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:53:59,778 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:53:59,782 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:53:59,782 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:53:59,782 [Worker-258: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:53:59,782 [Worker-258: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:53:59,783 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:54:06,829 [Worker-257: Launching Executing generate-sources in _home_diego_Documentos_workspace_AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/diego/Documentos/workspace/AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:54:06,829 [Worker-257: Launching Executing generate-sources in _home_diego_Documentos_workspace_AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B generate-sources
+2021-01-23 14:54:11,612 [main] INFO  o.e.m2e.actions.ExecutePomAction - Using existing launch configuration
+2021-01-23 14:54:11,667 [Worker-261: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/diego/Documentos/workspace/AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:54:11,667 [Worker-261: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B jetty:run
+2021-01-23 14:55:48,180 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:55:48,181 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:55:48,182 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:55:48,182 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:55:54,827 [Worker-261: Launching Executing clean in _home_diego_Documentos_workspace_AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/diego/Documentos/workspace/AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:55:54,827 [Worker-261: Launching Executing clean in _home_diego_Documentos_workspace_AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B clean
+2021-01-23 14:55:55,837 [Worker-262: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:55:55,837 [Worker-262: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:55:55,838 [Worker-262: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:55:55,839 [Worker-262: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:55:55,839 [Worker-262: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:55:55,839 [Worker-262: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:55:55,841 [Worker-262: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:56:01,263 [main] INFO  o.e.m2e.actions.ExecutePomAction - Using existing launch configuration
+2021-01-23 14:56:01,325 [Worker-259: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/diego/Documentos/workspace/AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:56:01,325 [Worker-259: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B jetty:run
+2021-01-23 14:56:29,050 [Worker-259: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:56:29,051 [Worker-259: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:56:29,051 [Worker-259: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:56:29,051 [Worker-259: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:56:41,597 [Worker-260: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:56:41,597 [Worker-260: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:56:41,597 [Worker-260: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:56:41,598 [Worker-260: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:56:55,686 [Worker-259: Cleaning all projects] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:56:55,876 [Worker-261: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:56:55,876 [Worker-261: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:56:55,877 [Worker-261: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:56:55,877 [Worker-261: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:56:55,877 [Worker-261: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:56:55,877 [Worker-261: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:56:55,879 [Worker-261: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:57:03,944 [Worker-259: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:57:03,945 [Worker-259: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:57:03,946 [Worker-259: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:57:03,946 [Worker-259: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:57:14,754 [Worker-260: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:57:14,754 [Worker-260: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:57:14,755 [Worker-260: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:57:14,755 [Worker-260: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:57:27,154 [Worker-257: Cleaning all projects] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:57:27,341 [Worker-261: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:57:27,341 [Worker-261: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:57:27,342 [Worker-261: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:57:27,343 [Worker-261: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:57:27,343 [Worker-261: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:57:27,343 [Worker-261: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:57:27,346 [Worker-261: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:57:31,631 [Worker-261: Launching Executing generate-sources in _home_diego_Documentos_workspace_AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/diego/Documentos/workspace/AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:57:31,631 [Worker-261: Launching Executing generate-sources in _home_diego_Documentos_workspace_AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B generate-sources
+2021-01-23 14:57:32,645 [Worker-261: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:57:32,645 [Worker-261: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:57:32,646 [Worker-261: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:57:32,646 [Worker-261: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:57:35,412 [main] INFO  o.e.m2e.actions.ExecutePomAction - Using existing launch configuration
+2021-01-23 14:57:35,472 [Worker-261: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/diego/Documentos/workspace/AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:57:35,473 [Worker-261: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B jetty:run
+2021-01-23 14:58:46,984 [Worker-259: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:58:46,984 [Worker-259: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:58:46,985 [Worker-259: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:58:46,986 [Worker-259: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:58:51,371 [Worker-263: Cleaning all projects] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:58:51,548 [Worker-261: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:58:51,548 [Worker-261: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:58:51,549 [Worker-261: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:58:51,549 [Worker-261: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:58:51,550 [Worker-261: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:58:51,550 [Worker-261: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:58:51,552 [Worker-261: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:58:54,540 [Worker-259: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/diego/Documentos/workspace/AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 14:58:54,541 [Worker-259: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B jetty:run
+2021-01-23 14:59:05,162 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:59:05,162 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:59:05,163 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:59:05,163 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:59:17,287 [Worker-262: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:59:17,287 [Worker-262: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:59:17,288 [Worker-262: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:59:17,288 [Worker-262: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:59:22,701 [Worker-262: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:59:22,701 [Worker-262: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:59:22,702 [Worker-262: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:59:22,703 [Worker-262: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:59:33,344 [Worker-259: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:59:33,344 [Worker-259: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:59:33,346 [Worker-259: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:59:33,346 [Worker-259: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:59:45,257 [Worker-260: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:59:45,257 [Worker-260: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:59:45,257 [Worker-260: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:59:45,257 [Worker-260: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:59:51,816 [Worker-262: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:59:51,816 [Worker-262: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:59:51,816 [Worker-262: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:59:51,816 [Worker-262: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 14:59:55,768 [Worker-259: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:59:55,768 [Worker-259: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 14:59:55,769 [Worker-259: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 14:59:55,769 [Worker-259: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:00:30,691 [Worker-263: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:00:30,692 [Worker-263: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:00:30,693 [Worker-263: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:00:30,693 [Worker-263: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:00:42,948 [Worker-261: Cleaning all projects] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:00:43,126 [Worker-260: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:00:43,126 [Worker-260: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:00:43,127 [Worker-260: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:00:43,127 [Worker-260: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:00:43,127 [Worker-260: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:00:43,127 [Worker-260: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:00:43,129 [Worker-260: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:00:45,461 [Worker-264: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/diego/Documentos/workspace/AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:00:45,461 [Worker-264: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B jetty:run
+2021-01-23 15:01:01,169 [Worker-264: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:01:01,170 [Worker-264: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:01:01,170 [Worker-264: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:01:01,170 [Worker-264: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:01:08,056 [Worker-260: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:01:08,056 [Worker-260: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:01:08,057 [Worker-260: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:01:08,057 [Worker-260: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:01:19,093 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:01:19,094 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:01:19,094 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:01:19,094 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:01:25,738 [Worker-261: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:01:25,738 [Worker-261: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:01:25,738 [Worker-261: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:01:25,738 [Worker-261: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:01:56,422 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:01:56,422 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:01:56,423 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:01:56,423 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:02:01,841 [Worker-264: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:02:01,841 [Worker-264: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:02:01,842 [Worker-264: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:02:01,842 [Worker-264: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:02:05,524 [Worker-257: Cleaning all projects] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:02:05,698 [Worker-264: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:02:05,699 [Worker-264: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:02:05,700 [Worker-264: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:02:05,700 [Worker-264: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:02:05,700 [Worker-264: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:02:05,700 [Worker-264: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:02:05,702 [Worker-264: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:02:09,414 [Worker-257: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/diego/Documentos/workspace/AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:02:09,414 [Worker-257: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B jetty:run
+2021-01-23 15:08:37,755 [Worker-257: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/diego/Documentos/workspace/AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:08:37,755 [Worker-257: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B jetty:run
+2021-01-23 15:15:50,913 [Worker-265: Cleaning all projects] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:15:51,096 [Worker-263: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:15:51,096 [Worker-263: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:15:51,097 [Worker-263: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:15:51,097 [Worker-263: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:15:51,097 [Worker-263: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:15:51,097 [Worker-263: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:15:51,098 [Worker-263: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:15:55,082 [Worker-257: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/diego/Documentos/workspace/AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:15:55,082 [Worker-257: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B jetty:run
+2021-01-23 15:17:41,785 [Worker-267: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:17:41,785 [Worker-267: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:17:41,786 [Worker-267: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:17:41,786 [Worker-267: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:17:45,035 [Worker-266: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:17:45,035 [Worker-266: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:17:45,036 [Worker-266: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:17:45,036 [Worker-266: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:17:50,326 [Worker-265: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:17:50,327 [Worker-265: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:17:50,328 [Worker-265: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:17:50,328 [Worker-265: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:18:01,418 [Worker-266: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:18:01,418 [Worker-266: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:18:01,419 [Worker-266: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:18:01,419 [Worker-266: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:18:57,096 [Worker-268: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:18:57,096 [Worker-268: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:18:57,096 [Worker-268: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:18:57,096 [Worker-268: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:19:08,605 [Worker-266: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:19:08,606 [Worker-266: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:19:08,606 [Worker-266: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:19:08,606 [Worker-266: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:19:30,634 [Worker-263: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:19:30,634 [Worker-263: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:19:30,635 [Worker-263: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:19:30,635 [Worker-263: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:19:34,717 [Worker-268: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:19:34,717 [Worker-268: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:19:34,717 [Worker-268: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:19:34,718 [Worker-268: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:20:11,889 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:20:11,890 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:20:11,890 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:20:11,890 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:20:21,861 [Worker-266: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:20:21,861 [Worker-266: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:20:21,862 [Worker-266: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:20:21,862 [Worker-266: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:20:35,273 [Worker-265: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:20:35,273 [Worker-265: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:20:35,273 [Worker-265: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:20:35,273 [Worker-265: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:20:52,166 [Worker-266: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:20:52,166 [Worker-266: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:20:52,167 [Worker-266: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:20:52,167 [Worker-266: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:21:05,326 [Worker-265: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:21:05,327 [Worker-265: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:21:05,327 [Worker-265: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:21:05,328 [Worker-265: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:21:52,586 [Worker-266: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:21:52,586 [Worker-266: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:21:52,587 [Worker-266: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:21:52,587 [Worker-266: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:22:13,471 [Worker-263: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:22:13,471 [Worker-263: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:22:13,472 [Worker-263: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:22:13,472 [Worker-263: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:22:26,087 [Worker-265: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:22:26,087 [Worker-265: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:22:26,087 [Worker-265: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:22:26,087 [Worker-265: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:22:37,685 [Worker-268: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:22:37,686 [Worker-268: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:22:37,686 [Worker-268: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:22:37,686 [Worker-268: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:22:42,866 [Worker-263: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:22:42,866 [Worker-263: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:22:42,867 [Worker-263: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:22:42,867 [Worker-263: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:22:52,104 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:22:52,104 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:22:52,105 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:22:52,105 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:23:08,384 [Worker-265: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:23:08,385 [Worker-265: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:23:08,386 [Worker-265: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:23:08,386 [Worker-265: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:23:13,957 [Worker-267: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:23:13,957 [Worker-267: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:23:13,958 [Worker-267: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:23:13,958 [Worker-267: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:23:36,482 [Worker-266: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:23:36,483 [Worker-266: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:23:36,483 [Worker-266: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:23:36,483 [Worker-266: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:23:39,534 [Worker-267: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:23:39,534 [Worker-267: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:23:39,535 [Worker-267: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:23:39,535 [Worker-267: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:23:50,634 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:23:50,635 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:23:50,635 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:23:50,635 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:23:56,025 [Worker-265: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:23:56,025 [Worker-265: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:23:56,026 [Worker-265: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:23:56,026 [Worker-265: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:24:14,859 [Worker-268: Cleaning all projects] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:24:15,039 [Worker-268: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:24:15,039 [Worker-268: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:24:15,040 [Worker-268: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:24:15,040 [Worker-268: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:24:15,040 [Worker-268: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:24:15,040 [Worker-268: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:24:15,042 [Worker-268: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:24:19,337 [Worker-263: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/diego/Documentos/workspace/AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:24:19,337 [Worker-263: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B jetty:run
+2021-01-23 15:28:14,523 [Worker-265: Cleaning all projects] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:28:14,695 [Worker-265: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:28:14,696 [Worker-265: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:28:14,696 [Worker-265: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:28:14,696 [Worker-265: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:28:14,696 [Worker-265: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:28:14,696 [Worker-265: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:28:14,698 [Worker-265: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:28:17,745 [Worker-265: Launching Executing clean in _home_diego_Documentos_workspace_AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/diego/Documentos/workspace/AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:28:17,745 [Worker-265: Launching Executing clean in _home_diego_Documentos_workspace_AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B clean
+2021-01-23 15:28:18,752 [Worker-266: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:28:18,753 [Worker-266: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:28:18,754 [Worker-266: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:28:18,754 [Worker-266: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:28:18,754 [Worker-266: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:28:18,754 [Worker-266: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:28:18,755 [Worker-266: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:28:20,847 [Worker-268: Launching Executing generate-sources in _home_diego_Documentos_workspace_AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/diego/Documentos/workspace/AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:28:20,847 [Worker-268: Launching Executing generate-sources in _home_diego_Documentos_workspace_AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B generate-sources
+2021-01-23 15:28:25,300 [main] INFO  o.e.m2e.actions.ExecutePomAction - Using existing launch configuration
+2021-01-23 15:28:25,367 [Worker-266: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/diego/Documentos/workspace/AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:28:25,367 [Worker-266: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B jetty:run
+2021-01-23 15:30:37,773 [Worker-263: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:30:37,773 [Worker-263: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:30:37,774 [Worker-263: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:30:37,774 [Worker-263: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:30:44,240 [Worker-257: Cleaning all projects] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:30:44,419 [Worker-263: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:30:44,419 [Worker-263: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:30:44,420 [Worker-263: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:30:44,420 [Worker-263: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:30:44,420 [Worker-263: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:30:44,420 [Worker-263: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:30:44,423 [Worker-263: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:31:07,803 [Worker-266: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:31:07,803 [Worker-266: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:31:07,804 [Worker-266: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:31:07,804 [Worker-266: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:31:11,794 [Worker-257: Cleaning all projects] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:31:11,966 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:31:11,966 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:31:11,967 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:31:11,967 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:31:11,967 [Worker-257: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:31:11,967 [Worker-257: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:31:11,969 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:31:14,969 [Worker-266: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/diego/Documentos/workspace/AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:31:14,969 [Worker-266: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B jetty:run
+2021-01-23 15:32:39,703 [Worker-263: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:32:39,703 [Worker-263: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:32:39,704 [Worker-263: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:32:39,704 [Worker-263: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:32:47,289 [Worker-266: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:32:47,290 [Worker-266: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:32:47,290 [Worker-266: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:32:47,290 [Worker-266: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:32:53,350 [Worker-263: Cleaning all projects] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:32:53,532 [Worker-268: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:32:53,532 [Worker-268: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:32:53,533 [Worker-268: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:32:53,533 [Worker-268: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:32:53,533 [Worker-268: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:32:53,533 [Worker-268: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:32:53,536 [Worker-268: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:32:56,610 [Worker-268: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/diego/Documentos/workspace/AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:32:56,610 [Worker-268: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B jetty:run
+2021-01-23 15:42:10,540 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:42:10,541 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:42:10,541 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:42:10,541 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:42:19,455 [Worker-267: Cleaning all projects] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:42:19,629 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:42:19,630 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:42:19,630 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:42:19,630 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:42:19,631 [Worker-257: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:42:19,631 [Worker-257: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:42:19,633 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:42:21,878 [Worker-257: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/diego/Documentos/workspace/AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:42:21,878 [Worker-257: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B jetty:run
+2021-01-23 15:44:56,492 [Worker-267: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:44:56,492 [Worker-267: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:44:56,492 [Worker-267: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:44:56,492 [Worker-267: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:45:02,583 [Worker-257: Cleaning all projects] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:45:02,756 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:45:02,756 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:45:02,757 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:45:02,758 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:45:02,758 [Worker-257: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:45:02,758 [Worker-257: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:45:02,762 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:45:06,190 [Worker-267: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/diego/Documentos/workspace/AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:45:06,190 [Worker-267: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B jetty:run
+2021-01-23 15:46:14,982 [Worker-269: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:46:14,982 [Worker-269: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:46:14,983 [Worker-269: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:46:14,983 [Worker-269: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:46:23,326 [Worker-263: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:46:23,326 [Worker-263: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:46:23,327 [Worker-263: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:46:23,327 [Worker-263: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:46:36,056 [Worker-269: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:46:36,056 [Worker-269: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:46:36,057 [Worker-269: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:46:36,057 [Worker-269: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:46:48,680 [Worker-263: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:46:48,680 [Worker-263: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:46:48,681 [Worker-263: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:46:48,681 [Worker-263: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:46:56,316 [Worker-265: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:46:56,316 [Worker-265: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:46:56,318 [Worker-265: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:46:56,318 [Worker-265: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:46:59,032 [Worker-270: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:46:59,033 [Worker-270: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:46:59,033 [Worker-270: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:46:59,033 [Worker-270: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:47:04,749 [Worker-269: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:47:04,750 [Worker-269: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:47:04,750 [Worker-269: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:47:04,750 [Worker-269: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:47:11,640 [Worker-265: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:47:11,640 [Worker-265: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:47:11,641 [Worker-265: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:47:11,641 [Worker-265: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:47:14,831 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:47:14,831 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:47:14,832 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:47:14,832 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:47:16,916 [Worker-270: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:47:16,916 [Worker-270: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:47:16,917 [Worker-270: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:47:16,917 [Worker-270: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:47:26,386 [Worker-269: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:47:26,386 [Worker-269: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:47:26,387 [Worker-269: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:47:26,387 [Worker-269: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:47:29,921 [Worker-265: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:47:29,921 [Worker-265: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:47:29,922 [Worker-265: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:47:29,922 [Worker-265: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:47:37,676 [Worker-267: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:47:37,677 [Worker-267: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:47:37,677 [Worker-267: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:47:37,678 [Worker-267: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:47:39,794 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:47:39,794 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-23 15:47:39,794 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-23 15:47:39,794 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-23 15:48:00,254 [Worker-267: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/diego/Documentos/workspace/AlbalatMiguel-Diego-autores-dblp-2-2
+2021-01-23 15:48:00,254 [Worker-267: Launching AlbalatMiguel-Diego-autores-dblp-2-2] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B jetty:run

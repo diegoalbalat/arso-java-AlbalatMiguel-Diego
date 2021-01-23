@@ -41,7 +41,7 @@ public class MongoContext {
     }
 
     public static MongoCollection<Document> getCollection() {
-        return database.getCollection("tareas");
+        return database.getCollection("publicaciones");
     }
 
     public static void close(){

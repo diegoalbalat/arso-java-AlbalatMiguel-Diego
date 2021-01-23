@@ -7,7 +7,6 @@ import graphql.schema.GraphQLSchema;
 import graphql.servlet.SimpleGraphQLServlet;
 import io.leangen.graphql.GraphQLSchemaGenerator;
 
-
 @SuppressWarnings("serial")
 @WebServlet(urlPatterns = "/graphql", loadOnStartup =1)
 public class GraphQLEndpoint extends SimpleGraphQLServlet {

@@ -3,12 +3,13 @@ package repositorio;
 import java.util.List;
 
 import modelo.Publicacion;
+import modelo.PublicacionView;
 
 public interface IPublicacionRepository {
 	
-	public Publicacion guardarPublicacion(Publicacion nueva);
+	public Publicacion guardarPublicacion(String usuario, String autor, String urlAutor, String urlPubliacionDBPL);
 	
-	public List<Publicacion> obtenerPublicacionesByUsuario(String usuario);
+	public List<PublicacionView> obtenerPublicacionesByUsuario(String usuario);
 	
-	public List<Publicacion> obtenerPublicacionesByAutorUrl(String urlAutor);
+	public List<PublicacionView> obtenerPublicacionesByAutorUrl(String urlAutor);
 }

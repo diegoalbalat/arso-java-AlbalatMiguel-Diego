@@ -7,10 +7,12 @@ import java.util.Set;
 
 import org.bson.Document;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mongodb.client.MongoCollection;
 
 import modelo.Publicacion;
+import modelo.PublicacionView;
 
 public class PublicacionRepository implements IPublicacionRepository {
 
@@ -30,6 +32,8 @@ public class PublicacionRepository implements IPublicacionRepository {
 	public PublicacionRepository() {
 		this.publicaciones = MongoContext.getCollection();
 		mapper = new ObjectMapper();
+		mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+
 	}
 
 	public PublicacionRepository(MongoCollection<Document> tareas) {
@@ -38,24 +42,25 @@ public class PublicacionRepository implements IPublicacionRepository {
 	}
 
 	@Override
-	public Publicacion guardarPublicacion(Publicacion nueva) {
-		Document doc = new Document().append("id", nueva.getId()).append("usuario", nueva.getUsuario())
-				.append("autor", nueva.getAutor()).append("urlAutor", nueva.getUrlAutor())
-				.append("urlPubliacionDBPL", nueva.getUrlPubliacionDBPL());
+	public Publicacion guardarPublicacion(String usuario, String autor, String urlAutor, String urlPublicacionDBPL) {
+		Document doc = new Document().append("usuario",usuario )
+				.append("autor", autor).append("urlAutor", urlAutor)
+				.append("urlPublicacionDBPL", urlPublicacionDBPL);
 		publicaciones.insertOne(doc);
-		return nueva;
+		Publicacion publi = mapper.convertValue(doc, Publicacion.class);
+		return publi;
 	}
 
 	@Override
-	public List<Publicacion> obtenerPublicacionesByUsuario(String usuario) {
+	public List<PublicacionView> obtenerPublicacionesByUsuario(String usuario) {
 		Document filtroUsuario = new Document().append("usuario", usuario);
 		Set<String> publicacionesSet= new HashSet<String>();
-		List<Publicacion> result = new LinkedList<Publicacion>();
+		List<PublicacionView> result = new LinkedList<PublicacionView>();
 		for( Document publicacion : publicaciones.find(filtroUsuario)){
 			
-			if (!publicacionesSet.contains((String)publicacion.get("urlPubliacionDBPL"))){
-				publicacionesSet.add((String)publicacion.get("urlPubliacionDBPL"));
-				Publicacion publi = mapper.convertValue(publicacion, Publicacion.class);
+			if (!publicacionesSet.contains((String)publicacion.get("urlPublicacionDBPL"))){
+				publicacionesSet.add((String)publicacion.get("urlPublicacionDBPL"));
+				PublicacionView publi = mapper.convertValue(publicacion, PublicacionView.class);
 				result.add(publi);
 			}
 		}
@@ -64,15 +69,15 @@ public class PublicacionRepository implements IPublicacionRepository {
 	}
 
 	@Override
-	public List<Publicacion> obtenerPublicacionesByAutorUrl(String urlAutor) {
+	public List<PublicacionView> obtenerPublicacionesByAutorUrl(String urlAutor) {
 		Document filtroAutor = new Document().append("urlAutor", urlAutor);
 		Set<String> publicacionesSet= new HashSet<String>();
-		List<Publicacion> result = new LinkedList<Publicacion>();
+		List<PublicacionView> result = new LinkedList<PublicacionView>();
 		for( Document publicacion : publicaciones.find(filtroAutor)){
 			
-			if (!publicacionesSet.contains((String)publicacion.get("urlPubliacionDBPL"))){
-				publicacionesSet.add((String)publicacion.get("urlPubliacionDBPL"));
-				Publicacion publi = mapper.convertValue(publicacion, Publicacion.class);
+			if (!publicacionesSet.contains((String)publicacion.get("urlPublicacionDBPL"))){
+				publicacionesSet.add((String)publicacion.get("urlPublicacionDBPL"));
+				PublicacionView publi = mapper.convertValue(publicacion, PublicacionView.class);
 				result.add(publi);
 			}
 		}

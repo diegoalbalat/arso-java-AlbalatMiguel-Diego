@@ -1,27 +1,22 @@
-type Publicacion {
-  usuario: String!
-  autor: String!
-  autorUrl: String!
-  urlPubliacionDBPL: String!
-}
-type PublicacionReturnView {
-  autor: String!
-  autorUrl: String!
-  urlPubliacionDBPL: String!
-}
-
-type Query {
-  obtenerPubliacionesUsuario[PublicacionReturnView]
-  obtenerPublicacionesAutor[PublicacionReturnView]
-}
-
-type Mutation {
-  registrarPublicación(publicacion: Publicacion)
-  
-}
-
 schema {
   query: Query
   mutation: Mutation
 }
+
+type Publicacion {
+  autor: String!
+  autorUrl: String!
+  urlPublicacionDBPL: String!
+}
+
+type Query {
+  obtenerPublicacionesByUsuario(usuario : String!) : [Publicacion]
+  obtenerPublicacionesByAutor(urlAutor : String!) : [Publicacion]
+}
+
+type Mutation {
+  registrarPublicacion(usuario: String!, autor : String!, urlAutor: String!, urlPublicacionDBPL: String!):Publicacion
+}
+
+
 
