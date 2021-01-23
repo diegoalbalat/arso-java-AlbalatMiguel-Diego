@@ -26,7 +26,7 @@ public class MongoContext {
     private void init() throws UnknownHostException {
         MongoClientURI uri = new MongoClientURI("mongodb://arsoalbalat:arsoalbalat@cluster0-shard-00-00-tdlfv.azure.mongodb.net:27017,cluster0-shard-00-01-tdlfv.azure.mongodb.net:27017,cluster0-shard-00-02-tdlfv.azure.mongodb.net:27017/dblp?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority");
         client = new MongoClient(uri);
-        database = client.getDatabase("user");
+        database = client.getDatabase("dblp");
     }
     public static MongoContext get(){
         return ctx;

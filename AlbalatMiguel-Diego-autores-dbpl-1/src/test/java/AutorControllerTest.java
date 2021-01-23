@@ -46,6 +46,7 @@ public class AutorControllerTest {
 	}
 
 	@Test
+	@Order(1)
 	public void findAutoresReturnOutputTest() {
 		try {
 			autores = controlador.findAutores(autorSearch2);
@@ -56,6 +57,7 @@ public class AutorControllerTest {
 	}
 
 	@Test
+	@Order(2)
 	public void findAutoresReturnCorrectOutput2Test() {
 		try {
 			autores = controlador.findAutores("fhwohgfiwhugheoughwuoghcqejifhincqp");
@@ -66,6 +68,7 @@ public class AutorControllerTest {
 	}
 
 	@Test
+	@Order(3)
 	public void findAutoresReturnCorrectOutputTest() {
 		try {
 			autores = controlador.findAutores(autorSearch);
@@ -76,7 +79,7 @@ public class AutorControllerTest {
 	}
 
 	@Test
-	@Order(1)
+	@Order(4)
 	public void findInfoAutorTest() {
 		try {
 			infoAutor = controlador.findInformacion(bernersUrl);
@@ -87,7 +90,7 @@ public class AutorControllerTest {
 	}
 
 	@Test
-	@Order(2)
+	@Order(5)
 	public void infoAutorDBPLTest() {
 		boolean nombreCompleto = infoAutor.getNombreCompleto().equals("Tim Berners-Lee");
 		boolean afiliacion = infoAutor.getAfiliacion().getAfiliacionPrimaria()
@@ -101,7 +104,7 @@ public class AutorControllerTest {
 	}
 
 	@Test
-	@Order(3)
+	@Order(6)
 	public void findInfoAutorGBTest() {
 		Libro libro = infoAutor.getLibros().get(1);
 		boolean librosCount = infoAutor.getLibros().size() == 80;
@@ -117,7 +120,7 @@ public class AutorControllerTest {
 	}
 
 	@Test
-	@Order(4)
+	@Order(7)
 	public void findInfoAutorDBPediaTest() {
 		InformacionPersonal iPersonal = infoAutor.getInformacionPersonal();
 		boolean fechaNacimiento = new SimpleDateFormat("yyyy-MM-dd")
@@ -129,7 +132,7 @@ public class AutorControllerTest {
 	}
 
 	@Test
-	@Order(5)
+	@Order(8)
 	public void crearFavoritosTest() {
 
 		try {
@@ -142,7 +145,7 @@ public class AutorControllerTest {
 	}
 
 	@Test
-	@Order(6)
+	@Order(9)
 	public void getFavoritosTest() {
 		try {
 			favoritos = controlador.findFavoritos(idFavoritos);
@@ -154,7 +157,7 @@ public class AutorControllerTest {
 	}
 
 	@Test
-	@Order(7)
+	@Order(10)
 	public void dontGetFavoritosTest() {
 		try {
 			favoritos = controlador.findFavoritos("363465345343643643663434643");
@@ -165,7 +168,7 @@ public class AutorControllerTest {
 	}
 
 	@Test
-	@Order(8)
+	@Order(11)
 	public void addAutorFavoritos() {
 		try {
 			favoritos = controlador.addAutorFavoritos(idFavoritos, "http://unaurl.com");
@@ -176,7 +179,7 @@ public class AutorControllerTest {
 	}
 
 	@Test
-	@Order(9)
+	@Order(12)
 	public void addAutorWrongIdFavoritos() {
 		try {
 			favoritos = controlador.addAutorFavoritos("UFWHUOFHEU", "http://unaurl.com");
@@ -188,7 +191,7 @@ public class AutorControllerTest {
 	}
 
 	@Test
-	@Order(10)
+	@Order(13)
 	public void deleteAutorFavoritos() {
 		boolean status = false;
 		try {
@@ -200,7 +203,7 @@ public class AutorControllerTest {
 	}
 
 	@Test
-	@Order(11)
+	@Order(14)
 	public void deleteAutorNoExistenteFavoritos() {
 		boolean status = false;
 		try {
@@ -212,7 +215,7 @@ public class AutorControllerTest {
 	}
 
 	@Test
-	@Order(12)
+	@Order(15)
 	public void deleteBBDDTest() {
 		boolean status = false;
 		try {

@@ -2,7 +2,6 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="java.net.URL"/>
     <fullyQualifiedTypeName name="java.io.InputStream"/>
-    <fullyQualifiedTypeName name="controller.AutoresController"/>
     <fullyQualifiedTypeName name="controller.AutoresControllerImpl"/>
     <fullyQualifiedTypeName name="modelo.Autores"/>
     <fullyQualifiedTypeName name="javax.xml.xpath.XPathExpression"/>
@@ -13,12 +12,35 @@
     <fullyQualifiedTypeName name="java.math.BigInteger"/>
     <fullyQualifiedTypeName name="javax.xml.xpath.XPathExpressionException"/>
     <fullyQualifiedTypeName name="java.util.Iterator"/>
-    <fullyQualifiedTypeName name="org.w3c.dom.Node"/>
     <fullyQualifiedTypeName name="commons.EspacioNombresDBLP"/>
     <fullyQualifiedTypeName name="modelo.TipoAfiliacion"/>
     <fullyQualifiedTypeName name="modelo.PaginasAsociadas"/>
-    <fullyQualifiedTypeName name="modelo.InformacionAutor"/>
     <fullyQualifiedTypeName name="java.util.ListIterator"/>
-    <fullyQualifiedTypeName name="modelo.Favoritos"/>
     <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="org.w3c.dom.Node"/>
+    <fullyQualifiedTypeName name="modelo.Libro"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="org.apache.commons.lang3.StringUtils"/>
+    <fullyQualifiedTypeName name="javax.json.JsonReader"/>
+    <fullyQualifiedTypeName name="java.io.StringReader"/>
+    <fullyQualifiedTypeName name="javax.json.Json"/>
+    <fullyQualifiedTypeName name="controller.AutoresController"/>
+    <fullyQualifiedTypeName name="modelo.InformacionAutor"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.Test"/>
+    <fullyQualifiedTypeName name="org.junit.Before"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.BeforeAll"/>
+    <fullyQualifiedTypeName name="org.junit.runner.RunWith"/>
+    <fullyQualifiedTypeName name="modelo.InformacionPersonal"/>
+    <fullyQualifiedTypeName name="modelo.Favoritos"/>
+    <fullyQualifiedTypeName name="controlador.AnotadorController"/>
+    <fullyQualifiedTypeName name="java.io.Serializable"/>
+    <fullyQualifiedTypeName name="java.lang.Object"/>
+    <fullyQualifiedTypeName name="org.bson.types.ObjectId"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="io.leangen.graphql.annotations.GraphQLArgument"/>
+    <fullyQualifiedTypeName name="repositorio.PublicacionRepository"/>
+    <fullyQualifiedTypeName name="modelo.Publicacion"/>
+    <fullyQualifiedTypeName name="controlador.AnotadorControllerImpl"/>
+    <fullyQualifiedTypeName name="repositorio.IPublicacionRepository"/>
+    <fullyQualifiedTypeName name="io.leangen.graphql.annotations.GraphQLMutation"/>
 </qualifiedTypeNameHistroy>

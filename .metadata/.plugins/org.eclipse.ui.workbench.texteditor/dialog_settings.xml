@@ -6,8 +6,16 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="contexto"/>
+		<item key="selection" value="obtenerArbolAutores"/>
 		<list key="findhistory">
+			<item value="obtenerArbolAutores"/>
+			<item value="system"/>
+			<item value="infoAutor"/>
+			<item value="libros"/>
+			<item value="setInformacionPe"/>
+			<item value="infoAutor.getInformacionPeronsal()"/>
+			<item value="Date"/>
+			<item value="generated"/>
 			<item value="contexto"/>
 			<item value="libro"/>
 			<item value="librosCreados"/>
@@ -16,11 +24,13 @@
 			<item value="autor"/>
 		</list>
 		<list key="replacehistory">
+			<item value="infoPersonal"/>
+			<item value="modelo"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="1124"/>
-		<item key="DIALOG_Y_ORIGIN" value="267"/>
+		<item key="DIALOG_X_ORIGIN" value="1109"/>
+		<item key="DIALOG_Y_ORIGIN" value="409"/>
 		<item key="DIALOG_WIDTH" value="352"/>
 		<item key="DIALOG_HEIGHT" value="424"/>
 		<item key="DIALOG_FONT_NAME" value="1|Noto Sans|10.0|0|GTK|1|"/>
