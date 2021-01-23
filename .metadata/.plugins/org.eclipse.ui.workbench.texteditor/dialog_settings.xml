@@ -6,8 +6,12 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="obtenerArbolAutores"/>
+		<item key="selection" value="u"/>
 		<list key="findhistory">
+			<item value="usu"/>
+			<item value="u"/>
+			<item value="usa"/>
+			<item value="usario"/>
 			<item value="obtenerArbolAutores"/>
 			<item value="system"/>
 			<item value="infoAutor"/>
@@ -19,9 +23,6 @@
 			<item value="contexto"/>
 			<item value="libro"/>
 			<item value="librosCreados"/>
-			<item value="nodeList"/>
-			<item value="nodeListHit"/>
-			<item value="autor"/>
 		</list>
 		<list key="replacehistory">
 			<item value="infoPersonal"/>
