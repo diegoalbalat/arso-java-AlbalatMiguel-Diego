@@ -8,7 +8,6 @@ import java.math.BigInteger;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.ListIterator;
@@ -57,21 +56,25 @@ public class AutoresControllerImpl implements AutoresController {
 	public final static String DBPEDIA_JSON = ".json";
 
 	@Override
-	public Autores findAutores(String autor) {
+	public Autores findAutores(String autor) throws AutorException {
 		Autores autores = new Autores();
 		// Realizar petición a DBLP
 		String response = makeRequest(DBLP_URL + DBLP_FIND_ENDPOINT + autor);
 		if (!response.isEmpty()) {
-			obtenerArbolAutores(autores, response);
+			try {
+				obtenerArbolAutores(autores, response);
+			} catch (XPathExpressionException e) {
+				throw new AutorException("Error al recorrer la respuesta con XPATH");
+			}
 		} else {
-			// No hay resultados, definir compartamiento
+			throw new AutorException("Error al realizar la petición al servicio DBLP");
 		}
 
 		return autores;
 	}
 
 	@Override
-	public InformacionAutor findInformacion(String urlAutor) {
+	public InformacionAutor findInformacion(String urlAutor) throws AutorException {
 		InformacionAutor infoAutor = new InformacionAutor();
 		JAXBContext contexto;
 		Pattern pattern = Pattern.compile("pid\\/(.*)");
@@ -83,22 +86,32 @@ public class AutoresControllerImpl implements AutoresController {
 
 			// Solicitar fichero rdf de DBLP
 			String response = makeRequest(urlAutor + DBLP_RDF);
-
-			getDblpInformation(infoAutor, response);
-			// Solicitar ifnormación de Google Books
-			getGBInformation(infoAutor);
-
-			// SOlicitar informacion JSON
-			getDBPediaInformation(infoAutor);
-			// Guardar autor en XML
-			try {
-				contexto = JAXBContext.newInstance(InformacionAutor.class);
-				Marshaller marshaller = contexto.createMarshaller();
-				marshaller.setProperty("jaxb.formatted.output", true);
-				marshaller.setProperty("jaxb.schemaLocation", "autor.xsd");
-				marshaller.marshal(infoAutor, autorFile);
-			} catch (JAXBException e) {
-				e.printStackTrace();
+			if (response != null && !response.isEmpty()) {
+				try {
+					
+						getDblpInformation(infoAutor, response);
+					
+				} catch (XPathExpressionException e1) {
+					throw new AutorException("Error al recorrer la respuesta con XPATH");
+				}
+				// Solicitar ifnormación de Google Books
+				getGBInformation(infoAutor);
+	
+				// Solicitar informacion JSON
+				getDBPediaInformation(infoAutor);
+				// Guardar autor en XML
+				try {
+					contexto = JAXBContext.newInstance(InformacionAutor.class);
+					Marshaller marshaller = contexto.createMarshaller();
+					marshaller.setProperty("jaxb.formatted.output", true);
+					marshaller.setProperty("jaxb.schemaLocation", "autor.xsd");
+					marshaller.marshal(infoAutor, autorFile);
+				} catch (JAXBException e) {
+					throw new AutorException("Error al guardar la información del autor con url" + urlAutor);
+				}
+			}
+			else {
+				return null;
 			}
 		} else {
 			try {
@@ -106,90 +119,93 @@ public class AutoresControllerImpl implements AutoresController {
 				Unmarshaller unmarshaller = contexto.createUnmarshaller();
 				infoAutor = (InformacionAutor) unmarshaller.unmarshal(autorFile);
 			} catch (JAXBException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				throw new AutorException("Error al cargar la información del autor con url" + urlAutor);
 			}
 		}
-		// Devolver autor
-
+		// Devolver informacion autor
 		return infoAutor;
 	}
 
-	private void getDblpInformation(InformacionAutor infoAutor, String response) {
-		try {
-			Document doc = (Document) Utils.convertStringToXMLDocument(response);
-			XPathFactory factoria = XPathFactory.newInstance();
-			XPath xpath = factoria.newXPath();
-			// xpath.setNamespaceContext(new EspacioNombresDBLP());
-			XPathExpression consulta;
-			NodeList resultado;
-			Element element;
-			consulta = xpath.compile("/RDF/Person/primaryFullCreatorName");
+	private void getDblpInformation(InformacionAutor infoAutor, String response) throws XPathExpressionException {
+		Document doc = (Document) Utils.convertStringToXMLDocument(response);
+		XPathFactory factoria = XPathFactory.newInstance();
+		XPath xpath = factoria.newXPath();
+		// xpath.setNamespaceContext(new EspacioNombresDBLP());
+		XPathExpression consulta;
+		NodeList resultado;
+		Element element;
+		consulta = xpath.compile("/RDF/Person/primaryFullCreatorName");
 
-			// Extraer el nombre completo del autor
-			resultado = (NodeList) consulta.evaluate(doc, XPathConstants.NODESET);
-			if (resultado.item(0) != null) {
-				infoAutor.setNombreCompleto(resultado.item(0).getTextContent());
-			}
-
-			// Establecer afiliación primaria
-			consulta = xpath.compile("/RDF/Person/primaryAffiliation");
-			resultado = (NodeList) consulta.evaluate(doc, XPathConstants.NODESET);
-			TipoAfiliacion tipoAfiliacion = new TipoAfiliacion();
-			if (resultado.item(0) != null) {
-				tipoAfiliacion.setAfiliacionPrimaria(resultado.item(0).getTextContent());
-			}
-			// Establecer afiliaciones secundarias
-			consulta = xpath.compile("/RDF/Person/otherAffiliation");
-			resultado = (NodeList) consulta.evaluate(doc, XPathConstants.NODESET);
-			for (int i = 0; i < resultado.getLength(); i++) {
-				element = (Element) resultado.item(i);
-				tipoAfiliacion.getAfiliacionSecundaria().add(element.getTextContent());
-			}
-
-			// Establecer pagina de premios primaria
-			consulta = xpath.compile("/RDF/Person/awardWebpage");
-			resultado = (NodeList) consulta.evaluate(doc, XPathConstants.NODESET);
-			for (int i = 0; i < resultado.getLength(); i++) {
-				element = (Element) resultado.item(i);
-				infoAutor.getPaginasPremios().add(element.getAttribute("rdf:resource"));
-			}
-
-			// Establecer pagina principal
-			consulta = xpath.compile("/RDF/Person/primaryHomepage");
-			resultado = (NodeList) consulta.evaluate(doc, XPathConstants.NODESET);
-			PaginasAsociadas paginas = new PaginasAsociadas();
-			if (resultado.item(0) != null) {
-				paginas.setPaginaPrincipal(((Element) resultado.item(0)).getAttribute("rdf:resource"));
-			}
-			// Establecer paginas secundarias
-			consulta = xpath.compile("/RDF/Person/webpage");
-			resultado = (NodeList) consulta.evaluate(doc, XPathConstants.NODESET);
-			for (int i = 0; i < resultado.getLength(); i++) {
-				element = (Element) resultado.item(i);
-				paginas.getPaginasSecundaria().add(element.getAttribute("rdf:resource"));
-			}
-
-			// Establecer libros de los cuales es el autor principal
-			consulta = xpath.compile("/RDF/Person/authorOf");
-			resultado = (NodeList) consulta.evaluate(doc, XPathConstants.NODESET);
-			for (int i = 0; i < resultado.getLength(); i++) {
-				element = (Element) resultado.item(i);
-				infoAutor.getArticulosAutor().add(element.getAttribute("rdf:resource"));
-			}
-
-			// idAutor;
-			consulta = xpath.compile("/RDF/Person/P2456");
-			resultado = (NodeList) consulta.evaluate(doc, XPathConstants.NODESET);
-			if (resultado.item(0) != null) {
-				infoAutor.setIdAutor(BigInteger.valueOf(Math.abs(resultado.item(0).getTextContent().hashCode())));
-			}
-
-			infoAutor.setAfiliacion(tipoAfiliacion);
-			infoAutor.setPaginas(paginas);
-		} catch (Exception e) {
-			e.printStackTrace();
+		// Extraer el nombre completo del autor
+		resultado = (NodeList) consulta.evaluate(doc, XPathConstants.NODESET);
+		if (resultado.item(0) != null) {
+			infoAutor.setNombreCompleto(resultado.item(0).getTextContent());
 		}
+
+		// Establecer afiliación primaria
+		consulta = xpath.compile("/RDF/Person/primaryAffiliation");
+		resultado = (NodeList) consulta.evaluate(doc, XPathConstants.NODESET);
+		TipoAfiliacion tipoAfiliacion = new TipoAfiliacion();
+		if (resultado.item(0) != null) {
+			tipoAfiliacion.setAfiliacionPrimaria(resultado.item(0).getTextContent());
+		}
+		// Establecer afiliaciones secundarias
+		consulta = xpath.compile("/RDF/Person/otherAffiliation");
+		resultado = (NodeList) consulta.evaluate(doc, XPathConstants.NODESET);
+		for (int i = 0; i < resultado.getLength(); i++) {
+			element = (Element) resultado.item(i);
+			tipoAfiliacion.getAfiliacionSecundaria().add(element.getTextContent());
+		}
+
+		// Establecer pagina de premios primaria
+		consulta = xpath.compile("/RDF/Person/awardWebpage");
+		resultado = (NodeList) consulta.evaluate(doc, XPathConstants.NODESET);
+		for (int i = 0; i < resultado.getLength(); i++) {
+			element = (Element) resultado.item(i);
+			infoAutor.getPaginasPremios().add(element.getAttribute("rdf:resource"));
+		}
+
+		// Establecer pagina principal
+		consulta = xpath.compile("/RDF/Person/primaryHomepage");
+		resultado = (NodeList) consulta.evaluate(doc, XPathConstants.NODESET);
+		PaginasAsociadas paginas = new PaginasAsociadas();
+		if (resultado.item(0) != null) {
+			paginas.setPaginaPrincipal(((Element) resultado.item(0)).getAttribute("rdf:resource"));
+		}
+		// Establecer paginas secundarias
+		consulta = xpath.compile("/RDF/Person/webpage");
+		resultado = (NodeList) consulta.evaluate(doc, XPathConstants.NODESET);
+		for (int i = 0; i < resultado.getLength(); i++) {
+			element = (Element) resultado.item(i);
+			paginas.getPaginasSecundaria().add(element.getAttribute("rdf:resource"));
+		}
+
+		// Establecer libros de los cuales es el autor principal
+		consulta = xpath.compile("/RDF/Person/authorOf");
+		resultado = (NodeList) consulta.evaluate(doc, XPathConstants.NODESET);
+		for (int i = 0; i < resultado.getLength(); i++) {
+			element = (Element) resultado.item(i);
+			infoAutor.getArticulosAutor().add(element.getAttribute("rdf:resource"));
+		}
+		
+		// Establecer libros de los cuales es el editor
+		consulta = xpath.compile("/RDF/Person/editorOf");
+		resultado = (NodeList) consulta.evaluate(doc, XPathConstants.NODESET);
+		for (int i = 0; i < resultado.getLength(); i++) {
+			element = (Element) resultado.item(i);
+			infoAutor.getArticulosEditor().add(element.getAttribute("rdf:resource"));
+		}
+
+		// idAutor;
+		consulta = xpath.compile("/RDF/Person/P2456");
+		resultado = (NodeList) consulta.evaluate(doc, XPathConstants.NODESET);
+		if (resultado.item(0) != null) {
+			infoAutor.setIdAutor(BigInteger.valueOf(Math.abs(resultado.item(0).getTextContent().hashCode())));
+		}
+
+		infoAutor.setAfiliacion(tipoAfiliacion);
+		infoAutor.setPaginas(paginas);
+
 	}
 
 	private void getGBInformation(InformacionAutor infoAutor) {
@@ -200,84 +216,87 @@ public class AutoresControllerImpl implements AutoresController {
 		boolean pendientes = false;
 		do {
 			response = makeRequest(url);
-			Document doc = Utils.convertStringToXMLDocument(response);
-			
-			NodeList nodeList = doc.getElementsByTagName("link");
-			Element element;
-			int index;
-			for (index = 0; index < nodeList.getLength(); index++) {
-				element = (Element) nodeList.item(index);
-				if (element.getNodeType() == Node.ELEMENT_NODE) {
-					if (element.getAttribute("rel").equals("next")) {
-						pendientes = true;
-						url = element.getAttribute("href");
-						break;
+			if (response != null && !response.isEmpty()) {
+				Document doc = Utils.convertStringToXMLDocument(response);
+
+				NodeList nodeList = doc.getElementsByTagName("link");
+				Element element;
+				int index;
+				for (index = 0; index < nodeList.getLength(); index++) {
+					element = (Element) nodeList.item(index);
+					if (element.getNodeType() == Node.ELEMENT_NODE) {
+						if (element.getAttribute("rel").equals("next")) {
+							pendientes = true;
+							url = element.getAttribute("href");
+							break;
+						}
 					}
 				}
-			}
-			if (index == nodeList.getLength()) {
-				pendientes = false;
-			}
-			
-			NodeList nodeLibroList = doc.getElementsByTagName("entry");
-			for (int i = 0; i < nodeLibroList.getLength(); i++) {
-				Libro entrada = new Libro();
-
-				Element libroElement = (Element) nodeLibroList.item(i);
-				// Recuperamos el id del libro (url)
-				nodeList = libroElement.getElementsByTagName("id");
-				element = (Element) nodeList.item(0);
-				if (element != null) {
-					entrada.setId(element.getTextContent());
-				}
-				// Recuperamos el titulo del libro
-				nodeList = libroElement.getElementsByTagName("title");
-				element = (Element) nodeList.item(0);
-				if (element != null) {
-					entrada.setTitulo(element.getTextContent());
+				if (index == nodeList.getLength()) {
+					pendientes = false;
 				}
 
-				// Recuperamos la fecha de publicacion
-				nodeList = libroElement.getElementsByTagName("dc:date");
-				element = (Element) nodeList.item(0);
-				if (element != null) {
-					Date date = Utils.dateFromString(element.getTextContent());
-					entrada.setFecha(Utils.createFecha(date));
-				}
+				NodeList nodeLibroList = doc.getElementsByTagName("entry");
+				for (int i = 0; i < nodeLibroList.getLength(); i++) {
+					Libro entrada = new Libro();
 
-				// Recogemos la descripcion del libro
-				nodeList = libroElement.getElementsByTagName("dc:description");
-				element = (Element) nodeList.item(0);
-				if (element != null) {
-					entrada.setDescripcion(element.getTextContent());
-				}
-
-				// Recuperamos el idioma del libro
-				nodeList = libroElement.getElementsByTagName("dc:language");
-				element = (Element) nodeList.item(0);
-				if (element != null) {
-					entrada.setIdioma(element.getTextContent().toUpperCase());
-				}
-
-				// Recuperamos los identificadores (ISBN)
-				nodeList = libroElement.getElementsByTagName("dc:identifier");
-				for (int j = 0; j < nodeList.getLength(); j++) {
-					element = (Element) nodeList.item(j);
-					entrada.getIsbn().add(element.getTextContent());
-				}
-
-				// Recuperamos el numero de paginas del libro
-				nodeList = libroElement.getElementsByTagName("dc:format");
-				for (int j = 0; j < nodeList.getLength(); j++) {
-					element = (Element) nodeList.item(j);
-					if (element.getTextContent().endsWith(" pages")) {
-						entrada.setPaginas(new BigInteger(StringUtils.substringBefore(element.getTextContent(), " ")));
+					Element libroElement = (Element) nodeLibroList.item(i);
+					// Recuperamos el id del libro (url)
+					nodeList = libroElement.getElementsByTagName("id");
+					element = (Element) nodeList.item(0);
+					if (element != null) {
+						entrada.setId(element.getTextContent());
+					}
+					// Recuperamos el titulo del libro
+					nodeList = libroElement.getElementsByTagName("title");
+					element = (Element) nodeList.item(0);
+					if (element != null) {
+						entrada.setTitulo(element.getTextContent());
 					}
 
-				}
+					// Recuperamos la fecha de publicacion
+					nodeList = libroElement.getElementsByTagName("dc:date");
+					element = (Element) nodeList.item(0);
+					if (element != null) {
+						Date date = Utils.dateFromString(element.getTextContent());
+						entrada.setFecha(Utils.createFecha(date));
+					}
 
-				// Se añade la entrada a la lista de libros del autor
-				infoAutor.getLibros().add(entrada);
+					// Recogemos la descripcion del libro
+					nodeList = libroElement.getElementsByTagName("dc:description");
+					element = (Element) nodeList.item(0);
+					if (element != null) {
+						entrada.setDescripcion(element.getTextContent());
+					}
+
+					// Recuperamos el idioma del libro
+					nodeList = libroElement.getElementsByTagName("dc:language");
+					element = (Element) nodeList.item(0);
+					if (element != null) {
+						entrada.setIdioma(element.getTextContent().toUpperCase());
+					}
+
+					// Recuperamos los identificadores (ISBN)
+					nodeList = libroElement.getElementsByTagName("dc:identifier");
+					for (int j = 0; j < nodeList.getLength(); j++) {
+						element = (Element) nodeList.item(j);
+						entrada.getIsbn().add(element.getTextContent());
+					}
+
+					// Recuperamos el numero de paginas del libro
+					nodeList = libroElement.getElementsByTagName("dc:format");
+					for (int j = 0; j < nodeList.getLength(); j++) {
+						element = (Element) nodeList.item(j);
+						if (element.getTextContent().endsWith(" pages")) {
+							entrada.setPaginas(
+									new BigInteger(StringUtils.substringBefore(element.getTextContent(), " ")));
+						}
+
+					}
+
+					// Se añade la entrada a la lista de libros del autor
+					infoAutor.getLibros().add(entrada);
+				}
 			}
 		} while (pendientes == true);
 
@@ -287,7 +306,8 @@ public class AutoresControllerImpl implements AutoresController {
 		String response;
 		String url = "";
 		String autor;
-		// Puesto que no todos los nombres se puede tratar igual, buscamos el enlace de la wikipedia para sacar el nombre
+		// Puesto que no todos los nombres se puede tratar igual, buscamos el enlace de
+		// la wikipedia para sacar el nombre
 		// adecuado a para realizar la busqueda en dbpedia
 		List<String> paginas = infoAutor.getPaginas().getPaginasSecundaria();
 		if (paginas.size() != 0) {
@@ -347,7 +367,7 @@ public class AutoresControllerImpl implements AutoresController {
 		}
 	}
 
-	private void obtenerArbolAutores(Autores autores, String response) {
+	private void obtenerArbolAutores(Autores autores, String response) throws XPathExpressionException {
 		Document doc = Utils.convertStringToXMLDocument(response);
 		XPathFactory factoria = XPathFactory.newInstance();
 		XPath xpath = factoria.newXPath();
@@ -356,34 +376,28 @@ public class AutoresControllerImpl implements AutoresController {
 		Element element;
 
 		// Generar arbol de objectos JAXB procesando la respuesta
-		try {
-			consulta = xpath.compile("//hit");
-			// Obtenemos todos los resultados obtenidos
-			resultado = (NodeList) consulta.evaluate(doc, XPathConstants.NODESET);
-			System.out.println(resultado.toString());
-			Autor autorTemp = new Autor();
-			for (int i = 0; i < resultado.getLength(); i++) {
-				autorTemp = new Autor();
-				// Seleccionamos un resultado
-				element = (Element) resultado.item(i);
+		consulta = xpath.compile("//hit");
+		// Obtenemos todos los resultados obtenidos
+		resultado = (NodeList) consulta.evaluate(doc, XPathConstants.NODESET);
+		Autor autorTemp = new Autor();
+		for (int i = 0; i < resultado.getLength(); i++) {
+			autorTemp = new Autor();
+			// Seleccionamos un resultado
+			element = (Element) resultado.item(i);
 
-				// Recogemos el id del resultado
-				autorTemp.setId(new BigInteger(element.getAttribute("id")));
+			// Recogemos el id del resultado
+			autorTemp.setId(new BigInteger(element.getAttribute("id")));
 
-				// Recogemos el nombre del autor
-				element = (Element) element.getElementsByTagName("info").item(0);
-				autorTemp.setNombre(element.getElementsByTagName("author").item(0).getTextContent());
+			// Recogemos el nombre del autor
+			element = (Element) element.getElementsByTagName("info").item(0);
+			autorTemp.setNombre(element.getElementsByTagName("author").item(0).getTextContent());
 
-				// Recogemos la url del autor
-				autorTemp.setUrl(element.getElementsByTagName("url").item(0).getTextContent());
+			// Recogemos la url del autor
+			autorTemp.setUrl(element.getElementsByTagName("url").item(0).getTextContent());
 
-				// Añadimos el resultado a la lista de autores
-				autores.getAutor().add(autorTemp);
+			// Añadimos el resultado a la lista de autores
+			autores.getAutor().add(autorTemp);
 
-			}
-
-		} catch (XPathExpressionException e) {
-			e.printStackTrace();
 		}
 	}
 
@@ -407,7 +421,7 @@ public class AutoresControllerImpl implements AutoresController {
 	}
 
 	@Override
-	public String crearFavoritos() {
+	public String crearFavoritos() throws AutorException {
 		// Se genera un identificador para el documento
 		String id = Utils.createId();
 		// Se crea el fichero si no existe ya
@@ -422,8 +436,7 @@ public class AutoresControllerImpl implements AutoresController {
 				marshaller.setProperty("jaxb.schemaLocation", "docFavoritos.xsd");
 				marshaller.marshal(favoritos, docFavoritos);
 			} catch (JAXBException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				throw new AutorException("Error al guardar el fichero de favoritos");
 			}
 			return id;
 		}
@@ -435,7 +448,7 @@ public class AutoresControllerImpl implements AutoresController {
 	}
 
 	@Override
-	public Favoritos findFavoritos(String identificador) {
+	public Favoritos findFavoritos(String identificador) throws AutorException {
 		// Obtenemos el fichero y comprobamos que exista
 		File docFavoritos = new File("xml/favoritos" + identificador + ".xml");
 		if (docFavoritos.exists()) {
@@ -449,7 +462,7 @@ public class AutoresControllerImpl implements AutoresController {
 				favoritos = (Favoritos) unmarshaller.unmarshal(docFavoritos);
 
 			} catch (JAXBException e) {
-				e.printStackTrace();
+				throw new AutorException("Error al cargar el fichero de favoritos con id: " + identificador);
 			}
 			return favoritos;
 		}
@@ -459,7 +472,7 @@ public class AutoresControllerImpl implements AutoresController {
 	}
 
 	@Override
-	public boolean deleteAutorFavoritos(String identificador, String urlAutor) {
+	public boolean deleteAutorFavoritos(String identificador, String urlAutor) throws AutorException {
 		File docFavoritos = new File("xml/favoritos" + identificador + ".xml");
 		if (docFavoritos.exists()) {
 			// Realizamos el unmarshalling del fichero en la variable favoritos y lo
@@ -489,15 +502,14 @@ public class AutoresControllerImpl implements AutoresController {
 				}
 				return false;
 			} catch (JAXBException e) {
-				e.printStackTrace();
+				throw new AutorException("Error al guardar el fichero de favoritos");
 			}
-			return true;
 		}
 		return false;
 	}
 
 	@Override
-	public Favoritos addAutorFavoritos(String identificador, String urlAutor) {
+	public Favoritos addAutorFavoritos(String identificador, String urlAutor) throws AutorException {
 		File docFavoritos = new File("xml/favoritos" + identificador + ".xml");
 		if (docFavoritos.exists()) {
 			// Realizamos el unmarshalling del fichero en la variable favoritos y lo
@@ -521,24 +533,31 @@ public class AutoresControllerImpl implements AutoresController {
 				}
 				return favoritos;
 			} catch (JAXBException e) {
-				e.printStackTrace();
+				throw new AutorException("Error al guardar el fichero de favoritos");
 			}
 		}
 		return null;
 	}
 
 	@Override
-	public boolean deleteBBDD() {
+	public boolean deleteBBDD() throws AutorException {
 		// Se obtiene el directorio
-		File folder = new File("/xml");
+		File folder = new File("./xml");
 		try {
-			// Se eliminan los ficheros del directorio que acaben en .xml
-			Arrays.stream(folder.listFiles((f, p) -> p.endsWith(".xml"))).forEach(File::delete);
+			if (folder.listFiles() != null) {
+				// Se eliminan los ficheros del directorio que acaben en .xml
+				for (File f : folder.listFiles()) {
+					if (f.getName().endsWith(".xml")) {
+						f.delete(); // may fail mysteriously - returns boolean you may want to check
+					}
+				}
+			}
 			return true;
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (
+
+		Exception e) {
+			throw new AutorException("Error al eliminar los ficheros xml de la BBDD");
 		}
-		return false;
 	}
 
 }

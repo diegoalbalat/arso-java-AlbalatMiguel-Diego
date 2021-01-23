@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.1 
 // Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2021.01.23 a las 02:00:59 AM CET 
+// Generado el: 2021.01.23 a las 12:39:51 PM CET 
 //
 
 
@@ -32,7 +32,6 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence&gt;
  *         &lt;element name="nombreCompleto" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="afiliacion" type="{}tipoAfiliacion" minOccurs="0"/&gt;
- *         &lt;element name="premio" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="paginas" type="{}paginasAsociadas" minOccurs="0"/&gt;
  *         &lt;element name="paginasPremios" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="articulosAutor" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/&gt;
@@ -52,7 +51,6 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "", propOrder = {
     "nombreCompleto",
     "afiliacion",
-    "premio",
     "paginas",
     "paginasPremios",
     "articulosAutor",
@@ -66,7 +64,6 @@ public class InformacionAutor {
     @XmlElement(required = true)
     protected String nombreCompleto;
     protected TipoAfiliacion afiliacion;
-    protected List<String> premio;
     protected PaginasAsociadas paginas;
     protected List<String> paginasPremios;
     protected List<String> articulosAutor;
@@ -123,35 +120,6 @@ public class InformacionAutor {
      */
     public void setAfiliacion(TipoAfiliacion value) {
         this.afiliacion = value;
-    }
-
-    /**
-     * Gets the value of the premio property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the premio property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getPremio().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getPremio() {
-        if (premio == null) {
-            premio = new ArrayList<String>();
-        }
-        return this.premio;
     }
 
     /**
