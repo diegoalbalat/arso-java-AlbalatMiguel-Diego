@@ -67,7 +67,7 @@ public class DbplControllerImpl implements IDbplController {
 	}
 
 	@Override
-	public Autores findAutores(String autor) throws DbplException {
+	public Autores findAutores(String autor) throws DbplException, ResourceNotFoundException {
 		Autores autores = new Autores();
 		// Realizar petición a DBLP
 		String response = makeRequest(DBLP_URL + DBLP_FIND_ENDPOINT + autor);
@@ -78,20 +78,20 @@ public class DbplControllerImpl implements IDbplController {
 				throw new DbplException("Error al recorrer la respuesta con XPATH");
 			}
 		} else {
-			throw new DbplException("Error al realizar la petición al servicio DBLP");
+			throw new ResourceNotFoundException("No existe ningún asociado con la busqueda");
 		}
 
 		return autores;
 	}
 
 	@Override
-	public InformacionAutor findInformacion(String urlAutor) throws DbplException {
+	public InformacionAutor findInformacion(String urlAutor) throws DbplException,  ResourceNotFoundException {
 		InformacionAutor infoAutor = new InformacionAutor();
 		JAXBContext contexto;
 		String[] strs = urlAutor.split("/");
 		String nombreAutor = strs[strs.length-1];
 		if(StringUtils.isEmpty(nombreAutor)) {
-			return null;
+			throw new ResourceNotFoundException("No hay ningún autor con la url "+urlAutor);
 		}
 		BigInteger pid = BigInteger.valueOf(Math.abs(nombreAutor.hashCode()));
 		File autorFile = new File("xml/" + pid + ".xml");
@@ -101,15 +101,15 @@ public class DbplControllerImpl implements IDbplController {
 			String response = makeRequest(urlAutor + DBLP_RDF);
 			if (response != null && !response.isEmpty()) {
 				try {
-
-					getDblpInformation(infoAutor, response);
-
+					
+						getDblpInformation(infoAutor, response);
+					
 				} catch (XPathExpressionException e1) {
 					throw new DbplException("Error al recorrer la respuesta con XPATH");
 				}
 				// Solicitar ifnormación de Google Books
 				getGBInformation(infoAutor);
-
+	
 				// Solicitar informacion JSON
 				getDBPediaInformation(infoAutor);
 				// Guardar autor en XML
@@ -122,8 +122,9 @@ public class DbplControllerImpl implements IDbplController {
 				} catch (JAXBException e) {
 					throw new DbplException("Error al guardar la información del autor con url" + urlAutor);
 				}
-			} else {
-				return null;
+			}
+			else {
+				throw new ResourceNotFoundException("Recurso asociada a "+urlAutor+"no encontrado");
 			}
 		} else {
 			try {
@@ -142,7 +143,6 @@ public class DbplControllerImpl implements IDbplController {
 		Document doc = (Document) Utils.convertStringToXMLDocument(response);
 		XPathFactory factoria = XPathFactory.newInstance();
 		XPath xpath = factoria.newXPath();
-		// xpath.setNamespaceContext(new EspacioNombresDBLP());
 		XPathExpression consulta;
 		NodeList resultado;
 		Element element;
@@ -199,7 +199,7 @@ public class DbplControllerImpl implements IDbplController {
 			element = (Element) resultado.item(i);
 			infoAutor.getArticulosAutor().add(element.getAttribute("rdf:resource"));
 		}
-
+		
 		// Establecer libros de los cuales es el editor
 		consulta = xpath.compile("/RDF/Person/editorOf");
 		resultado = (NodeList) consulta.evaluate(doc, XPathConstants.NODESET);
@@ -460,7 +460,7 @@ public class DbplControllerImpl implements IDbplController {
 	}
 
 	@Override
-	public Favoritos findFavoritos(String identificador) throws DbplException {
+	public Favoritos findFavoritos(String identificador) throws DbplException, ResourceNotFoundException {
 		// Obtenemos el fichero y comprobamos que exista
 		File docFavoritos = new File("xml/favoritos" + identificador + ".xml");
 		if (docFavoritos.exists()) {
@@ -478,13 +478,12 @@ public class DbplControllerImpl implements IDbplController {
 			}
 			return favoritos;
 		}
-		// Si no existe el fichero devolvemos nulo (El error se comprobara en los
-		// servicios)
-		return null;
+		throw new ResourceNotFoundException("No existe el documento de favoritos "+identificador);
+
 	}
 
 	@Override
-	public boolean deleteAutorFavoritos(String identificador, String urlAutor) throws DbplException {
+	public boolean deleteAutorFavoritos(String identificador, String urlAutor) throws DbplException, ResourceNotFoundException {
 		File docFavoritos = new File("xml/favoritos" + identificador + ".xml");
 		if (docFavoritos.exists()) {
 			// Realizamos el unmarshalling del fichero en la variable favoritos y lo
@@ -512,16 +511,16 @@ public class DbplControllerImpl implements IDbplController {
 					marshaller.marshal(favoritos, docFavoritos);
 					return true;
 				}
-				return false;
+				throw new ResourceNotFoundException("No se encuentra la url "+urlAutor+" en el documento de favoritos "+ identificador);
 			} catch (JAXBException e) {
 				throw new DbplException("Error al guardar el fichero de favoritos");
 			}
 		}
-		return false;
+		throw new ResourceNotFoundException("No existe el documento de favoritos "+identificador);
 	}
 
 	@Override
-	public Favoritos addAutorFavoritos(String identificador, String urlAutor) throws DbplException {
+	public Favoritos addAutorFavoritos(String identificador, String urlAutor) throws DbplException, ResourceNotFoundException {
 		File docFavoritos = new File("xml/favoritos" + identificador + ".xml");
 		if (docFavoritos.exists()) {
 			// Realizamos el unmarshalling del fichero en la variable favoritos y lo
@@ -540,15 +539,13 @@ public class DbplControllerImpl implements IDbplController {
 					marshaller.setProperty("jaxb.formatted.output", true);
 					marshaller.setProperty("jaxb.schemaLocation", "docFavoritos.xsd");
 					marshaller.marshal(favoritos, docFavoritos);
-				} else {
-					// Ya existe
 				}
 				return favoritos;
 			} catch (JAXBException e) {
-				throw new DbplException("Error al guardar el fichero de favoritos");
+				throw new DbplException("Error al guardar el documento de favoritos");
 			}
 		}
-		return null;
+		throw new ResourceNotFoundException("No existe el documento de favoritos "+identificador);
 	}
 
 	@Override
@@ -560,9 +557,7 @@ public class DbplControllerImpl implements IDbplController {
 				// Se eliminan los ficheros del directorio que acaben en .xml
 				for (File f : folder.listFiles()) {
 					if (f.getName().endsWith(".xml")) {
-						if (f.delete() == false) {
-							return false;
-						}
+						f.delete(); // may fail mysteriously - returns boolean you may want to check
 					}
 				}
 			}
@@ -573,5 +568,4 @@ public class DbplControllerImpl implements IDbplController {
 			throw new DbplException("Error al eliminar los ficheros xml de la BBDD");
 		}
 	}
-
 }

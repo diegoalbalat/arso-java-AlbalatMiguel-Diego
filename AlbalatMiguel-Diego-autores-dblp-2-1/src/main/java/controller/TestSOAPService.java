@@ -11,7 +11,7 @@ import modelo.InformacionAutor;
 
 public class TestSOAPService {
 
-	public static void main(String[] args) throws UnsupportedEncodingException {
+	public static void main(String[] args) throws UnsupportedEncodingException, ResourceNotFoundException, DbplException {
 		DbplWebServiceSOAPImplService servicio = new DbplWebServiceSOAPImplService();
 		DbplWebServiceSOAP puerto = servicio.getDbplWebServiceSOAPImplPort();
 		

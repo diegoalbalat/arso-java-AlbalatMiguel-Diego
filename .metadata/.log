@@ -3596,3 +3596,9 @@ org.eclipse.core.runtime.CoreException: Launch configuration TestSOAPService ref
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
 !SUBENTRY 1 org.eclipse.jdt.launching 4 124 2021-01-24 21:08:47.859
 !MESSAGE Launch configuration TestSOAPService references closed project AlbalatMiguel-Diego-autores-dblp-2-1
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-01-24 22:08:49.413
+!MESSAGE Unknown or unsupported source locator org.eclipse.jdt.internal.launching.sourcelookup.advanced.AdvancedSourceLookupDirector
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-01-24 22:09:53.555
+!MESSAGE Unknown or unsupported source locator org.eclipse.jdt.internal.launching.sourcelookup.advanced.AdvancedSourceLookupDirector

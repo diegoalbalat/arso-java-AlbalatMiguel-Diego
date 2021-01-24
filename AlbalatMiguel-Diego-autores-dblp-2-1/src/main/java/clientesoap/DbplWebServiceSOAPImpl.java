@@ -5,6 +5,7 @@ import javax.jws.WebService;
 import controller.DbplException;
 import controller.DbplControllerImpl;
 import controller.IDbplController;
+import controller.ResourceNotFoundException;
 import modelo.Autores;
 import modelo.Favoritos;
 import modelo.InformacionAutor;
@@ -21,6 +22,9 @@ public class DbplWebServiceSOAPImpl implements DbplWebServiceSOAP {
 			autores = autorController.findAutores(autor);
 		} catch (DbplException e) {
 			e.printStackTrace();
+		} catch (ResourceNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		return autores;
 	}
@@ -31,6 +35,9 @@ public class DbplWebServiceSOAPImpl implements DbplWebServiceSOAP {
 		try {
 			return autorController.findInformacion(urlAutor);
 		} catch (DbplException e) {
+			e.printStackTrace();
+		} catch (ResourceNotFoundException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return infoAutor;
@@ -54,6 +61,9 @@ public class DbplWebServiceSOAPImpl implements DbplWebServiceSOAP {
 			return fav;
 		} catch (DbplException e) {
 			e.printStackTrace();
+		} catch (ResourceNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		return null;
 	}
@@ -65,6 +75,9 @@ public class DbplWebServiceSOAPImpl implements DbplWebServiceSOAP {
 		} catch (DbplException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} catch (ResourceNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		return false;
 	}
@@ -74,6 +87,9 @@ public class DbplWebServiceSOAPImpl implements DbplWebServiceSOAP {
 		try {
 			return autorController.addAutorFavoritos(identificador, urlAutor);
 		} catch (DbplException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ResourceNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

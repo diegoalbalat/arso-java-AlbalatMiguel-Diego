@@ -23,6 +23,7 @@ import org.apache.commons.lang3.StringUtils;
 import controller.DbplException;
 import controller.DbplControllerImpl;
 import controller.IDbplController;
+import controller.ResourceNotFoundException;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -48,8 +49,8 @@ public class DbplRestController {
 	private HttpHeaders headers;
 
 	private IDbplController autorController = DbplControllerImpl.getUnicaInstancia();
-	
-	private IEntidadRespuestaMapperService mapperService= EntidadRespuestaMapperServiceImpl.getUnicaInstancia();
+
+	private IEntidadRespuestaMapperService mapperService = EntidadRespuestaMapperServiceImpl.getUnicaInstancia();
 
 	@GET
 	@Path("/autores")
@@ -76,7 +77,7 @@ public class DbplRestController {
 			builder.queryParam("autor", autor);
 			URI uri = builder.build();
 			if (mediaType.equals("application/xml")) {
-				
+
 				FeedType respuesta = mapperService.autoresToAtom(uri, autores, autor);
 				return Response.ok().entity(respuesta).build();
 			} else {
@@ -86,6 +87,8 @@ public class DbplRestController {
 
 		} catch (DbplException e) {
 			return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
+		} catch (ResourceNotFoundException e) {
+			return Response.status(Response.Status.NOT_FOUND).build();
 		}
 
 	}
@@ -101,14 +104,16 @@ public class DbplRestController {
 			@ApiResponse(code = HttpServletResponse.SC_BAD_REQUEST, message = "No se ha realizado la petición con un formato correcto") })
 	public Response findInformacionAutor(
 			@ApiParam(name = "urlAutor", value = "Url de identificación del autor", required = true) @NotNull @PathParam("urlAutor") String urlAutor) {
+		if(StringUtils.isEmpty(urlAutor)) {
+			return Response.status(Response.Status.BAD_REQUEST).build();
+		}
 		try {
 			InformacionAutor infoAutor = autorController.findInformacion(urlAutor);
-			if (infoAutor == null) {
-				return Response.status(Response.Status.NOT_FOUND).build();
-			}
 			return Response.ok().entity(infoAutor).build();
 		} catch (DbplException e) {
 			return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
+		} catch (ResourceNotFoundException e) {
+			return Response.status(Response.Status.NOT_FOUND).build();
 		}
 	}
 
@@ -143,14 +148,16 @@ public class DbplRestController {
 			@ApiResponse(code = HttpServletResponse.SC_BAD_REQUEST, message = "No se ha realizado la petición con un formato correcto") })
 	public Response findFavoritos(
 			@ApiParam(name = "id", value = "Identificador del documento de favoritos objetivo.", required = true) @NotNull @PathParam("id") String id) {
+		if(StringUtils.isEmpty(id)) {
+			return Response.status(Response.Status.BAD_REQUEST).build();
+		}
 		try {
 			Favoritos fav = autorController.findFavoritos(id);
-			if (fav == null) {
-				return Response.status(Response.Status.NOT_FOUND).build();
-			}
 			return Response.ok().entity(fav).build();
 		} catch (DbplException e) {
 			return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
+		} catch (ResourceNotFoundException e) {
+			return Response.status(Response.Status.NOT_FOUND).build();
 		}
 	}
 
@@ -166,13 +173,18 @@ public class DbplRestController {
 	public Response deleteAutorFavoritos(
 			@ApiParam(name = "identificador", value = "Identificador del documento de favoritos objetivo.", required = true) @NotNull @PathParam("identificador") String identificador,
 			@ApiParam(name = "urlAutor", value = "Url de identificación del autor", required = true) @NotNull @PathParam("urlAutor") String urlAutor) {
+		if(StringUtils.isEmpty(urlAutor) || StringUtils.isEmpty(identificador)) {
+			return Response.status(Response.Status.BAD_REQUEST).build();
+		}
 		try {
-			if (!autorController.deleteAutorFavoritos(identificador, urlAutor)) {
-				return Response.status(Response.Status.NOT_FOUND).build();
+			if (autorController.deleteAutorFavoritos(identificador, urlAutor)) {
+				return Response.status(Response.Status.NO_CONTENT).build();
 			}
-			return Response.status(Response.Status.NO_CONTENT).build();
+			return Response.status(Response.Status.NOT_FOUND).build(); // No sucede nunca
 		} catch (DbplException e) {
 			return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
+		} catch (ResourceNotFoundException e) {
+			return Response.status(Response.Status.NOT_FOUND).build();
 		}
 	}
 
@@ -188,16 +200,19 @@ public class DbplRestController {
 	public Response addAutorFavoritos(
 			@ApiParam(name = "identificador", value = "Identificador del documento de favoritos objetivo.", required = true) @NotNull @PathParam("identificador") String identificador,
 			@ApiParam(name = "urlAutor", value = "Url de identificación del autor", required = true) @NotNull String urlAutor) {
+		if(StringUtils.isEmpty(urlAutor) || StringUtils.isEmpty(identificador)) {
+			return Response.status(Response.Status.BAD_REQUEST).build();
+		}
 		try {
-			if (autorController.addAutorFavoritos(identificador, urlAutor) == null) {
-				return Response.status(Response.Status.NOT_FOUND).build();
-			}
+			autorController.addAutorFavoritos(identificador, urlAutor);
 			UriBuilder builder = uriInfo.getAbsolutePathBuilder();
 			builder.path(String.valueOf(urlAutor));
 			URI nuevaURL = builder.build();
 			return Response.created(nuevaURL).build();
 		} catch (DbplException e) {
 			return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
+		} catch (ResourceNotFoundException e) {
+			return Response.status(Response.Status.NOT_FOUND).build();
 		}
 	}
 

@@ -1,4 +1,5 @@
 
+import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 
 import java.text.SimpleDateFormat;
@@ -9,9 +10,10 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
+import controller.DbplControllerImpl;
 import controller.DbplException;
 import controller.IDbplController;
-import controller.DbplControllerImpl;
+import controller.ResourceNotFoundException;
 import modelo.Autores;
 import modelo.Favoritos;
 import modelo.InformacionAutor;
@@ -50,7 +52,7 @@ public class DbplControllerTest {
 	public void findAutoresReturnOutputTest() {
 		try {
 			autores = controlador.findAutores(autorSearch2);
-		} catch (DbplException e) {
+		} catch (DbplException | ResourceNotFoundException e) {
 			e.printStackTrace();
 		}
 		assertTrue(autores != null);
@@ -61,7 +63,7 @@ public class DbplControllerTest {
 	public void findAutoresReturnCorrectOutput2Test() {
 		try {
 			autores = controlador.findAutores("fhwohgfiwhugheoughwuoghcqejifhincqp");
-		} catch (DbplException e) {
+		} catch (DbplException | ResourceNotFoundException e) {
 			e.printStackTrace();
 		}
 		assertTrue(autores.getAutor().size() == 0);
@@ -72,7 +74,7 @@ public class DbplControllerTest {
 	public void findAutoresReturnCorrectOutputTest() {
 		try {
 			autores = controlador.findAutores(autorSearch);
-		} catch (DbplException e) {
+		} catch (DbplException | ResourceNotFoundException e) {
 			e.printStackTrace();
 		}
 		assertTrue(autores.getAutor().size() == 5);
@@ -83,7 +85,7 @@ public class DbplControllerTest {
 	public void findInfoAutorTest() {
 		try {
 			infoAutor = controlador.findInformacion(bernersUrl);
-		} catch (DbplException e) {
+		} catch (DbplException | ResourceNotFoundException e) {
 			e.printStackTrace();
 		}
 		assertTrue(infoAutor != null);
@@ -107,7 +109,7 @@ public class DbplControllerTest {
 	@Order(6)
 	public void findInfoAutorGBTest() {
 		Libro libro = infoAutor.getLibros().get(1);
-		boolean librosCount = infoAutor.getLibros().size() == 80;
+		boolean librosCount = infoAutor.getLibros().size() == 92;
 		boolean libroId = libro.getId().equals("http://www.google.com/books/feeds/volumes/Unp4PwAACAAJ");
 		boolean titulo = libro.getTitulo().equals("Weaving the Web");
 		boolean descripcion = libro.getDescripcion().length() == 136;
@@ -150,7 +152,7 @@ public class DbplControllerTest {
 		try {
 			favoritos = controlador.findFavoritos(idFavoritos);
 			assertTrue(favoritos != null);
-		} catch (DbplException e) {
+		} catch (DbplException | ResourceNotFoundException e) {
 			e.printStackTrace();
 		}
 
@@ -159,12 +161,9 @@ public class DbplControllerTest {
 	@Test
 	@Order(10)
 	public void dontGetFavoritosTest() {
-		try {
+		assertThrows(ResourceNotFoundException.class, () -> {
 			favoritos = controlador.findFavoritos("363465345343643643663434643");
-		} catch (DbplException e) {
-			e.printStackTrace();
-		}
-		assertTrue(favoritos == null);
+		});
 	}
 
 	@Test
@@ -172,7 +171,7 @@ public class DbplControllerTest {
 	public void addAutorFavoritos() {
 		try {
 			favoritos = controlador.addAutorFavoritos(idFavoritos, "http://unaurl.com");
-		} catch (DbplException e) {
+		} catch (DbplException | ResourceNotFoundException e) {
 			e.printStackTrace();
 		}
 		assertTrue(favoritos != null);
@@ -181,13 +180,9 @@ public class DbplControllerTest {
 	@Test
 	@Order(12)
 	public void addAutorWrongIdFavoritos() {
-		try {
+		assertThrows(ResourceNotFoundException.class, () -> {
 			favoritos = controlador.addAutorFavoritos("UFWHUOFHEU", "http://unaurl.com");
-		} catch (DbplException e) {
-			e.printStackTrace();
-		}
-		assertTrue(favoritos == null);
-
+		});
 	}
 
 	@Test
@@ -196,7 +191,7 @@ public class DbplControllerTest {
 		boolean status = false;
 		try {
 			status = controlador.deleteAutorFavoritos(idFavoritos, "http://unaurl.com");
-		} catch (DbplException e) {
+		} catch (DbplException | ResourceNotFoundException e) {
 			e.printStackTrace();
 		}
 		assertTrue(status);
@@ -205,13 +200,10 @@ public class DbplControllerTest {
 	@Test
 	@Order(14)
 	public void deleteAutorNoExistenteFavoritos() {
-		boolean status = false;
-		try {
-			status = controlador.deleteAutorFavoritos(idFavoritos, "http://unaurl.com");
-		} catch (DbplException e) {
-			e.printStackTrace();
-		}
-		assertTrue(!status);
+		assertThrows(ResourceNotFoundException.class, () -> {
+			controlador.deleteAutorFavoritos(idFavoritos, "http://unaurl.com");
+		});
+
 	}
 
 	@Test
