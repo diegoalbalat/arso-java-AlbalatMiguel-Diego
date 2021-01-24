@@ -54,6 +54,19 @@ public class AutoresControllerImpl implements IAutoresController {
 	public final static String GB_URL = "https://books.google.com/books/feeds/volumes?q=";
 	public final static String DBPEDIA_URL = "https://dbpedia.org/data/";
 	public final static String DBPEDIA_JSON = ".json";
+	
+	public static AutoresControllerImpl unicaInstancia = null;
+
+	public static AutoresControllerImpl getUnicaInstancia() {
+		if (unicaInstancia == null) {
+			unicaInstancia = new AutoresControllerImpl();
+		}
+		return unicaInstancia;
+	}
+
+	public AutoresControllerImpl() {
+
+	}
 
 	@Override
 	public Autores findAutores(String autor) throws AutorException {
@@ -88,15 +101,15 @@ public class AutoresControllerImpl implements IAutoresController {
 			String response = makeRequest(urlAutor + DBLP_RDF);
 			if (response != null && !response.isEmpty()) {
 				try {
-					
-						getDblpInformation(infoAutor, response);
-					
+
+					getDblpInformation(infoAutor, response);
+
 				} catch (XPathExpressionException e1) {
 					throw new AutorException("Error al recorrer la respuesta con XPATH");
 				}
 				// Solicitar ifnormación de Google Books
 				getGBInformation(infoAutor);
-	
+
 				// Solicitar informacion JSON
 				getDBPediaInformation(infoAutor);
 				// Guardar autor en XML
@@ -109,8 +122,7 @@ public class AutoresControllerImpl implements IAutoresController {
 				} catch (JAXBException e) {
 					throw new AutorException("Error al guardar la información del autor con url" + urlAutor);
 				}
-			}
-			else {
+			} else {
 				return null;
 			}
 		} else {
@@ -187,7 +199,7 @@ public class AutoresControllerImpl implements IAutoresController {
 			element = (Element) resultado.item(i);
 			infoAutor.getArticulosAutor().add(element.getAttribute("rdf:resource"));
 		}
-		
+
 		// Establecer libros de los cuales es el editor
 		consulta = xpath.compile("/RDF/Person/editorOf");
 		resultado = (NodeList) consulta.evaluate(doc, XPathConstants.NODESET);

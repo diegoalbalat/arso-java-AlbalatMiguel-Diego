@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="respuestaAtom">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="feed" type="TipoFeed" />
+				<xs:element name="entry" type="Entry" minOccurs="0"
+					maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="TipoFeed">
+		<xs:sequence>
+			<xs:element name="id" type="xs:string" />
+			<xs:element name="title" type="xs:string" />
+			<xs:element name="updated" type="xs:date" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Entry">
+		<xs:sequence>
+			<xs:element name="id" type="xs:string" />
+			<xs:element name="title" type="xs:string" />
+			<xs:element name="updated" type="xs:date" />
+			<xs:element name="nombre" type="xs:string" />
+			<xs:element name="url" type="xs:anyURI" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="autores">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="autor" type="Autor"
+					maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="Autor">
+		<xs:sequence>
+			<xs:element name="nombre" type="xs:string" />
+			<xs:element name="url" type="xs:anyURI" />
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:positiveInteger"
+			use="required" />
+	</xs:complexType>
+
+	<xs:element name="InformacionAutor">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="nombreCompleto" type="xs:string"></xs:element>
+				<xs:element name="afiliacion" type="tipoAfiliacion"
+					minOccurs="0"></xs:element>
+				<xs:element name="paginas" type="paginasAsociadas"
+					minOccurs="0"></xs:element>
+				<xs:element name="paginasPremios" type="xs:string"
+					minOccurs="0" maxOccurs="unbounded"></xs:element>
+				<xs:element name="articulosAutor" type="xs:string"
+					minOccurs="0" maxOccurs="unbounded"></xs:element>
+				<xs:element name="articulosEditor" type="xs:string"
+					minOccurs="0" maxOccurs="unbounded"></xs:element>
+				<xs:element name="libros" type="libro" minOccurs="0"
+					maxOccurs="unbounded"></xs:element>
+				<xs:element name="informacionPersonal"
+					type="informacionPersonal" minOccurs="0"></xs:element>
+			</xs:sequence>
+			<xs:attribute name="idAutor" type="xs:positiveInteger"
+				use="required" />
+		</xs:complexType>
+	</xs:element>
+
+
+	<xs:complexType name="paginasAsociadas">
+		<xs:sequence>
+			<xs:element name="paginaPrincipal" type="xs:string" />
+			<xs:element name="paginasSecundaria" type="xs:string"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="tipoAfiliacion">
+		<xs:sequence>
+			<xs:element name="afiliacionPrimaria" type="xs:string" />
+			<xs:element name="afiliacionSecundaria" type="xs:string"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="libro">
+		<xs:sequence>
+			<xs:element name="id" type="xs:string" />
+			<xs:element name="titulo" type="xs:string" />
+			<xs:element name="descripcion" type="xs:string" />
+			<xs:element name="isbn" type="xs:string" minOccurs="1"
+				maxOccurs="2" />
+			<xs:element name="idioma" type="xs:string" />
+			<xs:element name="fecha" type="xs:date" />
+			<xs:element name="paginas" type="xs:positiveInteger" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="informacionPersonal">
+		<xs:sequence>
+			<xs:element name="padres" type="xs:string" minOccurs="0"
+				maxOccurs="unbounded" />
+			<xs:element name="hijos" type="xs:positiveInteger" />
+			<xs:element name="fechaNacimiento" type="xs:date" />
+			<xs:element name="lugarNacimiento" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>
