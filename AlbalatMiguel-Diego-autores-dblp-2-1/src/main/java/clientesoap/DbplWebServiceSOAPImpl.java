@@ -1,4 +1,4 @@
-package soap;
+package clientesoap;
 
 import javax.jws.WebService;
 
@@ -9,7 +9,7 @@ import modelo.Autores;
 import modelo.Favoritos;
 import modelo.InformacionAutor;
 
-@WebService(endpointInterface = "soap.DbplWebServiceSOAP")
+@WebService(endpointInterface = "clientesoap.DbplWebServiceSOAP")
 public class DbplWebServiceSOAPImpl implements DbplWebServiceSOAP {
 
 	private IDbplController autorController = DbplControllerImpl.getUnicaInstancia();
@@ -29,7 +29,7 @@ public class DbplWebServiceSOAPImpl implements DbplWebServiceSOAP {
 	public InformacionAutor findInformacion(String urlAutor) {
 		InformacionAutor infoAutor = new InformacionAutor();
 		try {
-			autorController.findInformacion(urlAutor);
+			return autorController.findInformacion(urlAutor);
 		} catch (DbplException e) {
 			e.printStackTrace();
 		}

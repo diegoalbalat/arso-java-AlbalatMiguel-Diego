@@ -1,5 +1,5 @@
 
-package stub;
+package clientesoap;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -17,14 +17,14 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "DbplWebServiceSOAPImplService", targetNamespace = "http://soap/", wsdlLocation = "http://localhost:9999/ws/dblpservice?wsdl")
+@WebServiceClient(name = "DbplWebServiceSOAPImplService", targetNamespace = "http://clientesoap/", wsdlLocation = "http://localhost:9999/ws/dblpservice?wsdl")
 public class DbplWebServiceSOAPImplService
     extends Service
 {
 
     private final static URL DBPLWEBSERVICESOAPIMPLSERVICE_WSDL_LOCATION;
     private final static WebServiceException DBPLWEBSERVICESOAPIMPLSERVICE_EXCEPTION;
-    private final static QName DBPLWEBSERVICESOAPIMPLSERVICE_QNAME = new QName("http://soap/", "DbplWebServiceSOAPImplService");
+    private final static QName DBPLWEBSERVICESOAPIMPLSERVICE_QNAME = new QName("http://clientesoap/", "DbplWebServiceSOAPImplService");
 
     static {
         URL url = null;
@@ -69,7 +69,7 @@ public class DbplWebServiceSOAPImplService
      */
     @WebEndpoint(name = "DbplWebServiceSOAPImplPort")
     public DbplWebServiceSOAP getDbplWebServiceSOAPImplPort() {
-        return super.getPort(new QName("http://soap/", "DbplWebServiceSOAPImplPort"), DbplWebServiceSOAP.class);
+        return super.getPort(new QName("http://clientesoap/", "DbplWebServiceSOAPImplPort"), DbplWebServiceSOAP.class);
     }
 
     /**
@@ -81,7 +81,7 @@ public class DbplWebServiceSOAPImplService
      */
     @WebEndpoint(name = "DbplWebServiceSOAPImplPort")
     public DbplWebServiceSOAP getDbplWebServiceSOAPImplPort(WebServiceFeature... features) {
-        return super.getPort(new QName("http://soap/", "DbplWebServiceSOAPImplPort"), DbplWebServiceSOAP.class, features);
+        return super.getPort(new QName("http://clientesoap/", "DbplWebServiceSOAPImplPort"), DbplWebServiceSOAP.class, features);
     }
 
     private static URL __getWsdlLocation() {

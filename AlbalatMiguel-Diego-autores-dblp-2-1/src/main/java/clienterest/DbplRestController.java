@@ -1,4 +1,4 @@
-package rest;
+package clienterest;
 
 import java.net.URI;
 
