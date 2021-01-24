@@ -6,13 +6,18 @@ import java.util.List;
 
 import commons.Utils;
 import modelo.Autor;
+import modelo.AutorResource;
 import modelo.Autores;
+import modelo.AutoresResource;
 import modelo.DateTimeType;
+import modelo.Embedded;
 import modelo.EntryType;
 import modelo.FeedType;
 import modelo.IdType;
 import modelo.LinkType;
+import modelo.Links;
 import modelo.PersonType;
+import modelo.Self;
 import modelo.TextType;
 
 public class EntidadRespuestaMapperServiceImpl implements IEntidadRespuestaMapperService {
@@ -78,5 +83,21 @@ public class EntidadRespuestaMapperServiceImpl implements IEntidadRespuestaMappe
 		}
 		
 		return nueva;
+	}
+
+	@Override
+	public AutoresResource autoresToHal(Autores autores, URI uri, String busqueda) {
+		AutoresResource respuesta = new AutoresResource();
+		List<Autor> autoresList = autores.getAutor();
+		respuesta.set_links(new Links(new Self(uri.toString())));
+		Embedded _embedded = new Embedded();
+		for(Autor autor : autoresList) {
+			AutorResource autorResource = new AutorResource(new Links(new Self(autor.getUrl())),autor.getUrl(), autor.getNombre(), autor.getId() );
+			_embedded.getAutores().add(autorResource);
+		}
+		respuesta.setCount(autoresList.size());
+		respuesta.setTotal(autoresList.size());
+		respuesta.set_embedded(_embedded);
+		return respuesta;
 	}
 }

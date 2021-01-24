@@ -26,6 +26,7 @@ import io.swagger.annotations.ApiParam;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import modelo.Autores;
+import modelo.AutoresResource;
 import modelo.Favoritos;
 import modelo.FeedType;
 import modelo.InformacionAutor;
@@ -66,19 +67,20 @@ public class AutoresRestController {
 			if (autores.getAutor().size() == 0) {
 				return Response.status(Response.Status.NOT_FOUND).build();
 			}
-			// Comprobar mediaType solicitado
+			// Comprobar mediaType solicitado y devolver según corresponda
 			String mediaType = headers.getRequestHeader("Accept").get(0);
+			UriBuilder builder = uriInfo.getAbsolutePathBuilder();
+			builder.queryParam("autor", autor);
+			URI uri = builder.build();
 			if (mediaType.equals("application/xml")) {
-				UriBuilder builder = uriInfo.getAbsolutePathBuilder();
-				builder.queryParam("autor", autor);
-				URI uri = builder.build();
+				
 				FeedType respuesta = mapperService.autoresToAtom(uri, autores, autor);
 				return Response.ok().entity(respuesta).build();
 			} else {
-				// Devolver hal json
+				AutoresResource respuesta = mapperService.autoresToHal(autores, uri, autor);
+				return Response.ok().entity(respuesta).build();
 			}
 
-			return Response.ok().entity(autores).build();
 		} catch (AutorException e) {
 			return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
 		}
