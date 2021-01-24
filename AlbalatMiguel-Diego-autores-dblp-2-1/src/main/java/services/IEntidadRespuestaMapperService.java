@@ -1,10 +1,10 @@
-package service;
+package services;
 
 import java.net.URI;
 
 import modelo.Autores;
-import modelo.AutoresResource;
-import modelo.FeedType;
+import modelo.atom.FeedType;
+import modelo.hal.AutoresResource;
 
 public interface IEntidadRespuestaMapperService {
 	

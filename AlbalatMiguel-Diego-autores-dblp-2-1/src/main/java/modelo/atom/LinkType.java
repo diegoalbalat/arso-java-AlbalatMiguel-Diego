@@ -6,7 +6,7 @@
 //
 
 
-package modelo;
+package modelo.atom;
 
 import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;

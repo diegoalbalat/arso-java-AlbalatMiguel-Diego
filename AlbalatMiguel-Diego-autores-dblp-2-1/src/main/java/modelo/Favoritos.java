@@ -36,7 +36,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
+@XmlType(name = "favoritos", propOrder = {
     "urlAutor"
 })
 @XmlRootElement(name = "favoritos")

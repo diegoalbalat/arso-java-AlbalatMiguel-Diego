@@ -46,7 +46,7 @@ import modelo.Libro;
 import modelo.PaginasAsociadas;
 import modelo.TipoAfiliacion;
 
-public class AutoresControllerImpl implements IAutoresController {
+public class DbplControllerImpl implements IDbplController {
 
 	public final static String DBLP_URL = "https://dblp.org";
 	public final static String DBLP_FIND_ENDPOINT = "/search/author/api?q=";
@@ -55,21 +55,21 @@ public class AutoresControllerImpl implements IAutoresController {
 	public final static String DBPEDIA_URL = "https://dbpedia.org/data/";
 	public final static String DBPEDIA_JSON = ".json";
 	
-	public static AutoresControllerImpl unicaInstancia = null;
+	public static DbplControllerImpl unicaInstancia = null;
 
-	public static AutoresControllerImpl getUnicaInstancia() {
+	public static DbplControllerImpl getUnicaInstancia() {
 		if (unicaInstancia == null) {
-			unicaInstancia = new AutoresControllerImpl();
+			unicaInstancia = new DbplControllerImpl();
 		}
 		return unicaInstancia;
 	}
 
-	public AutoresControllerImpl() {
+	public DbplControllerImpl() {
 
 	}
 
 	@Override
-	public Autores findAutores(String autor) throws AutorException {
+	public Autores findAutores(String autor) throws DbplException {
 		Autores autores = new Autores();
 		// Realizar petición a DBLP
 		String response = makeRequest(DBLP_URL + DBLP_FIND_ENDPOINT + autor);
@@ -77,17 +77,17 @@ public class AutoresControllerImpl implements IAutoresController {
 			try {
 				obtenerArbolAutores(autores, response);
 			} catch (XPathExpressionException e) {
-				throw new AutorException("Error al recorrer la respuesta con XPATH");
+				throw new DbplException("Error al recorrer la respuesta con XPATH");
 			}
 		} else {
-			throw new AutorException("Error al realizar la petición al servicio DBLP");
+			throw new DbplException("Error al realizar la petición al servicio DBLP");
 		}
 
 		return autores;
 	}
 
 	@Override
-	public InformacionAutor findInformacion(String urlAutor) throws AutorException {
+	public InformacionAutor findInformacion(String urlAutor) throws DbplException {
 		InformacionAutor infoAutor = new InformacionAutor();
 		JAXBContext contexto;
 		Pattern pattern = Pattern.compile("pid\\/(.*)");
@@ -105,7 +105,7 @@ public class AutoresControllerImpl implements IAutoresController {
 					getDblpInformation(infoAutor, response);
 
 				} catch (XPathExpressionException e1) {
-					throw new AutorException("Error al recorrer la respuesta con XPATH");
+					throw new DbplException("Error al recorrer la respuesta con XPATH");
 				}
 				// Solicitar ifnormación de Google Books
 				getGBInformation(infoAutor);
@@ -120,7 +120,7 @@ public class AutoresControllerImpl implements IAutoresController {
 					marshaller.setProperty("jaxb.schemaLocation", "autor.xsd");
 					marshaller.marshal(infoAutor, autorFile);
 				} catch (JAXBException e) {
-					throw new AutorException("Error al guardar la información del autor con url" + urlAutor);
+					throw new DbplException("Error al guardar la información del autor con url" + urlAutor);
 				}
 			} else {
 				return null;
@@ -131,7 +131,7 @@ public class AutoresControllerImpl implements IAutoresController {
 				Unmarshaller unmarshaller = contexto.createUnmarshaller();
 				infoAutor = (InformacionAutor) unmarshaller.unmarshal(autorFile);
 			} catch (JAXBException e) {
-				throw new AutorException("Error al cargar la información del autor con url" + urlAutor);
+				throw new DbplException("Error al cargar la información del autor con url" + urlAutor);
 			}
 		}
 		// Devolver informacion autor
@@ -433,7 +433,7 @@ public class AutoresControllerImpl implements IAutoresController {
 	}
 
 	@Override
-	public String crearFavoritos() throws AutorException {
+	public String crearFavoritos() throws DbplException {
 		// Se genera un identificador para el documento
 		String id = Utils.createId();
 		// Se crea el fichero si no existe ya
@@ -448,7 +448,7 @@ public class AutoresControllerImpl implements IAutoresController {
 				marshaller.setProperty("jaxb.schemaLocation", "docFavoritos.xsd");
 				marshaller.marshal(favoritos, docFavoritos);
 			} catch (JAXBException e) {
-				throw new AutorException("Error al guardar el fichero de favoritos");
+				throw new DbplException("Error al guardar el fichero de favoritos");
 			}
 			return id;
 		}
@@ -460,7 +460,7 @@ public class AutoresControllerImpl implements IAutoresController {
 	}
 
 	@Override
-	public Favoritos findFavoritos(String identificador) throws AutorException {
+	public Favoritos findFavoritos(String identificador) throws DbplException {
 		// Obtenemos el fichero y comprobamos que exista
 		File docFavoritos = new File("xml/favoritos" + identificador + ".xml");
 		if (docFavoritos.exists()) {
@@ -474,7 +474,7 @@ public class AutoresControllerImpl implements IAutoresController {
 				favoritos = (Favoritos) unmarshaller.unmarshal(docFavoritos);
 
 			} catch (JAXBException e) {
-				throw new AutorException("Error al cargar el fichero de favoritos con id: " + identificador);
+				throw new DbplException("Error al cargar el fichero de favoritos con id: " + identificador);
 			}
 			return favoritos;
 		}
@@ -484,7 +484,7 @@ public class AutoresControllerImpl implements IAutoresController {
 	}
 
 	@Override
-	public boolean deleteAutorFavoritos(String identificador, String urlAutor) throws AutorException {
+	public boolean deleteAutorFavoritos(String identificador, String urlAutor) throws DbplException {
 		File docFavoritos = new File("xml/favoritos" + identificador + ".xml");
 		if (docFavoritos.exists()) {
 			// Realizamos el unmarshalling del fichero en la variable favoritos y lo
@@ -514,14 +514,14 @@ public class AutoresControllerImpl implements IAutoresController {
 				}
 				return false;
 			} catch (JAXBException e) {
-				throw new AutorException("Error al guardar el fichero de favoritos");
+				throw new DbplException("Error al guardar el fichero de favoritos");
 			}
 		}
 		return false;
 	}
 
 	@Override
-	public Favoritos addAutorFavoritos(String identificador, String urlAutor) throws AutorException {
+	public Favoritos addAutorFavoritos(String identificador, String urlAutor) throws DbplException {
 		File docFavoritos = new File("xml/favoritos" + identificador + ".xml");
 		if (docFavoritos.exists()) {
 			// Realizamos el unmarshalling del fichero en la variable favoritos y lo
@@ -545,14 +545,14 @@ public class AutoresControllerImpl implements IAutoresController {
 				}
 				return favoritos;
 			} catch (JAXBException e) {
-				throw new AutorException("Error al guardar el fichero de favoritos");
+				throw new DbplException("Error al guardar el fichero de favoritos");
 			}
 		}
 		return null;
 	}
 
 	@Override
-	public boolean deleteBBDD() throws AutorException {
+	public boolean deleteBBDD() throws DbplException {
 		// Se obtiene el directorio
 		File folder = new File("./xml");
 		try {
@@ -570,7 +570,7 @@ public class AutoresControllerImpl implements IAutoresController {
 		} catch (
 
 		Exception e) {
-			throw new AutorException("Error al eliminar los ficheros xml de la BBDD");
+			throw new DbplException("Error al eliminar los ficheros xml de la BBDD");
 		}
 	}
 

@@ -9,9 +9,9 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
-import controller.AutorException;
-import controller.IAutoresController;
-import controller.AutoresControllerImpl;
+import controller.DbplException;
+import controller.IDbplController;
+import controller.DbplControllerImpl;
 import modelo.Autores;
 import modelo.Favoritos;
 import modelo.InformacionAutor;
@@ -19,10 +19,10 @@ import modelo.InformacionPersonal;
 import modelo.Libro;
 
 @TestMethodOrder(OrderAnnotation.class)
-public class AutorControllerTest {
+public class DbplControllerTest {
 	private static Autores autores;
 	private static InformacionAutor infoAutor;
-	private static IAutoresController controlador;
+	private static IDbplController controlador;
 	private static String idFavoritos;
 	private static Favoritos favoritos;
 
@@ -35,11 +35,11 @@ public class AutorControllerTest {
 		idFavoritos = "";
 		autores = null;
 		infoAutor = null;
-		controlador = new AutoresControllerImpl();
+		controlador = new DbplControllerImpl();
 		favoritos = null;
 		try {
 			controlador.deleteBBDD();
-		} catch (AutorException e) {
+		} catch (DbplException e) {
 			e.printStackTrace();
 		}
 
@@ -50,7 +50,7 @@ public class AutorControllerTest {
 	public void findAutoresReturnOutputTest() {
 		try {
 			autores = controlador.findAutores(autorSearch2);
-		} catch (AutorException e) {
+		} catch (DbplException e) {
 			e.printStackTrace();
 		}
 		assertTrue(autores != null);
@@ -61,7 +61,7 @@ public class AutorControllerTest {
 	public void findAutoresReturnCorrectOutput2Test() {
 		try {
 			autores = controlador.findAutores("fhwohgfiwhugheoughwuoghcqejifhincqp");
-		} catch (AutorException e) {
+		} catch (DbplException e) {
 			e.printStackTrace();
 		}
 		assertTrue(autores.getAutor().size() == 0);
@@ -72,7 +72,7 @@ public class AutorControllerTest {
 	public void findAutoresReturnCorrectOutputTest() {
 		try {
 			autores = controlador.findAutores(autorSearch);
-		} catch (AutorException e) {
+		} catch (DbplException e) {
 			e.printStackTrace();
 		}
 		assertTrue(autores.getAutor().size() == 5);
@@ -83,7 +83,7 @@ public class AutorControllerTest {
 	public void findInfoAutorTest() {
 		try {
 			infoAutor = controlador.findInformacion(bernersUrl);
-		} catch (AutorException e) {
+		} catch (DbplException e) {
 			e.printStackTrace();
 		}
 		assertTrue(infoAutor != null);
@@ -138,7 +138,7 @@ public class AutorControllerTest {
 		try {
 			idFavoritos = controlador.crearFavoritos();
 			assertTrue(!idFavoritos.isEmpty());
-		} catch (AutorException e) {
+		} catch (DbplException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -150,7 +150,7 @@ public class AutorControllerTest {
 		try {
 			favoritos = controlador.findFavoritos(idFavoritos);
 			assertTrue(favoritos != null);
-		} catch (AutorException e) {
+		} catch (DbplException e) {
 			e.printStackTrace();
 		}
 
@@ -161,7 +161,7 @@ public class AutorControllerTest {
 	public void dontGetFavoritosTest() {
 		try {
 			favoritos = controlador.findFavoritos("363465345343643643663434643");
-		} catch (AutorException e) {
+		} catch (DbplException e) {
 			e.printStackTrace();
 		}
 		assertTrue(favoritos == null);
@@ -172,7 +172,7 @@ public class AutorControllerTest {
 	public void addAutorFavoritos() {
 		try {
 			favoritos = controlador.addAutorFavoritos(idFavoritos, "http://unaurl.com");
-		} catch (AutorException e) {
+		} catch (DbplException e) {
 			e.printStackTrace();
 		}
 		assertTrue(favoritos != null);
@@ -183,7 +183,7 @@ public class AutorControllerTest {
 	public void addAutorWrongIdFavoritos() {
 		try {
 			favoritos = controlador.addAutorFavoritos("UFWHUOFHEU", "http://unaurl.com");
-		} catch (AutorException e) {
+		} catch (DbplException e) {
 			e.printStackTrace();
 		}
 		assertTrue(favoritos == null);
@@ -196,7 +196,7 @@ public class AutorControllerTest {
 		boolean status = false;
 		try {
 			status = controlador.deleteAutorFavoritos(idFavoritos, "http://unaurl.com");
-		} catch (AutorException e) {
+		} catch (DbplException e) {
 			e.printStackTrace();
 		}
 		assertTrue(status);
@@ -208,7 +208,7 @@ public class AutorControllerTest {
 		boolean status = false;
 		try {
 			status = controlador.deleteAutorFavoritos(idFavoritos, "http://unaurl.com");
-		} catch (AutorException e) {
+		} catch (DbplException e) {
 			e.printStackTrace();
 		}
 		assertTrue(!status);
@@ -220,7 +220,7 @@ public class AutorControllerTest {
 		boolean status = false;
 		try {
 			status = controlador.deleteBBDD();
-		} catch (AutorException e) {
+		} catch (DbplException e) {
 			e.printStackTrace();
 		}
 		assertTrue(status);

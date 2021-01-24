@@ -1,4 +1,4 @@
-package modelo;
+package modelo.hal;
 
 import java.util.LinkedList;
 import java.util.List;

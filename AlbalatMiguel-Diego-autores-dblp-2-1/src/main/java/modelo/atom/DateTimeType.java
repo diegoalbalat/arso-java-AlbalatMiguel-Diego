@@ -6,7 +6,7 @@
 //
 
 
-package modelo;
+package modelo.atom;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

@@ -12,6 +12,15 @@ import javax.xml.bind.annotation.XmlElementDecl;
 import javax.xml.bind.annotation.XmlRegistry;
 import javax.xml.namespace.QName;
 
+import modelo.atom.DateTimeType;
+import modelo.atom.EntryType;
+import modelo.atom.FeedType;
+import modelo.atom.IdType;
+import modelo.atom.LinkType;
+import modelo.atom.PersonType;
+import modelo.atom.TextType;
+import modelo.atom.UriType;
+
 /**
  * This object contains factory methods for each Java content interface and Java
  * element interface generated in the org.w3._2005.atom package.

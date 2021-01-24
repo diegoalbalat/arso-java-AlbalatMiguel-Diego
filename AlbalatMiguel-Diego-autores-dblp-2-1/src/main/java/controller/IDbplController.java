@@ -4,7 +4,7 @@ import modelo.Autores;
 import modelo.Favoritos;
 import modelo.InformacionAutor;
 
-public interface IAutoresController {
+public interface IDbplController {
 
 	/*
 	 * Función encargada de retornar los autores junto con los enlaces a los registro de la API DBLP.
@@ -12,7 +12,7 @@ public interface IAutoresController {
 	 * @Param autor - Nombre del autor a buscar
 	 * 		Tipo: String   
 	 */
-	public Autores findAutores(String autor) throws AutorException;
+	public Autores findAutores(String autor) throws DbplException;
 	
 	/*
 	 * Función para recuperar de DBLP y otras fuentes información adicional del autor que corresponda con la url pasado como parametro.
@@ -20,13 +20,13 @@ public interface IAutoresController {
 	 * @Param urlAutor - URL en dblp del autor a buscar la información
 	 * 		Tipo: String   
 	 **/
-	public InformacionAutor findInformacion(String urlAutor) throws AutorException;
+	public InformacionAutor findInformacion(String urlAutor) throws DbplException;
 	
 	/*
 	 * Función para crear un documento para almacenar url de autores favoritos.
 	 * Devuelve el identificador del documento creado. 
 	 */
-	public String crearFavoritos() throws AutorException;
+	public String crearFavoritos() throws DbplException;
 	
 	/*
 	 * Función para recuperar un documento de favoritos mediante el identificador.
@@ -34,7 +34,7 @@ public interface IAutoresController {
 	 * @Param identificador - Codigo para identificar el documento de autores favoritos 
 	 * 		Tipo: String 
 	 */
-	public Favoritos findFavoritos(String identificador) throws AutorException;
+	public Favoritos findFavoritos(String identificador) throws DbplException;
 	
 	/*
 	 * Funcion para eliminar una url del documento de favoritos. 
@@ -43,7 +43,7 @@ public interface IAutoresController {
 	 * 		Tipo: String   
 	 * @Param urlAutor
 	 **/
-	public boolean deleteAutorFavoritos(String identificador, String urlAutor) throws AutorException;
+	public boolean deleteAutorFavoritos(String identificador, String urlAutor) throws DbplException;
 	
 	/*
 	 * Funcion para añadir una url del documento de favoritos. 
@@ -52,11 +52,11 @@ public interface IAutoresController {
 	 * 		Tipo: String   
 	 * @Param urlAutor
 	 **/	
-	public Favoritos addAutorFavoritos(String identificador, String urlAutor) throws AutorException;
+	public Favoritos addAutorFavoritos(String identificador, String urlAutor) throws DbplException;
 	
 	/*
 	 * Operación encarga de eliminar todos los xml que conforman la BBDD 
 	 */
-	public boolean deleteBBDD() throws AutorException;
+	public boolean deleteBBDD() throws DbplException;
 	
 }

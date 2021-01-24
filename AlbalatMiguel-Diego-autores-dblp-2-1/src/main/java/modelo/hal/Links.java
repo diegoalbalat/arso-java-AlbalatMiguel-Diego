@@ -1,4 +1,4 @@
-package modelo;
+package modelo.hal;
 
 public class Links {
 	public Self self;

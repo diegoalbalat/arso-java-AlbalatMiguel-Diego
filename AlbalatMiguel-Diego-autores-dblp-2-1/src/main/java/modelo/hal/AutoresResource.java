@@ -1,4 +1,4 @@
-package modelo;
+package modelo.hal;
 
 public class AutoresResource {
 	protected Links _links;

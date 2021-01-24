@@ -1,4 +1,4 @@
-package controller;
+package rest;
 
 import java.net.URI;
 
@@ -20,23 +20,26 @@ import javax.ws.rs.core.UriInfo;
 
 import org.apache.commons.lang3.StringUtils;
 
+import controller.DbplException;
+import controller.DbplControllerImpl;
+import controller.IDbplController;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import modelo.Autores;
-import modelo.AutoresResource;
 import modelo.Favoritos;
-import modelo.FeedType;
 import modelo.InformacionAutor;
-import service.EntidadRespuestaMapperServiceImpl;
-import service.IEntidadRespuestaMapperService;
+import modelo.atom.FeedType;
+import modelo.hal.AutoresResource;
+import services.EntidadRespuestaMapperServiceImpl;
+import services.IEntidadRespuestaMapperService;
 
 @Path("dblp")
 @Produces(MediaType.APPLICATION_JSON)
 @Api(produces = "application/xml, application/json", value = "Operations pertaining to manager blood donors in the application")
-public class AutoresRestController {
+public class DbplRestController {
 
 	@Context
 	private UriInfo uriInfo;
@@ -44,7 +47,7 @@ public class AutoresRestController {
 	@Context
 	private HttpHeaders headers;
 
-	private IAutoresController autorController = AutoresControllerImpl.getUnicaInstancia();
+	private IDbplController autorController = DbplControllerImpl.getUnicaInstancia();
 	
 	private IEntidadRespuestaMapperService mapperService= EntidadRespuestaMapperServiceImpl.getUnicaInstancia();
 
@@ -81,7 +84,7 @@ public class AutoresRestController {
 				return Response.ok().entity(respuesta).build();
 			}
 
-		} catch (AutorException e) {
+		} catch (DbplException e) {
 			return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
 		}
 
@@ -104,7 +107,7 @@ public class AutoresRestController {
 				return Response.status(Response.Status.NOT_FOUND).build();
 			}
 			return Response.ok().entity(infoAutor).build();
-		} catch (AutorException e) {
+		} catch (DbplException e) {
 			return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
 		}
 	}
@@ -124,7 +127,7 @@ public class AutoresRestController {
 			URI nuevaURL = builder.build();
 			System.out.println(nuevaURL.toString());
 			return Response.created(nuevaURL).build();
-		} catch (AutorException e) {
+		} catch (DbplException e) {
 			return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
 		}
 	}
@@ -146,7 +149,7 @@ public class AutoresRestController {
 				return Response.status(Response.Status.NOT_FOUND).build();
 			}
 			return Response.ok().entity(fav).build();
-		} catch (AutorException e) {
+		} catch (DbplException e) {
 			return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
 		}
 	}
@@ -168,7 +171,7 @@ public class AutoresRestController {
 				return Response.status(Response.Status.NOT_FOUND).build();
 			}
 			return Response.status(Response.Status.NO_CONTENT).build();
-		} catch (AutorException e) {
+		} catch (DbplException e) {
 			return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
 		}
 	}
@@ -193,7 +196,7 @@ public class AutoresRestController {
 			builder.path(String.valueOf(urlAutor));
 			URI nuevaURL = builder.build();
 			return Response.created(nuevaURL).build();
-		} catch (AutorException e) {
+		} catch (DbplException e) {
 			return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
 		}
 	}
@@ -211,7 +214,7 @@ public class AutoresRestController {
 				return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
 			}
 			return Response.status(Response.Status.NO_CONTENT).build();
-		} catch (AutorException e) {
+		} catch (DbplException e) {
 			return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
 
 		}

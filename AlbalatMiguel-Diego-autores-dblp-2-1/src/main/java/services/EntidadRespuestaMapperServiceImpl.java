@@ -1,4 +1,4 @@
-package service;
+package services;
 
 import java.net.URI;
 import java.util.Calendar;
@@ -6,19 +6,19 @@ import java.util.List;
 
 import commons.Utils;
 import modelo.Autor;
-import modelo.AutorResource;
 import modelo.Autores;
-import modelo.AutoresResource;
-import modelo.DateTimeType;
-import modelo.Embedded;
-import modelo.EntryType;
-import modelo.FeedType;
-import modelo.IdType;
-import modelo.LinkType;
-import modelo.Links;
-import modelo.PersonType;
-import modelo.Self;
-import modelo.TextType;
+import modelo.atom.DateTimeType;
+import modelo.atom.EntryType;
+import modelo.atom.FeedType;
+import modelo.atom.IdType;
+import modelo.atom.LinkType;
+import modelo.atom.PersonType;
+import modelo.atom.TextType;
+import modelo.hal.AutorResource;
+import modelo.hal.AutoresResource;
+import modelo.hal.Embedded;
+import modelo.hal.Links;
+import modelo.hal.Self;
 
 public class EntidadRespuestaMapperServiceImpl implements IEntidadRespuestaMapperService {
 

@@ -6,7 +6,7 @@
 //
 
 
-package modelo;
+package modelo.atom;
 
 import java.util.ArrayList;
 import java.util.List;
