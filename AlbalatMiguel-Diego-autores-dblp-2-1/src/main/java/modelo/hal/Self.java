@@ -3,6 +3,9 @@ package modelo.hal;
 public class Self {
 	public String href;
 
+	public Self() {
+	}
+
 	public Self(String href) {
 		super();
 		this.href = href;
@@ -15,6 +18,5 @@ public class Self {
 	public void setHref(String href) {
 		this.href = href;
 	}
-	
-	
+
 }

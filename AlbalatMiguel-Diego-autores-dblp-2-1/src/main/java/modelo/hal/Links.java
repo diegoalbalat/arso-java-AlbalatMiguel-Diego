@@ -2,7 +2,7 @@ package modelo.hal;
 
 public class Links {
 	public Self self;
-
+	public Links() {}
 	public Links(Self self) {
 		super();
 		this.self = self;

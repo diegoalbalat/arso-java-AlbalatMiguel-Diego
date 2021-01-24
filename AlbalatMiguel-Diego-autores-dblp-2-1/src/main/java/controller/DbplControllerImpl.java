@@ -11,8 +11,6 @@ import java.net.URLConnection;
 import java.util.Date;
 import java.util.List;
 import java.util.ListIterator;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 import javax.json.Json;
@@ -54,7 +52,7 @@ public class DbplControllerImpl implements IDbplController {
 	public final static String GB_URL = "https://books.google.com/books/feeds/volumes?q=";
 	public final static String DBPEDIA_URL = "https://dbpedia.org/data/";
 	public final static String DBPEDIA_JSON = ".json";
-	
+
 	public static DbplControllerImpl unicaInstancia = null;
 
 	public static DbplControllerImpl getUnicaInstancia() {
@@ -90,10 +88,12 @@ public class DbplControllerImpl implements IDbplController {
 	public InformacionAutor findInformacion(String urlAutor) throws DbplException {
 		InformacionAutor infoAutor = new InformacionAutor();
 		JAXBContext contexto;
-		Pattern pattern = Pattern.compile("pid\\/(.*)");
-		Matcher matcher = pattern.matcher(urlAutor);
-		matcher.find();
-		BigInteger pid = BigInteger.valueOf(Math.abs(matcher.group(1).hashCode()));
+		String[] strs = urlAutor.split("/");
+		String nombreAutor = strs[strs.length-1];
+		if(StringUtils.isEmpty(nombreAutor)) {
+			return null;
+		}
+		BigInteger pid = BigInteger.valueOf(Math.abs(nombreAutor.hashCode()));
 		File autorFile = new File("xml/" + pid + ".xml");
 		if (!autorFile.exists()) {
 

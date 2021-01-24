@@ -77,10 +77,12 @@ public class DbplControllerImpl implements IDbplController {
 	public InformacionAutor findInformacion(String urlAutor) throws DbplException {
 		InformacionAutor infoAutor = new InformacionAutor();
 		JAXBContext contexto;
-		Pattern pattern = Pattern.compile("pid\\/(.*)");
-		Matcher matcher = pattern.matcher(urlAutor);
-		matcher.find();
-		BigInteger pid = BigInteger.valueOf(Math.abs(matcher.group(1).hashCode()));
+		String[] strs = urlAutor.split("/");
+		String nombreAutor = strs[strs.length-1];
+		if(StringUtils.isEmpty(nombreAutor)) {
+			return null;
+		}
+		BigInteger pid = BigInteger.valueOf(Math.abs(nombreAutor.hashCode()));
 		File autorFile = new File("xml/" + pid + ".xml");
 		if (!autorFile.exists()) {
 
