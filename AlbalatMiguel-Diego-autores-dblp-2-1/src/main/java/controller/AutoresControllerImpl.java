@@ -560,7 +560,9 @@ public class AutoresControllerImpl implements IAutoresController {
 				// Se eliminan los ficheros del directorio que acaben en .xml
 				for (File f : folder.listFiles()) {
 					if (f.getName().endsWith(".xml")) {
-						f.delete(); // may fail mysteriously - returns boolean you may want to check
+						if (f.delete() == false) {
+							return false;
+						}
 					}
 				}
 			}
