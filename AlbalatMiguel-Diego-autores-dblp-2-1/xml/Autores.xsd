@@ -1,33 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-	<xs:element name="respuestaAtom">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="feed" type="TipoFeed" />
-				<xs:element name="entry" type="Entry" minOccurs="0"
-					maxOccurs="unbounded" />
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
-
-	<xs:complexType name="TipoFeed">
-		<xs:sequence>
-			<xs:element name="id" type="xs:string" />
-			<xs:element name="title" type="xs:string" />
-			<xs:element name="updated" type="xs:date" />
-		</xs:sequence>
-	</xs:complexType>
-
-	<xs:complexType name="Entry">
-		<xs:sequence>
-			<xs:element name="id" type="xs:string" />
-			<xs:element name="title" type="xs:string" />
-			<xs:element name="updated" type="xs:date" />
-			<xs:element name="nombre" type="xs:string" />
-			<xs:element name="url" type="xs:anyURI" />
-		</xs:sequence>
-	</xs:complexType>
-
 	<xs:element name="autores">
 		<xs:complexType>
 			<xs:sequence>
@@ -36,6 +8,7 @@
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
+
 
 	<xs:complexType name="Autor">
 		<xs:sequence>

@@ -12,6 +12,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
+import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriBuilder;
@@ -26,7 +27,10 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import modelo.Autores;
 import modelo.Favoritos;
+import modelo.FeedType;
 import modelo.InformacionAutor;
+import service.EntidadRespuestaMapperServiceImpl;
+import service.IEntidadRespuestaMapperService;
 
 @Path("dblp")
 @Produces(MediaType.APPLICATION_JSON)
@@ -36,12 +40,17 @@ public class AutoresRestController {
 	@Context
 	private UriInfo uriInfo;
 
+	@Context
+	private HttpHeaders headers;
+
 	private IAutoresController autorController = AutoresControllerImpl.getUnicaInstancia();
+	
+	private IEntidadRespuestaMapperService mapperService= EntidadRespuestaMapperServiceImpl.getUnicaInstancia();
 
 	@GET
 	@Path("/autores")
 	@Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
-	@ApiOperation(value = "Devuelve un listado de tipo autor encontrado al filtrar por el término de búsqueda indicado.", response = Autores.class)
+	@ApiOperation(value = "Devuelve un listado de tipo autor encontrado al filtrar por el término de búsqueda indicado.", response = Response.class)
 	@ApiResponses(value = {
 			@ApiResponse(code = HttpServletResponse.SC_OK, message = "Devuelve el listado asociado al término de búsqueda"),
 			@ApiResponse(code = HttpServletResponse.SC_NOT_FOUND, message = "La busqueda no ha obtenido ningún resultado"),
@@ -57,9 +66,18 @@ public class AutoresRestController {
 			if (autores.getAutor().size() == 0) {
 				return Response.status(Response.Status.NOT_FOUND).build();
 			}
-			// Comprobar tipo cabecera
-			// Devolver atom xml
-			// Devolver hal json
+			// Comprobar mediaType solicitado
+			String mediaType = headers.getRequestHeader("Accept").get(0);
+			if (mediaType.equals("application/xml")) {
+				UriBuilder builder = uriInfo.getAbsolutePathBuilder();
+				builder.queryParam("autor", autor);
+				URI uri = builder.build();
+				FeedType respuesta = mapperService.autoresToAtom(uri, autores, autor);
+				return Response.ok().entity(respuesta).build();
+			} else {
+				// Devolver hal json
+			}
+
 			return Response.ok().entity(autores).build();
 		} catch (AutorException e) {
 			return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
